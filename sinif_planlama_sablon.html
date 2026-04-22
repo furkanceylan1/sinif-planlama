@@ -1,0 +1,1230 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sınıf Planlama — İSTEK Kemal Atatürk</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Nunito:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f0ede6;--surf:#fff;--s2:#f8f7f4;--s3:#edeae3;
+  --bdr:#ddd8ce;--ink:#1a1a16;--ink2:#5a5a4e;--ink3:#9a9a88;
+  --grn:#1b4332;--grn-m:#2d6a4f;--grn-l:#e8f0eb;--grn-xl:#f2f7f3;
+  --red:#c0392b;--red-l:#fde8e6;
+  --amb:#92600a;--amb-l:#fef3e2;
+  --blu:#1a3a6e;--blu-l:#e6edf8;
+  --pur:#5a2878;--pur-l:#f0e8f8;
+  --ora:#b5400a;--ora-l:#fdf0e8;
+  --r:10px;--rlg:16px;
+  --sh:0 1px 8px rgba(0,0,0,.07),0 0 0 1px rgba(0,0,0,.04);
+  --shlg:0 8px 32px rgba(0,0,0,.14);
+  --shh:0 4px 20px rgba(27,67,50,.15);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--ink);min-height:100vh;font-size:14px}
+
+/* ── HEADER ── */
+header{background:var(--grn);color:#fff;padding:0 24px;height:56px;display:flex;align-items:center;gap:16px;box-shadow:0 2px 16px rgba(0,0,0,.2);position:sticky;top:0;z-index:300}
+.logo{font-family:'Playfair Display',serif;font-size:18px;flex:1;display:flex;align-items:baseline;gap:8px}
+.logo-sub{font-family:'Nunito',sans-serif;font-size:10px;font-weight:300;opacity:.6}
+.countdown-badge{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);border-radius:20px;padding:4px 14px;font-size:12px;font-weight:700;display:flex;align-items:center;gap:6px;white-space:nowrap}
+.countdown-badge .num{font-family:'Playfair Display',serif;font-size:18px;line-height:1}
+.nav{display:flex;gap:2px;background:rgba(255,255,255,.1);padding:3px;border-radius:8px}
+.nav-btn{padding:5px 14px;border:none;background:transparent;color:rgba(255,255,255,.7);border-radius:5px;cursor:pointer;font-family:'Nunito',sans-serif;font-size:13px;font-weight:600;transition:.15s;white-space:nowrap}
+.nav-btn.active{background:#fff;color:var(--grn)}
+.nav-btn:hover:not(.active){background:rgba(255,255,255,.15);color:#fff}
+
+/* ── MAIN ── */
+.main{max-width:1560px;margin:0 auto;padding:18px 20px}
+.panel{display:none}.panel.active{display:block}
+
+/* ── STAT CARDS ── */
+.stats{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-bottom:16px}
+.stat{background:var(--surf);border-radius:var(--r);padding:12px 16px;box-shadow:var(--sh);border-top:3px solid var(--grn);cursor:default}
+.stat .n{font-family:'Playfair Display',serif;font-size:22px;color:var(--grn);display:block;line-height:1}
+.stat .l{font-size:11px;color:var(--ink3);font-weight:700;letter-spacing:.4px;margin-top:3px}
+
+/* ── FILTER BAR ── */
+.fbar{background:var(--surf);border-radius:var(--rlg);padding:14px 18px;margin-bottom:14px;display:flex;gap:10px;align-items:flex-end;flex-wrap:wrap;box-shadow:var(--sh)}
+.fg{display:flex;flex-direction:column;gap:4px}
+.fg label{font-size:11px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:var(--ink3)}
+select,input[type=text],input[type=date]{padding:7px 10px;border:1.5px solid var(--bdr);border-radius:7px;font-family:'Nunito',sans-serif;font-size:13px;color:var(--ink);background:var(--surf);outline:none;transition:.15s;cursor:pointer}
+select:focus,input:focus{border-color:var(--grn)}
+
+/* ── SINAV SEÇİCİ (pill style) ── */
+.sinav-bar{background:var(--surf);border-radius:var(--rlg);padding:12px 18px;margin-bottom:14px;box-shadow:var(--sh)}
+.sinav-bar-label{font-size:11px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:var(--ink3);margin-bottom:8px}
+.sinav-pills{display:flex;gap:7px;flex-wrap:wrap}
+.sinav-pill{display:inline-flex;align-items:center;gap:6px;padding:6px 13px;border-radius:20px;font-size:12px;font-weight:700;cursor:pointer;border:1.5px solid var(--bdr);background:var(--surf);color:var(--ink2);transition:.15s;font-family:'Nunito',sans-serif}
+.sinav-pill:hover{border-color:var(--grn);color:var(--grn)}
+.sinav-pill.active{background:var(--grn);border-color:var(--grn);color:#fff}
+.sinav-pill .sp-date{font-size:10px;opacity:.7;font-weight:400}
+.sinav-pill .sp-count{font-size:10px;background:rgba(255,255,255,.25);padding:1px 5px;border-radius:10px}
+.sinav-pill:not(.active) .sp-count{background:var(--grn-l);color:var(--grn)}
+
+/* ── KAZANIM GRID ── */
+.kaz-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(295px,1fr));gap:10px}
+.kc{background:var(--surf);border:1.5px solid var(--bdr);border-radius:var(--r);padding:13px 15px 12px 19px;cursor:pointer;transition:all .15s;position:relative;overflow:hidden}
+.kc::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--cc,var(--grn));border-radius:4px 0 0 4px}
+.kc:hover{border-color:var(--cc,var(--grn));box-shadow:var(--shh);transform:translateY(-1px)}
+.kc.sel{border-color:var(--cc,var(--grn));background:color-mix(in srgb,var(--cc,var(--grn)) 7%,white)}
+.kc .d-tag{font-size:10px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:var(--cc,var(--grn));margin-bottom:4px}
+.kc .k-name{font-size:13px;font-weight:600;line-height:1.4;color:var(--ink);margin-bottom:7px}
+.kc-stats{display:flex;gap:6px;flex-wrap:wrap}
+.pill{display:inline-flex;align-items:center;gap:3px;font-size:11px;font-weight:700;padding:2px 8px;border-radius:20px}
+.pill.y{background:var(--red-l);color:var(--red)}
+.pill.b{background:var(--amb-l);color:var(--amb)}
+.pill .dot{width:5px;height:5px;border-radius:50%;background:currentColor;flex-shrink:0}
+.kc-add-btn{position:absolute;top:8px;right:8px;background:var(--grn);color:#fff;border:none;border-radius:6px;padding:3px 8px;font-size:11px;font-weight:700;cursor:pointer;opacity:0;transition:.15s;font-family:'Nunito',sans-serif}
+.kc:hover .kc-add-btn,.kc.sel .kc-add-btn{opacity:1}
+
+/* ── HAFTALIK TABLO ── */
+.week-wrap{background:var(--surf);border-radius:var(--rlg);overflow:hidden;box-shadow:var(--sh)}
+.week-hdr{display:grid;grid-template-columns:76px repeat(4,1fr);background:var(--grn);color:#fff}
+.whc{padding:9px 12px;font-size:11px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;border-right:1px solid rgba(255,255,255,.12);text-align:center}
+.whc:first-child{text-align:left;padding-left:14px}
+.whc:last-child{border-right:none}
+.day-label{background:color-mix(in srgb,var(--grn) 88%,black);color:#fff;padding:6px 14px;font-size:11px;font-weight:700;letter-spacing:.8px;text-transform:uppercase}
+.sube-row{display:grid;grid-template-columns:76px repeat(4,1fr);border-bottom:1px solid var(--bdr);min-height:82px}
+.sube-row:last-child{border-bottom:2px solid var(--bdr)}
+.sube-label{padding:6px;background:var(--s2);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:var(--grn);border-right:1px solid var(--bdr)}
+.slot{padding:6px;border-right:1px solid var(--bdr);min-height:82px;position:relative;cursor:pointer;transition:.13s}
+.slot:last-child{border-right:none}
+.slot:hover{background:var(--s2)}
+.slot-hint{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0;transition:.15s}
+.slot:hover .slot-hint{opacity:1}
+.slot-hint span{width:26px;height:26px;border-radius:50%;background:var(--grn-l);border:2px dashed var(--grn-m);color:var(--grn);font-size:16px;display:flex;align-items:center;justify-content:center;font-weight:700}
+.slot-card{border-radius:7px;padding:6px 8px;height:100%;position:relative;overflow:hidden}
+.sc-del{position:absolute;top:3px;right:3px;width:15px;height:15px;border-radius:50%;background:rgba(192,57,43,.1);border:none;color:var(--red);font-size:9px;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0;transition:.13s;line-height:1;opacity:0}
+.slot-card:hover .sc-del{opacity:1}
+.sc-del:hover{background:var(--red);color:#fff}
+.sc-ders{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;margin-bottom:2px;opacity:.75}
+.sc-kaz{font-size:11px;font-weight:700;line-height:1.3;margin-bottom:3px}
+.sc-ogr{font-size:10px;line-height:1.55;color:var(--ink2)}
+.sc-more{font-size:10px;color:var(--ink3);font-style:italic}
+.sc-ogretmen{font-size:10px;color:var(--ink3);margin-top:3px;padding-top:3px;border-top:1px solid rgba(0,0,0,.07);font-style:italic}
+
+/* ── ÖĞRENCİ ANALİZ SAYFASI ── */
+.ogr-picker{background:var(--surf);border-radius:var(--rlg);padding:16px 20px;margin-bottom:16px;box-shadow:var(--sh);display:flex;gap:14px;align-items:flex-end;flex-wrap:wrap}
+.ogr-search-wrap{position:relative;flex:1;min-width:220px}
+.ogr-search-wrap input{width:100%;padding-right:32px}
+.ogr-search-clear{position:absolute;right:8px;top:50%;transform:translateY(-50%);background:none;border:none;color:var(--ink3);cursor:pointer;font-size:16px;line-height:1}
+.ogr-dropdown{position:absolute;top:100%;left:0;right:0;background:#fff;border:1.5px solid var(--grn);border-top:none;border-radius:0 0 8px 8px;box-shadow:var(--shlg);z-index:200;max-height:220px;overflow-y:auto;display:none}
+.ogr-dropdown.show{display:block}
+.odd-item{padding:8px 12px;cursor:pointer;font-size:13px;transition:.12s;display:flex;align-items:center;gap:8px}
+.odd-item:hover{background:var(--grn-l);color:var(--grn)}
+.odd-sube{font-size:10px;color:var(--ink3);font-weight:600;margin-left:auto}
+
+/* ANALİZ LAYOUT */
+.analiz-layout{display:grid;grid-template-columns:300px 1fr;gap:16px;align-items:start}
+.analiz-kart{background:var(--surf);border-radius:var(--rlg);box-shadow:var(--sh);overflow:hidden}
+.ak-hd{padding:14px 18px;background:var(--grn);color:#fff}
+.ak-hd .ak-ad{font-family:'Playfair Display',serif;font-size:18px}
+.ak-hd .ak-meta{font-size:11px;opacity:.75;margin-top:3px}
+.ak-body{padding:16px 18px}
+
+/* Sinav genel performans */
+.sinav-perf-list{display:flex;flex-direction:column;gap:8px}
+.sp-item{border-radius:8px;padding:10px 12px;border:1px solid var(--bdr);cursor:pointer;transition:.15s}
+.sp-item:hover{box-shadow:var(--sh);transform:translateX(2px)}
+.sp-item.active{border-color:var(--grn);background:var(--grn-xl)}
+.sp-item-hd{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}
+.sp-sinav-ad{font-size:12px;font-weight:700;color:var(--ink)}
+.sp-tarih{font-size:10px;color:var(--ink3)}
+.sp-bar-wrap{position:relative;height:6px;background:var(--bdr);border-radius:3px;overflow:hidden}
+.sp-bar-y{position:absolute;left:0;top:0;height:100%;background:var(--red);border-radius:3px;transition:width .4s}
+.sp-bar-b{position:absolute;top:0;height:100%;background:var(--amb);border-radius:3px;transition:width .4s}
+.sp-nums{display:flex;gap:8px;margin-top:4px}
+.sp-num{font-size:10px;font-weight:700}
+.sp-num.y{color:var(--red)}
+.sp-num.b{color:var(--amb)}
+.sp-num.d{color:var(--grn)}
+
+/* Ders bazlı radar/bar */
+.ders-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px}
+.ders-bar-item{background:var(--s2);border-radius:8px;padding:10px 12px}
+.dbi-ders{font-size:11px;font-weight:700;color:var(--ink2);margin-bottom:6px;display:flex;align-items:center;justify-content:space-between}
+.dbi-ders-color{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.dbi-bar-row{display:flex;align-items:center;gap:6px;margin-bottom:3px}
+.dbi-bar-label{font-size:10px;color:var(--ink3);width:44px;flex-shrink:0}
+.dbi-bar-bg{flex:1;height:8px;background:var(--bdr);border-radius:4px;overflow:hidden}
+.dbi-bar-fill{height:100%;border-radius:4px;transition:width .4s}
+.dbi-bar-num{font-size:10px;font-weight:700;width:24px;text-align:right;flex-shrink:0}
+
+/* Zayıf kazanımlar listesi */
+.weak-list{display:flex;flex-direction:column;gap:6px}
+.wl-item{background:var(--s2);border-radius:8px;padding:9px 12px;display:flex;align-items:center;gap:10px;border-left:3px solid var(--bdr)}
+.wl-item .wl-rank{width:22px;height:22px;border-radius:50%;background:var(--grn-l);color:var(--grn);font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.wl-item .wl-info{flex:1;min-width:0}
+.wl-item .wl-kaz{font-size:12px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.wl-item .wl-ders{font-size:10px;color:var(--ink3);margin-top:1px}
+.wl-item .wl-nums{display:flex;gap:5px;flex-shrink:0}
+
+/* GENEL ÖZET TABLOSU */
+.ozet-table{width:100%;border-collapse:collapse;font-size:12px}
+.ozet-table th{text-align:left;padding:6px 10px;font-size:10px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--ink3);border-bottom:2px solid var(--bdr)}
+.ozet-table td{padding:7px 10px;border-bottom:1px solid var(--bdr)}
+.ozet-table tr:last-child td{border-bottom:none}
+.ozet-table tr:hover td{background:var(--s2)}
+.trend-up{color:var(--red)}
+.trend-down{color:var(--grn)}
+.trend-eq{color:var(--ink3)}
+
+/* ── MODAL ── */
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:500;display:flex;align-items:center;justify-content:center;padding:16px;opacity:0;pointer-events:none;transition:.2s}
+.overlay.open{opacity:1;pointer-events:all}
+.modal{background:#fff;border-radius:var(--rlg);width:100%;max-width:580px;max-height:92vh;display:flex;flex-direction:column;box-shadow:var(--shlg);transform:translateY(10px);transition:.2s;overflow:hidden}
+.overlay.open .modal{transform:translateY(0)}
+.modal-hd{padding:14px 20px;border-bottom:1px solid var(--bdr);display:flex;align-items:center;justify-content:space-between;background:var(--s2);flex-shrink:0}
+.modal-hd h3{font-family:'Playfair Display',serif;font-size:16px}
+.modal-hd .slot-info{font-size:11px;color:var(--ink3);margin-top:2px}
+.mc{overflow-y:auto;flex:1}
+.mc-sec{padding:14px 20px;border-bottom:1px solid var(--bdr)}
+.mc-sec h4{font-size:11px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:var(--ink3);margin-bottom:10px}
+.modal-ft{padding:11px 20px;border-top:1px solid var(--bdr);display:flex;gap:8px;justify-content:flex-end;background:var(--s2);flex-shrink:0}
+.ff{display:flex;flex-direction:column;gap:4px;margin-bottom:10px}
+.ff:last-child{margin-bottom:0}
+.ff label{font-size:11px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:var(--ink3)}
+.ff select,.ff input{width:100%}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.t-wrap{position:relative}
+.t-wrap input{width:100%}
+.t-sugg{position:absolute;top:100%;left:0;right:0;background:#fff;border:1.5px solid var(--grn);border-top:none;border-radius:0 0 8px 8px;box-shadow:var(--shlg);z-index:600;max-height:160px;overflow-y:auto;display:none}
+.t-sugg.show{display:block}
+.t-item{padding:7px 12px;cursor:pointer;font-size:13px;transition:.12s;display:flex;align-items:center;gap:8px}
+.t-item:hover{background:var(--grn-l);color:var(--grn)}
+.t-ders-tag{font-size:10px;color:var(--ink3);font-weight:600;margin-left:auto}
+.ogr-filter-bar{display:flex;gap:5px;flex-wrap:wrap;align-items:center;margin-bottom:8px}
+.ogr-filter-bar small{font-size:11px;color:var(--ink3);font-weight:700;letter-spacing:.5px;text-transform:uppercase}
+.ftag{display:inline-flex;align-items:center;gap:3px;padding:3px 9px;border-radius:20px;font-size:11px;font-weight:700;background:var(--grn-l);color:var(--grn);cursor:pointer;border:1.5px solid transparent;font-family:'Nunito',sans-serif;transition:.13s}
+.ftag.active{border-color:var(--grn);background:var(--grn);color:#fff}
+.sel-bar{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
+.sel-bar span{font-size:12px;font-weight:700;color:var(--grn)}
+.ogr-list{border:1.5px solid var(--bdr);border-radius:8px;overflow:hidden;max-height:260px;overflow-y:auto}
+.oi{display:flex;align-items:center;gap:8px;padding:7px 11px;border-bottom:1px solid var(--bdr);cursor:pointer;transition:.12s;user-select:none}
+.oi:last-child{border-bottom:none}
+.oi:hover{background:var(--s2)}
+.oi.added{background:color-mix(in srgb,var(--grn) 7%,white)}
+.oi.conflict{opacity:.4;cursor:not-allowed;background:#fff5f5}
+.oi-ck{width:16px;height:16px;border:2px solid var(--bdr);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:10px;flex-shrink:0;transition:.13s}
+.oi.added .oi-ck{background:var(--grn);border-color:var(--grn);color:#fff}
+.oi.conflict .oi-ck{background:var(--red-l);border-color:var(--red)}
+.oi-info{flex:1;min-width:0}
+.oi-name{font-size:12px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.oi-meta{font-size:10px;color:var(--ink3)}
+.oi-bdg{display:flex;gap:3px;flex-shrink:0}
+.b{font-size:10px;font-weight:700;padding:2px 5px;border-radius:8px}
+.by{background:var(--red-l);color:var(--red)}
+.bb{background:var(--amb-l);color:var(--amb)}
+.bconf{background:var(--red-l);color:var(--red)}
+.conflict-info{display:none;margin-top:8px;padding:8px 10px;background:var(--red-l);border-radius:7px;font-size:12px;color:var(--red);font-weight:600}
+
+/* ── BUTTONS ── */
+.btn{padding:7px 15px;border-radius:7px;font-family:'Nunito',sans-serif;font-size:13px;font-weight:700;cursor:pointer;border:1.5px solid transparent;transition:.15s}
+.btn-primary{background:var(--grn);color:#fff;border-color:var(--grn)}
+.btn-primary:hover{background:var(--grn-m)}
+.btn-outline{background:transparent;color:var(--grn);border-color:var(--grn)}
+.btn-outline:hover{background:var(--grn-l)}
+.btn-sm{padding:4px 10px;font-size:11px;border-radius:6px}
+.btn-lg{padding:10px 22px;font-size:14px;border-radius:9px}
+.btn-all{background:var(--grn-l);color:var(--grn);border:1.5px solid var(--grn);border-radius:7px;padding:4px 10px;font-family:'Nunito',sans-serif;font-size:12px;font-weight:700;cursor:pointer;transition:.13s}
+.btn-all:hover{background:var(--grn);color:#fff}
+
+/* ── YAZDIRMA ── */
+.print-ctrl{display:flex;gap:10px;align-items:center;margin-bottom:16px;padding:14px 18px;background:var(--surf);border-radius:var(--r);box-shadow:var(--sh)}
+.print-wselector{display:flex;gap:7px;align-items:center;margin-bottom:14px;flex-wrap:wrap}
+.print-wselector label{font-size:12px;font-weight:700;color:var(--ink3)}
+.print-wselector button{padding:5px 12px;border-radius:6px;border:1.5px solid var(--bdr);background:var(--surf);font-family:'Nunito',sans-serif;font-size:12px;font-weight:600;cursor:pointer;transition:.13s}
+.print-wselector button.active{background:var(--grn);color:#fff;border-color:var(--grn)}
+.print-day-block{background:#fff;border:1px solid var(--bdr);border-radius:var(--rlg);overflow:hidden;margin-bottom:20px;box-shadow:var(--sh);page-break-inside:avoid}
+.pdb-hd{background:var(--grn);color:#fff;padding:14px 24px;display:flex;align-items:center;gap:16px}
+.pdb-week{font-size:10px;opacity:.65;font-weight:700;letter-spacing:.8px;text-transform:uppercase;margin-bottom:3px}
+.pdb-gun{font-family:'Playfair Display',serif;font-size:20px}
+.pdb-meta{font-size:11px;opacity:.75;margin-top:2px}
+.pdb-school{margin-left:auto;text-align:right;font-size:10px;opacity:.65;font-weight:600;letter-spacing:.5px}
+.lb{border-bottom:2px solid var(--bdr)}
+.lb:last-child{border-bottom:none}
+.lb-hd{padding:9px 20px 7px;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:14px;background:var(--s2);border-bottom:1px solid var(--bdr)}
+.lb-slot{font-family:'Playfair Display',serif;font-size:16px;color:var(--grn)}
+.lb-kaz{font-size:13px;font-weight:700}
+.lb-ders{font-size:11px;color:var(--ink3)}
+.lb-salon{font-size:12px;font-weight:700;color:var(--grn)}
+.lb-ogretmen{font-size:11px;color:var(--ink3);margin-top:2px}
+.lb-table{width:100%;border-collapse:collapse}
+.lb-table th{text-align:left;font-size:10px;font-weight:700;letter-spacing:.7px;text-transform:uppercase;color:var(--ink3);padding:6px 16px 5px;border-bottom:1.5px solid var(--bdr)}
+.lb-table td{padding:7px 16px;border-bottom:1px solid var(--bdr);font-size:12px}
+.lb-table tr:last-child td{border-bottom:none}
+.lb-table tr:nth-child(even) td{background:var(--s2)}
+.lb-notes{padding:10px 20px;border-top:1px solid var(--bdr);display:grid;grid-template-columns:1fr 1fr;gap:16px;background:var(--s2)}
+.lb-nb label{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.7px;color:var(--ink3);display:block;margin-bottom:6px}
+.lb-line{height:1px;background:var(--bdr);margin-bottom:7px}
+
+/* ── LOADING ── */
+.loading{position:fixed;inset:0;background:rgba(27,67,50,.94);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:9999;color:#fff;gap:14px}
+.spinner{width:40px;height:40px;border:3px solid rgba(255,255,255,.2);border-top-color:#fff;border-radius:50%;animation:spin .8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.loading p{font-family:'Playfair Display',serif;font-size:17px;opacity:.9}
+.loading small{font-size:12px;opacity:.5}
+
+/* ── MISC ── */
+.sec-title{font-family:'Playfair Display',serif;font-size:18px;color:var(--ink);display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.sec-title::after{content:'';flex:1;height:1px;background:var(--bdr)}
+.empty-s{text-align:center;padding:40px 20px;color:var(--ink3)}
+.empty-s .ei{font-size:36px;margin-bottom:10px}
+.empty-s p{font-size:14px;color:var(--ink2);margin-bottom:4px}
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:var(--bdr);border-radius:3px}
+.card{background:var(--surf);border-radius:var(--rlg);box-shadow:var(--sh);overflow:hidden}
+.card-hd{padding:12px 18px;border-bottom:1px solid var(--bdr);background:var(--s2);display:flex;align-items:center;justify-content:space-between}
+.card-hd h3{font-family:'Playfair Display',serif;font-size:15px;font-weight:400}
+.card-body{padding:14px 18px}
+
+@media print{
+  header,.nav,.print-ctrl,.print-wselector,.fbar,.sinav-bar,
+  .panel:not(#p-print){display:none!important}
+  #p-print{display:block!important}
+  body{background:#fff}
+  .print-day-block{box-shadow:none;border:1px solid #ccc;margin-bottom:0;border-radius:0;page-break-after:always}
+  .print-day-block:last-child{page-break-after:auto}
+  .main{padding:0;max-width:100%}
+}
+</style>
+</head>
+<body>
+<div class="loading" id="loading">
+  <div class="spinner"></div>
+  <p>Veriler yükleniyor…</p>
+  <small>22.758 sınav kaydı işleniyor</small>
+</div>
+
+<!-- MODAL -->
+<div class="overlay" id="overlay">
+  <div class="modal">
+    <div class="modal-hd">
+      <div><h3 id="modal-title">Ders Ekle</h3><div class="slot-info" id="modal-slot-info"></div></div>
+      <button style="background:none;border:none;font-size:20px;cursor:pointer;color:var(--ink3)" onclick="closeModal()">✕</button>
+    </div>
+    <div class="mc">
+      <div class="mc-sec">
+        <h4>Ders & Kazanım</h4>
+        <div class="form-row">
+          <div class="ff">
+            <label>Ders</label>
+            <select id="m-ders" onchange="onMDers()">
+              <option value="">— Seçin —</option>
+            </select>
+          </div>
+          <div class="ff">
+            <label>Öğretmen</label>
+            <div class="t-wrap">
+              <input type="text" id="m-ogretmen" placeholder="Öğretmen adı…" autocomplete="off" oninput="onTInput()" onfocus="onTFocus()">
+              <div class="t-sugg" id="t-sugg"></div>
+            </div>
+          </div>
+        </div>
+        <div class="ff">
+          <label>Kazanım <span id="kaz-count" style="font-weight:400;opacity:.6;text-transform:none;letter-spacing:0;font-size:11px"></span></label>
+          <select id="m-kaz" onchange="onMKaz()"><option value="">— Önce ders seçin —</option></select>
+        </div>
+      </div>
+      <div class="mc-sec">
+        <h4>Öğrenciler</h4>
+        <div class="sel-bar">
+          <div class="ogr-filter-bar">
+            <small>Filtre:</small>
+            <button class="ftag active" onclick="setMF('all',this)">Tümü</button>
+            <button class="ftag" onclick="setMF('y',this)" style="background:var(--red-l);color:var(--red)">⚠ Yanlış</button>
+            <button class="ftag" onclick="setMF('b',this)" style="background:var(--amb-l);color:var(--amb)">○ Boş</button>
+          </div>
+          <div style="display:flex;gap:6px;align-items:center">
+            <button class="btn-all" onclick="selAll()">Tümünü Seç</button>
+            <span id="modal-sc" style="font-size:12px;font-weight:700;color:var(--grn)">0 seçildi</span>
+          </div>
+        </div>
+        <div class="ogr-list" id="modal-ogr"></div>
+        <div class="conflict-info" id="conflict-info">⚠️ Kırmızı öğrenciler bu saatte başka salona eklenmiş — seçilemez.</div>
+      </div>
+    </div>
+    <div class="modal-ft">
+      <button class="btn btn-outline" onclick="closeModal()">İptal</button>
+      <button class="btn btn-primary" onclick="saveSlot()">✓ Kaydet</button>
+    </div>
+  </div>
+</div>
+
+<header>
+  <div class="logo">📚 Sınıf Planlama <span class="logo-sub">İSTEK Kemal Atatürk — 12. Sınıf Kamp Dönemi</span></div>
+  <div class="countdown-badge" id="countdown-badge">
+    <span class="num" id="countdown-num">—</span>
+    <span>hafta kaldı</span>
+  </div>
+  <nav class="nav">
+    <button class="nav-btn active" onclick="showTab('haftalik')">📅 Haftalık Program</button>
+    <button class="nav-btn" onclick="showTab('kazanim')">🎯 Kazanım Analizi</button>
+    <button class="nav-btn" onclick="showTab('analiz')">👤 Öğrenci Analizi</button>
+    <button class="nav-btn" onclick="showTab('print')">🖨️ Yazdır</button>
+  </nav>
+</header>
+
+<div class="main">
+
+<!-- ═══ HAFTALIK PROGRAM ═══ -->
+<div id="p-haftalik" class="panel active">
+  <div class="stats">
+    <div class="stat"><span class="n" id="s-ogr">—</span><span class="l">Öğrenci</span></div>
+    <div class="stat"><span class="n" id="s-kaz">—</span><span class="l">Kazanım</span></div>
+    <div class="stat"><span class="n" id="s-sinav">—</span><span class="l">Sınav</span></div>
+    <div class="stat"><span class="n" id="s-master">—</span><span class="l">Sınav Kaydı</span></div>
+    <div class="stat"><span class="n" id="s-slot">0</span><span class="l">Planlanan Ders</span></div>
+    <div class="stat">
+      <span class="l" style="margin-bottom:5px">Hafta</span>
+      <select id="week-sel" style="width:100%;font-size:12px;padding:4px 8px" onchange="renderWeek()">
+        <option value="1">1. Hafta</option><option value="2">2. Hafta</option>
+        <option value="3">3. Hafta</option><option value="4">4. Hafta</option>
+        <option value="5">5. Hafta</option><option value="6">6. Hafta</option>
+        <option value="7">7. Hafta</option><option value="8">8. Hafta</option>
+        <option value="9">9. Hafta</option>
+      </select>
+    </div>
+  </div>
+  <div class="week-wrap">
+    <div class="week-hdr">
+      <div class="whc">Salon</div>
+      <div class="whc">6. Ders</div><div class="whc">7. Ders</div>
+      <div class="whc">8. Ders</div><div class="whc">9. Ders</div>
+    </div>
+    <div id="week-body"></div>
+  </div>
+</div>
+
+<!-- ═══ KAZANIM ANALİZİ ═══ -->
+<div id="p-kazanim" class="panel">
+  <!-- Sınav filtresi -->
+  <div class="sinav-bar">
+    <div class="sinav-bar-label">Sınav Filtresi</div>
+    <div class="sinav-pills" id="sinav-pills"></div>
+  </div>
+  <div class="fbar">
+    <div class="fg" style="flex:0 0 200px">
+      <label>Ders</label>
+      <select id="f-ders" onchange="renderGrid()"><option value="">Tüm Dersler</option></select>
+    </div>
+    <div class="fg" style="flex:0 0 140px">
+      <label>Şube</label>
+      <select id="f-sube" onchange="renderGrid()">
+        <option value="">Tüm Şubeler</option>
+        <option>12-A</option><option>12-B</option><option>12-C</option><option>12-D</option>
+        <option value="FL">Fen Lisesi</option>
+      </select>
+    </div>
+    <div class="fg" style="flex:1;min-width:180px">
+      <label>Kazanım Ara</label>
+      <input type="text" id="f-search" placeholder="Kazanım veya ders adı…" oninput="renderGrid()">
+    </div>
+  </div>
+  <div id="kaz-grid" class="kaz-grid"></div>
+</div>
+
+<!-- ═══ ÖĞRENCİ ANALİZİ ═══ -->
+<div id="p-analiz" class="panel">
+  <div class="ogr-picker">
+    <div class="fg" style="flex:1;min-width:220px">
+      <label>Öğrenci Seç</label>
+      <div class="ogr-search-wrap">
+        <input type="text" id="ogr-search" placeholder="Öğrenci adı yazın…" autocomplete="off"
+          oninput="onOgrSearch()" onfocus="onOgrSearch()">
+        <button class="ogr-search-clear" onclick="clearOgrSearch()">×</button>
+        <div class="ogr-dropdown" id="ogr-dropdown"></div>
+      </div>
+    </div>
+    <div class="fg" style="flex:0 0 160px">
+      <label>Şube Filtrele</label>
+      <select id="ogr-sube-filter" onchange="onOgrSearch()">
+        <option value="">Tüm Şubeler</option>
+        <option>12-A</option><option>12-B</option><option>12-C</option><option>12-D</option>
+        <option value="FL">Fen Lisesi</option>
+      </select>
+    </div>
+  </div>
+  <div id="analiz-content">
+    <div class="empty-s"><div class="ei">👤</div><p>Yukarıdan bir öğrenci seçin</p><small>Tüm sınav performansı ve zayıf kazanımlar görünecek</small></div>
+  </div>
+</div>
+
+<!-- ═══ YAZDIRMA ═══ -->
+<div id="p-print" class="panel">
+  <div class="print-ctrl">
+    <button class="btn btn-primary btn-lg" onclick="window.print()">🖨️ Yazdır / PDF Kaydet</button>
+    <span style="font-size:12px;color:var(--ink3)">Seçili haftanın tüm dersleri yazdırılacak</span>
+  </div>
+  <div class="print-wselector" id="print-wselector"></div>
+  <div id="print-pages"></div>
+</div>
+
+</div><!-- .main -->
+
+<script>
+// ════════════════════════════════════════════
+// SABİTLER
+// ════════════════════════════════════════════
+const GUNLER       = ['Salı','Perşembe','Cuma'];
+const DERS_SAATLERI = ['6. Ders','7. Ders','8. Ders','9. Ders'];
+const SUBELER      = ['12A','12B','12C','12D','FL12'];
+const BITIS_TARIHI = new Date('2026-06-26');
+
+const OGRETMENLER = [
+  {ad:'Yelda Çoşkun',        ders:'Fizik'},
+  {ad:'Burcu Bıyıkoğlu',     ders:'Fizik'},
+  {ad:'Buket Aksoy',         ders:'Kimya'},
+  {ad:'Necibe Başboğa',      ders:'Kimya'},
+  {ad:'Nilay Olkan',         ders:'Biyoloji'},
+  {ad:'Aykut Elmas',         ders:'Matematik'},
+  {ad:'Utku Bingül',         ders:'Matematik'},
+  {ad:'Bilal Şakirler',      ders:'Matematik'},
+  {ad:'Elif Şimşek',         ders:'Matematik'},
+  {ad:'Sevim Seda Yıldıray', ders:'Türkçe'},
+  {ad:'Gazel Göğebakan',     ders:'Türkçe'},
+  {ad:'Nihal Suyolcu',       ders:'Türkçe'},
+  {ad:'Nazan Özdere',        ders:'Tarih'},
+  {ad:'Burcu Demir',         ders:'Tarih'},
+  {ad:'Begüm Yılmaz',        ders:'Coğrafya'},
+  {ad:'Dursun Demirci',      ders:'Din Kültürü'},
+  {ad:'Cem Onur Gülal',      ders:'Felsefe'},
+];
+
+const DERS_RENK = {
+  'Türkçe':'#1e6b35','Türk Dili ve Edebiya':'#1a7a2e',
+  'T.Matematik':'#1a3d8c','Matematik(A)':'#2a509c','Geometri':'#2a509c',
+  'Tarih':'#7a3218','Coğrafya':'#2d5c1e',
+  'Felsefe':'#5a2878','Felsefe_Seçmeli':'#6a3888','Felsefe Grubu(A)':'#7a4898','Felsefe_Seçmeli(A)':'#8a58a8',
+  'Din Kültürü ve Ahlak':'#7a5510','(1) Din Kültürü ve Ahlak':'#8a6520',
+  'Fizik':'#1e3d6e','Fizik(A)':'#2a4d8e',
+  'Kimya':'#7a1e4a','Kimya(A)':'#8a2e5a',
+  'Biyoloji':'#1e6a3a','Biyoloji(A)':'#2e7a4a',
+};
+const dc = d => DERS_RENK[d]||'#555';
+
+// ════════════════════════════════════════════
+// STATE
+// ════════════════════════════════════════════
+let DB = null;
+let schedule   = JSON.parse(localStorage.getItem('sch_v5')||'{}');
+let modalCtx   = null;
+let modalFilt  = 'all';
+let modalSel   = new Set();
+let selKazCtx  = null;
+let aktivSinav = 'all'; // 'all' veya sinav id
+let secilenOgr = null;
+let printWeek  = '1';
+
+// ════════════════════════════════════════════
+// VERİ & BAŞLAT
+// ════════════════════════════════════════════
+function loadData(){
+  document.getElementById('loading').style.display='flex';
+  try{ DB = EMBEDDED_DB; onLoaded(); }
+  catch(e){ console.error(e); alert('Veri yüklenemedi: '+e.message); }
+}
+
+function onLoaded(){
+  // Stats
+  document.getElementById('s-ogr').textContent    = DB.students.length;
+  document.getElementById('s-kaz').textContent    = DB.kazanim_list.length;
+  document.getElementById('s-sinav').textContent  = DB.sinav_listesi.length;
+  document.getElementById('s-master').textContent = DB.meta.total_master.toLocaleString('tr-TR');
+
+  // Countdown
+  const bugun = new Date();
+  const msLeft = BITIS_TARIHI - bugun;
+  const haftaLeft = Math.max(0, Math.ceil(msLeft / (7*24*3600*1000)));
+  document.getElementById('countdown-num').textContent = haftaLeft;
+  document.getElementById('countdown-badge').title = '26 Haziran 2026 okul kapanışına kadar';
+
+  // Ders select
+  const dersler = [...new Set(DB.kazanim_list.map(k=>k.ders))].sort();
+  [document.getElementById('f-ders'), document.getElementById('m-ders')].forEach(sel=>{
+    dersler.forEach(d=>{
+      const o=document.createElement('option');
+      o.value=d;o.textContent=d;sel.appendChild(o);
+    });
+  });
+
+  buildSinavPills();
+  document.getElementById('loading').style.display='none';
+  renderWeek();
+  renderGrid();
+  updateSlotCount();
+  buildPrintWSelector();
+}
+
+// ════════════════════════════════════════════
+// SINAV FİLTRESİ
+// ════════════════════════════════════════════
+function buildSinavPills(){
+  const box = document.getElementById('sinav-pills');
+  // Tümü pill
+  box.innerHTML = `<button class="sinav-pill active" data-id="all" onclick="setSinav('all',this)">
+    📊 Tüm Sınavlar</button>`;
+  DB.sinav_listesi.forEach(s=>{
+    // Bu sınavda toplam kaç öğrenci hata yaptı
+    const total = DB.kazanim_list.reduce((acc,k)=>{
+      const sd = k.sinav_detail?.[s.id];
+      return acc + (sd ? new Set([...(sd.yanlis_ids||[]),...(sd.bos_ids||[])]).size : 0);
+    },0);
+    const kisa = s.ad.replace('12.Sınıf ','').replace(/\(.*?\)/g,'').replace(', TYT','').replace(', YKS','').trim();
+    box.innerHTML += `<button class="sinav-pill" data-id="${s.id}" onclick="setSinav('${s.id}',this)">
+      ${kisa}
+      <span class="sp-date">${s.tarih}</span>
+    </button>`;
+  });
+}
+
+function setSinav(id, btn){
+  aktivSinav = id;
+  document.querySelectorAll('.sinav-pill').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  renderGrid();
+}
+
+// ════════════════════════════════════════════
+// KAZANIM GRID
+// ════════════════════════════════════════════
+function renderGrid(){
+  if(!DB) return;
+  const fDers   = document.getElementById('f-ders').value;
+  const fSube   = document.getElementById('f-sube').value;
+  const fSearch = document.getElementById('f-search').value.toLowerCase().trim();
+
+  const subeSt = fSube
+    ? new Set(fSube==='FL'
+        ? DB.students.filter(s=>s.kurum==='Fen Lisesi').map(s=>s.id)
+        : DB.students.filter(s=>s.sube===fSube).map(s=>s.id))
+    : null;
+
+  const cards = DB.kazanim_list.filter(k=>{
+    if(fDers && k.ders!==fDers) return false;
+    if(fSearch && !k.kaz.toLowerCase().includes(fSearch) && !k.ders.toLowerCase().includes(fSearch)) return false;
+    return true;
+  }).map(k=>{
+    // Sınav bazlı detay
+    let detail = k.detail||[];
+    if(aktivSinav !== 'all'){
+      const sd = k.sinav_detail?.[aktivSinav];
+      if(!sd) return null;
+      const ySet = new Set(sd.yanlis_ids||[]);
+      const bSet = new Set(sd.bos_ids||[]);
+      detail = [...ySet].map(id=>({id,y:1,b:0}));
+      [...bSet].forEach(id=>{
+        const ex = detail.find(d=>d.id===id);
+        if(ex) ex.b=1; else detail.push({id,y:0,b:1});
+      });
+    }
+    if(subeSt) detail = detail.filter(d=>subeSt.has(d.id));
+    const yCount = detail.filter(d=>d.y>0).length;
+    const bCount = detail.filter(d=>d.b>0).length;
+    if(!yCount && !bCount) return null;
+    const color = dc(k.ders);
+    const isSel = selKazCtx&&selKazCtx.ders===k.ders&&selKazCtx.kaz===k.kaz;
+    return `<div class="kc ${isSel?'sel':''}" style="--cc:${color}"
+      data-ders="${k.ders.replace(/"/g,'&quot;')}" data-kaz="${k.kaz.replace(/"/g,'&quot;')}" data-color="${color}"
+      onclick="selKaz(this)">
+      <button class="kc-add-btn" onclick="addToProgram(event,this.closest('.kc'))">+ Ekle</button>
+      <div class="d-tag">${k.ders}</div>
+      <div class="k-name">${k.kaz}</div>
+      <div class="kc-stats">
+        ${yCount?`<div class="pill y"><div class="dot"></div>${yCount} yanlış</div>`:''}
+        ${bCount?`<div class="pill b"><div class="dot"></div>${bCount} boş</div>`:''}
+      </div>
+    </div>`;
+  }).filter(Boolean);
+
+  const grid = document.getElementById('kaz-grid');
+  grid.innerHTML = cards.join('')||'<div class="empty-s"><div class="ei">🔍</div><p>Kazanım bulunamadı</p></div>';
+}
+
+function selKaz(el){
+  document.querySelectorAll('.kc').forEach(c=>c.classList.remove('sel'));
+  el.classList.add('sel');
+  selKazCtx = {ders:el.dataset.ders, kaz:el.dataset.kaz, color:el.dataset.color};
+}
+
+function addToProgram(e,el){
+  e.stopPropagation();
+  selKazCtx = {ders:el.dataset.ders, kaz:el.dataset.kaz, color:el.dataset.color};
+  showTab('haftalik');
+  setTimeout(()=>{
+    const b=document.createElement('div');
+    b.style.cssText='position:fixed;top:62px;left:50%;transform:translateX(-50%);background:var(--grn);color:#fff;padding:9px 18px;border-radius:8px;font-weight:700;font-size:13px;z-index:400;box-shadow:var(--shlg);max-width:90vw;text-align:center';
+    b.textContent=`✓ "${selKazCtx.kaz.slice(0,45)}…" seçildi — Boş slota tıklayın`;
+    document.body.appendChild(b);
+    setTimeout(()=>b.remove(),3500);
+  },100);
+}
+
+// ════════════════════════════════════════════
+// HAFTALIK PROGRAM
+// ════════════════════════════════════════════
+function renderWeek(){
+  const week = document.getElementById('week-sel').value;
+  let html='';
+  for(const gun of GUNLER){
+    html+=`<div class="day-label">${gun}</div>`;
+    for(const salon of SUBELER){
+      html+=`<div class="sube-row"><div class="sube-label">${salon}</div>`;
+      for(let di=0;di<4;di++){
+        const slot = getSlot(week,gun,salon,di);
+        const ctx  = `${week}|${gun}|${salon}|${di}`;
+        html+=`<div class="slot" data-ctx="${ctx}" onclick="openModal(this.dataset.ctx)">`;
+        if(slot){
+          const sts  = slot.ogrenciler.map(id=>DB?.students.find(s=>s.id===id)).filter(Boolean);
+          const color= dc(slot.ders);
+          const shown= sts.slice(0,5);
+          const more = sts.length-shown.length;
+          html+=`<div class="slot-card" style="background:color-mix(in srgb,${color} 9%,white);border-left:3px solid ${color}">
+            <button class="sc-del" data-ctx="${ctx}" onclick="delCtx(event,this.dataset.ctx)">✕</button>
+            <div class="sc-ders" style="color:${color}">${slot.ders}</div>
+            <div class="sc-kaz">${slot.kaz}</div>
+            <div class="sc-ogr">${shown.map(s=>s.name.split(' ')[0]+' '+s.name.split(' ').slice(-1)[0]).join('<br>')}</div>
+            ${more>0?`<div class="sc-more">+${more} daha</div>`:''}
+            ${slot.ogretmen?`<div class="sc-ogretmen">👤 ${slot.ogretmen}</div>`:''}
+          </div>`;
+        } else {
+          html+=`<div class="slot-hint"><span>+</span></div>`;
+        }
+        html+=`</div>`;
+      }
+      html+=`</div>`;
+    }
+  }
+  document.getElementById('week-body').innerHTML=html;
+  updateSlotCount();
+}
+
+function getSlot(w,g,s,d){ return schedule[w]?.[g]?.[s]?.[d]||null; }
+function setSlot(w,g,s,d,v){
+  if(!schedule[w])schedule[w]={};
+  if(!schedule[w][g])schedule[w][g]={};
+  if(!schedule[w][g][s])schedule[w][g][s]={};
+  schedule[w][g][s][d]=v; persist();
+}
+function delCtx(e,ctx){
+  e.stopPropagation();
+  if(!confirm('Bu dersi silmek istiyor musunuz?')) return;
+  const [w,g,s,d]=ctx.split('|');
+  if(schedule[w]?.[g]?.[s]) delete schedule[w][g][s][+d];
+  persist(); renderWeek(); renderPrint();
+}
+function updateSlotCount(){
+  let c=0;
+  for(const w of Object.values(schedule))
+    for(const g of Object.values(w))
+      for(const s of Object.values(g))
+        c+=Object.keys(s).length;
+  document.getElementById('s-slot').textContent=c;
+}
+function persist(){ localStorage.setItem('sch_v5',JSON.stringify(schedule)); }
+
+function getConflictsExcl(week,gun,di,excSalon){
+  const busy=new Set();
+  for(const [salon,sd] of Object.entries(schedule[week]?.[gun]||{})){
+    if(salon===excSalon) continue;
+    if(sd[di])(sd[di].ogrenciler||[]).forEach(id=>busy.add(id));
+  }
+  return busy;
+}
+
+// ════════════════════════════════════════════
+// MODAL
+// ════════════════════════════════════════════
+function openModal(ctx){
+  const [week,gun,salon,di]=ctx.split('|');
+  modalCtx={week,gun,salon,di:+di};
+  modalSel=new Set(); modalFilt='all';
+  document.getElementById('modal-title').textContent=`${salon} — ${DERS_SAATLERI[+di]}`;
+  document.getElementById('modal-slot-info').textContent=`${gun} · ${week}. Hafta`;
+
+  const existing=getSlot(week,gun,salon,+di);
+  const mDers=document.getElementById('m-ders');
+  const mKaz=document.getElementById('m-kaz');
+  const mOgr=document.getElementById('m-ogretmen');
+
+  if(existing){
+    mDers.value=existing.ders; onMDers();
+    setTimeout(()=>{ mKaz.value=existing.kaz; onMKaz(); },0);
+    mOgr.value=existing.ogretmen||'';
+    modalSel=new Set(existing.ogrenciler);
+  } else if(selKazCtx){
+    mDers.value=selKazCtx.ders; onMDers();
+    setTimeout(()=>{ mKaz.value=selKazCtx.kaz; onMKaz(); },0);
+    mOgr.value='';
+  } else {
+    mDers.value=''; mKaz.innerHTML='<option value="">— Önce ders seçin —</option>';
+    mOgr.value='';
+    document.getElementById('kaz-count').textContent='';
+    document.getElementById('modal-ogr').innerHTML='<div style="padding:14px;text-align:center;color:var(--ink3);font-size:13px">Ders ve kazanım seçin</div>';
+  }
+
+  document.querySelectorAll('#overlay .ftag').forEach(b=>b.classList.remove('active'));
+  document.querySelectorAll('#overlay .ftag')[0]?.classList.add('active');
+  updateMSC();
+  document.getElementById('overlay').classList.add('open');
+}
+
+function closeModal(){
+  document.getElementById('overlay').classList.remove('open');
+  document.getElementById('t-sugg').classList.remove('show');
+  selKazCtx=null;
+}
+
+function onMDers(){
+  const ders=document.getElementById('m-ders').value;
+  const kaz=document.getElementById('m-kaz');
+  document.getElementById('kaz-count').textContent='';
+  if(!ders){ kaz.innerHTML='<option value="">— Önce ders seçin —</option>'; renderMOgr(); return; }
+  // Ders bazlı öğretmen öneri
+  const base=OGRETMENLER.filter(o=>ders.toLowerCase().includes(o.ders.toLowerCase().split(' ')[0]));
+  if(base.length===1 && !document.getElementById('m-ogretmen').value)
+    document.getElementById('m-ogretmen').value=base[0].ad;
+  kaz.innerHTML='<option value="">— Kazanım seçin —</option>';
+  // Aktif sınav filtreli kazanımlar
+  const list = DB.kazanim_list.filter(k=>k.ders===ders)
+    .map(k=>{
+      let yCount=k.yanlis_ids.length, bCount=k.bos_ids.length;
+      if(aktivSinav!=='all'){
+        const sd=k.sinav_detail?.[aktivSinav];
+        yCount=(sd?.yanlis_ids||[]).length;
+        bCount=(sd?.bos_ids||[]).length;
+      }
+      return {...k, yCount, bCount};
+    })
+    .filter(k=>k.yCount>0||k.bCount>0)
+    .sort((a,b)=>(b.yCount+b.bCount)-(a.yCount+a.bCount));
+  document.getElementById('kaz-count').textContent=`(${list.length} kazanım)`;
+  list.forEach(k=>{
+    const o=document.createElement('option');
+    o.value=k.kaz;
+    o.textContent=`${k.kaz}  —  Y:${k.yCount} B:${k.bCount}`;
+    kaz.appendChild(o);
+  });
+  renderMOgr();
+}
+
+function onMKaz(){ renderMOgr(); }
+
+function onTFocus(){ showTSugg(document.getElementById('m-ogretmen').value.toLowerCase()); }
+function onTInput(){ showTSugg(document.getElementById('m-ogretmen').value.toLowerCase()); }
+function showTSugg(val){
+  const box=document.getElementById('t-sugg');
+  const sel=document.getElementById('m-ders').value;
+  let list=val?OGRETMENLER.filter(o=>o.ad.toLowerCase().includes(val)):OGRETMENLER;
+  if(sel) list=[...list.filter(o=>sel.toLowerCase().includes(o.ders.toLowerCase().split(' ')[0])),...list.filter(o=>!sel.toLowerCase().includes(o.ders.toLowerCase().split(' ')[0]))];
+  if(!list.length){ box.classList.remove('show'); return; }
+  box.innerHTML=list.map(o=>`<div class="t-item" onclick="pickT('${o.ad.replace(/'/g,"\\'")}')">
+    <span>${o.ad}</span><span class="t-ders-tag">${o.ders}</span>
+  </div>`).join('');
+  box.classList.add('show');
+}
+function pickT(name){ document.getElementById('m-ogretmen').value=name; document.getElementById('t-sugg').classList.remove('show'); }
+document.addEventListener('click',e=>{ if(!e.target.closest('.t-wrap')) document.getElementById('t-sugg').classList.remove('show'); });
+
+function setMF(mode,btn){
+  modalFilt=mode;
+  document.querySelectorAll('#overlay .ftag').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  renderMOgr();
+}
+
+function renderMOgr(){
+  if(!DB) return;
+  const ders=document.getElementById('m-ders').value;
+  const kaz=document.getElementById('m-kaz').value;
+  const {week,gun,di,salon}=modalCtx||{};
+  const conflicts=week&&gun&&di!==undefined?getConflictsExcl(week,gun,di,salon):new Set();
+  document.getElementById('conflict-info').style.display=conflicts.size>0?'block':'none';
+
+  let detail=[];
+  if(ders&&kaz){
+    const ko=DB.kazanim_list.find(k=>k.ders===ders&&k.kaz===kaz);
+    if(ko){
+      if(aktivSinav!=='all'){
+        const sd=ko.sinav_detail?.[aktivSinav];
+        if(sd){
+          const ySet=new Set(sd.yanlis_ids||[]), bSet=new Set(sd.bos_ids||[]);
+          const allIds=new Set([...ySet,...bSet]);
+          allIds.forEach(id=>{
+            const y=ySet.has(id)?1:0, b=bSet.has(id)?1:0;
+            detail.push({id,y,b});
+          });
+        }
+      } else {
+        detail=ko.detail||[];
+      }
+    }
+  }
+
+  let filtered=DB.students.map(s=>{
+    const d=detail.find(x=>x.id===s.id);
+    return {...s,y:d?d.y:0,b:d?d.b:0};
+  });
+  if(modalFilt==='y') filtered=filtered.filter(s=>s.y>0);
+  else if(modalFilt==='b') filtered=filtered.filter(s=>s.b>0);
+  filtered.sort((a,b2)=>{
+    const ac=conflicts.has(a.id)?1:0,bc=conflicts.has(b2.id)?1:0;
+    if(ac!==bc) return ac-bc;
+    return (b2.y*3+b2.b)-(a.y*3+a.b);
+  });
+
+  document.getElementById('modal-ogr').innerHTML=filtered.map(s=>{
+    const added=modalSel.has(s.id);
+    const conf=conflicts.has(s.id);
+    return `<div class="oi ${added?'added':''} ${conf?'conflict':''}" onclick="${conf?'conflictWarn()':'toggleMS('+s.id+')'}">
+      <div class="oi-ck">${added?'✓':conf?'✕':''}</div>
+      <div class="oi-info">
+        <div class="oi-name">${s.name}${conf?'<span style="background:var(--red-l);color:var(--red);font-size:9px;padding:1px 5px;border-radius:4px;margin-left:4px">Çakışıyor</span>':''}</div>
+        <div class="oi-meta">${s.kurum} · ${s.sube}</div>
+      </div>
+      <div class="oi-bdg">
+        ${s.y>0?`<span class="b by">⚠ ${s.y}×</span>`:''}
+        ${s.b>0?`<span class="b bb">○ ${s.b}×</span>`:''}
+        ${!s.y&&!s.b&&!conf?'<span class="b" style="background:var(--s2);color:var(--ink3)">—</span>':''}
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function conflictWarn(){ alert('Bu öğrenci aynı saatte başka bir salona eklenmiş.'); }
+function toggleMS(id){ modalSel.has(id)?modalSel.delete(id):modalSel.add(id); updateMSC(); renderMOgr(); }
+function updateMSC(){ document.getElementById('modal-sc').textContent=`${modalSel.size} seçildi`; }
+function selAll(){
+  const {week,gun,di,salon}=modalCtx||{};
+  const conflicts=week&&gun&&di!==undefined?getConflictsExcl(week,gun,di,salon):new Set();
+  const ders=document.getElementById('m-ders').value;
+  const kaz=document.getElementById('m-kaz').value;
+  const ko=ders&&kaz?DB.kazanim_list.find(k=>k.ders===ders&&k.kaz===kaz):null;
+  let pool=DB.students;
+  if(modalFilt==='y'&&ko) pool=DB.students.filter(s=>(ko.detail||[]).find(d=>d.id===s.id&&d.y>0));
+  else if(modalFilt==='b'&&ko) pool=DB.students.filter(s=>(ko.detail||[]).find(d=>d.id===s.id&&d.b>0));
+  pool.filter(s=>!conflicts.has(s.id)).forEach(s=>modalSel.add(s.id));
+  updateMSC(); renderMOgr();
+}
+function saveSlot(){
+  const ders=document.getElementById('m-ders').value;
+  const kaz=document.getElementById('m-kaz').value;
+  const ogr=document.getElementById('m-ogretmen').value.trim();
+  if(!ders||!kaz){ alert('Ders ve kazanım seçin.'); return; }
+  if(!modalSel.size){ alert('En az bir öğrenci seçin.'); return; }
+  const {week,gun,salon,di}=modalCtx;
+  setSlot(week,gun,salon,di,{ders,kaz,ogretmen:ogr,ogrenciler:[...modalSel]});
+  closeModal(); renderWeek(); renderPrint();
+}
+
+// ════════════════════════════════════════════
+// ÖĞRENCİ ANALİZİ
+// ════════════════════════════════════════════
+function onOgrSearch(){
+  const q=document.getElementById('ogr-search').value.toLowerCase().trim();
+  const subeF=document.getElementById('ogr-sube-filter').value;
+  let students=DB.students;
+  if(subeF) students=subeF==='FL'
+    ? students.filter(s=>s.kurum==='Fen Lisesi')
+    : students.filter(s=>s.sube===subeF);
+  if(q) students=students.filter(s=>s.name.toLowerCase().includes(q));
+  const dropdown=document.getElementById('ogr-dropdown');
+  if(!students.length){ dropdown.classList.remove('show'); return; }
+  dropdown.innerHTML=students.slice(0,20).map(s=>`
+    <div class="odd-item" onclick="selectOgr(${s.id})">
+      ${s.name} <span class="odd-sube">${s.sube}</span>
+    </div>`).join('');
+  dropdown.classList.add('show');
+}
+
+function clearOgrSearch(){
+  document.getElementById('ogr-search').value='';
+  document.getElementById('ogr-dropdown').classList.remove('show');
+  document.getElementById('analiz-content').innerHTML='<div class="empty-s"><div class="ei">👤</div><p>Yukarıdan bir öğrenci seçin</p></div>';
+  secilenOgr=null;
+}
+
+function selectOgr(id){
+  secilenOgr=DB.students.find(s=>s.id===id);
+  document.getElementById('ogr-search').value=secilenOgr.name;
+  document.getElementById('ogr-dropdown').classList.remove('show');
+  renderAnaliz();
+}
+
+document.addEventListener('click',e=>{
+  if(!e.target.closest('.ogr-search-wrap')) document.getElementById('ogr-dropdown').classList.remove('show');
+});
+
+function renderAnaliz(){
+  if(!secilenOgr) return;
+  const ogr=secilenOgr;
+  const ogrSinav=DB.ogr_sinav?.[String(ogr.id)]||{};
+  const ogrHatalar=DB.ogrenci_hatalar?.[String(ogr.id)]||{};
+
+  // Sınav bazlı performans
+  const sinavPerf = DB.sinav_listesi.map(s=>{
+    const data=ogrSinav[s.id]||{y:0,b:0,ders:{}};
+    const kisa=s.ad.replace('12.Sınıf ','').replace(/\s*\(.*?\)\s*/g,'').replace(', TYT','').replace(', YKS','').trim();
+    return {id:s.id, ad:kisa, tarih:s.tarih, y:data.y, b:data.b, ders:data.ders||{}};
+  });
+
+  const maxYB = Math.max(...sinavPerf.map(s=>s.y+s.b), 1);
+
+  // Zayıf kazanımlar
+  const weakList = Object.entries(ogrHatalar)
+    .map(([key,val])=>{
+      const [ders,kaz]=key.split('|||');
+      return {ders,kaz,y:val.y||0,b:val.b||0,total:(val.y||0)*3+(val.b||0)};
+    })
+    .sort((a,b)=>b.total-a.total)
+    .slice(0,15);
+
+  // Ders bazlı özet (tüm sınavlar)
+  const dersToplam={};
+  for(const [key,val] of Object.entries(ogrHatalar)){
+    const [ders]=key.split('|||');
+    if(!dersToplam[ders]) dersToplam[ders]={y:0,b:0};
+    dersToplam[ders].y+=(val.y||0);
+    dersToplam[ders].b+=(val.b||0);
+  }
+  const dersSirali=Object.entries(dersToplam).sort((a,b)=>(b[1].y+b[1].b)-(a[1].y+a[1].b));
+  const maxDers=Math.max(...dersSirali.map(([,v])=>v.y+v.b),1);
+
+  let html=`
+  <div class="analiz-layout">
+    <!-- Sol: Profil + Sınav Performansı -->
+    <div>
+      <div class="analiz-kart" style="margin-bottom:12px">
+        <div class="ak-hd" style="background:${dc(dersSirali[0]?.[0]||'Türkçe')}">
+          <div class="ak-ad">${ogr.name}</div>
+          <div class="ak-meta">${ogr.kurum} · ${ogr.sube}</div>
+        </div>
+        <div class="ak-body">
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:12px">
+            <div style="text-align:center;padding:8px;background:var(--red-l);border-radius:8px">
+              <div style="font-family:'Playfair Display',serif;font-size:22px;color:var(--red)">${Object.values(ogrHatalar).reduce((a,v)=>a+(v.y||0),0)}</div>
+              <div style="font-size:10px;font-weight:700;color:var(--red);letter-spacing:.4px">TOPLAM YANLIŞ</div>
+            </div>
+            <div style="text-align:center;padding:8px;background:var(--amb-l);border-radius:8px">
+              <div style="font-family:'Playfair Display',serif;font-size:22px;color:var(--amb)">${Object.values(ogrHatalar).reduce((a,v)=>a+(v.b||0),0)}</div>
+              <div style="font-size:10px;font-weight:700;color:var(--amb);letter-spacing:.4px">TOPLAM BOŞ</div>
+            </div>
+            <div style="text-align:center;padding:8px;background:var(--grn-l);border-radius:8px">
+              <div style="font-family:'Playfair Display',serif;font-size:22px;color:var(--grn)">${DB.sinav_listesi.length}</div>
+              <div style="font-size:10px;font-weight:700;color:var(--grn);letter-spacing:.4px">SINAV</div>
+            </div>
+          </div>
+          <div style="font-size:11px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--ink3);margin-bottom:8px">Sınav Bazlı Performans</div>
+          <div class="sinav-perf-list">
+            ${sinavPerf.map((s,i)=>{
+              const pct_y=s.y/(maxYB)*100;
+              const pct_b=s.b/(maxYB)*100;
+              // Trend (önceki sınavla karşılaştır)
+              let trend='';
+              if(i>0){
+                const prev=sinavPerf[i-1];
+                const diff=(s.y+s.b)-(prev.y+prev.b);
+                if(diff>0) trend='<span class="trend-up">↑</span>';
+                else if(diff<0) trend='<span class="trend-down">↓</span>';
+                else trend='<span class="trend-eq">→</span>';
+              }
+              return `<div class="sp-item">
+                <div class="sp-item-hd">
+                  <span class="sp-sinav-ad">${s.ad} ${trend}</span>
+                  <span class="sp-tarih">${s.tarih}</span>
+                </div>
+                <div class="sp-bar-wrap">
+                  <div class="sp-bar-y" style="width:${pct_y}%"></div>
+                  <div class="sp-bar-b" style="left:${pct_y}%;width:${pct_b}%"></div>
+                </div>
+                <div class="sp-nums">
+                  <span class="sp-num y">⚠ ${s.y} yanlış</span>
+                  <span class="sp-num b">○ ${s.b} boş</span>
+                  <span class="sp-num d">✓ ~${Math.max(0,125-s.y-s.b)} doğru</span>
+                </div>
+              </div>`;
+            }).join('')}
+          </div>
+        </div>
+      </div>
+
+      <!-- Ders bazlı dağılım -->
+      <div class="card">
+        <div class="card-hd"><h3>Ders Bazlı Dağılım</h3></div>
+        <div class="card-body">
+          <div style="display:flex;flex-direction:column;gap:7px">
+            ${dersSirali.map(([ders,v])=>{
+              const pctY=v.y/maxDers*100;
+              const pctB=v.b/maxDers*100;
+              return `<div>
+                <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:3px">
+                  <span style="font-size:11px;font-weight:700;color:${dc(ders)}">${ders}</span>
+                  <span style="font-size:10px;color:var(--ink3)">Y:${v.y} B:${v.b}</span>
+                </div>
+                <div style="height:7px;background:var(--bdr);border-radius:4px;overflow:hidden;display:flex">
+                  <div style="width:${pctY}%;background:var(--red);border-radius:4px 0 0 4px"></div>
+                  <div style="width:${pctB}%;background:var(--amb)"></div>
+                </div>
+              </div>`;
+            }).join('')}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sağ: Zayıf Kazanımlar + Sınav Karşılaştırma -->
+    <div>
+      <div class="card" style="margin-bottom:12px">
+        <div class="card-hd"><h3>🎯 En Zayıf Kazanımlar (Top 15)</h3></div>
+        <div class="card-body" style="padding:10px 14px">
+          <div class="weak-list">
+            ${weakList.map((w,i)=>`
+              <div class="wl-item" style="border-left-color:${dc(w.ders)}">
+                <div class="wl-rank" style="background:color-mix(in srgb,${dc(w.ders)} 12%,white);color:${dc(w.ders)}">${i+1}</div>
+                <div class="wl-info">
+                  <div class="wl-kaz">${w.kaz}</div>
+                  <div class="wl-ders">${w.ders}</div>
+                </div>
+                <div class="wl-nums">
+                  ${w.y>0?`<span class="b by">⚠${w.y}</span>`:''}
+                  ${w.b>0?`<span class="b bb">○${w.b}</span>`:''}
+                </div>
+              </div>`).join('')}
+          </div>
+        </div>
+      </div>
+
+      <!-- Sınav bazlı detay tablosu -->
+      <div class="card">
+        <div class="card-hd"><h3>📊 Sınav × Ders Matrisi</h3></div>
+        <div class="card-body" style="padding:0;overflow-x:auto">
+          <table class="ozet-table" style="min-width:500px">
+            <thead>
+              <tr>
+                <th>Ders</th>
+                ${DB.sinav_listesi.map(s=>{
+                  const kisa=s.ad.replace('12.Sınıf ','').replace(/\s*\(.*?\)\s*/g,'').replace(', TYT','').replace(', YKS','').trim();
+                  return `<th>${kisa}</th>`;
+                }).join('')}
+              </tr>
+            </thead>
+            <tbody>
+              ${dersSirali.map(([ders])=>{
+                return `<tr>
+                  <td><span style="font-weight:700;color:${dc(ders)};font-size:11px">${ders}</span></td>
+                  ${DB.sinav_listesi.map(s=>{
+                    const sdata=ogrSinav[s.id]?.ders?.[ders]||{y:0,b:0};
+                    const total=sdata.y+sdata.b;
+                    if(!total) return '<td style="color:var(--ink3);font-size:11px">—</td>';
+                    return `<td><span style="color:var(--red);font-size:11px;font-weight:700">⚠${sdata.y}</span> <span style="color:var(--amb);font-size:11px">○${sdata.b}</span></td>`;
+                  }).join('')}
+                </tr>`;
+              }).join('')}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>`;
+
+  document.getElementById('analiz-content').innerHTML=html;
+}
+
+// ════════════════════════════════════════════
+// YAZDIRMA
+// ════════════════════════════════════════════
+function buildPrintWSelector(){
+  const sel=document.getElementById('print-wselector');
+  sel.innerHTML='<label>Hafta seç:</label>';
+  for(let w=1;w<=9;w++){
+    const btn=document.createElement('button');
+    btn.textContent=w+'. Hafta'; btn.dataset.w=String(w);
+    if(String(w)===printWeek) btn.classList.add('active');
+    btn.onclick=()=>{ printWeek=String(w); sel.querySelectorAll('button').forEach(b=>b.classList.remove('active')); btn.classList.add('active'); renderPrint(); };
+    sel.appendChild(btn);
+  }
+}
+
+function renderPrint(){
+  if(!document.getElementById('p-print').classList.contains('active')) return;
+  const container=document.getElementById('print-pages');
+  const wData=schedule[printWeek]||{};
+  const allSlots=[];
+  for(const gun of GUNLER)
+    for(const salon of SUBELER){
+      const sd=(wData[gun]||{})[salon]||{};
+      for(const [di,slot] of Object.entries(sd))
+        allSlots.push({gun,salon,di:+di,slot});
+    }
+
+  if(!allSlots.length){
+    container.innerHTML='<div class="empty-s"><div class="ei">🖨️</div><p>Bu haftada planlanmış ders yok</p></div>';
+    return;
+  }
+
+  let html='';
+  for(const gun of GUNLER){
+    const gunSlots=allSlots.filter(s=>s.gun===gun);
+    if(!gunSlots.length) continue;
+    html+=`<div class="print-day-block">
+      <div class="pdb-hd">
+        <div>
+          <div class="pdb-week">${printWeek}. HAFTA</div>
+          <div class="pdb-gun">${gun}</div>
+          <div class="pdb-meta">İSTEK Kemal Atatürk Lisesi · 12. Sınıf Kamp Dönemi</div>
+        </div>
+        <div class="pdb-school">ETÜt PROGRAMI</div>
+      </div>`;
+    gunSlots.sort((a,b)=>{ const sO=SUBELER.indexOf(a.salon)-SUBELER.indexOf(b.salon); return sO||a.di-b.di; });
+    for(const {salon,di,slot} of gunSlots){
+      const sts=slot.ogrenciler.map(id=>DB?.students.find(s=>s.id===id)).filter(Boolean);
+      const color=dc(slot.ders);
+      html+=`<div class="lb">
+        <div class="lb-hd">
+          <div class="lb-slot" style="color:${color}">${DERS_SAATLERI[di]}</div>
+          <div><div class="lb-kaz">${slot.kaz}</div><div class="lb-ders">${slot.ders}</div></div>
+          <div style="text-align:right">
+            <div class="lb-salon" style="color:${color}">🏫 ${salon}</div>
+            ${slot.ogretmen?`<div class="lb-ogretmen">👤 ${slot.ogretmen}</div>`:''}
+          </div>
+        </div>
+        <table class="lb-table">
+          <thead><tr><th style="width:28px">#</th><th>Ad Soyad</th><th>Şube</th><th>Kurum</th><th style="width:100px">İmza</th></tr></thead>
+          <tbody>${sts.map((s,i)=>`
+            <tr><td>${i+1}</td><td><strong>${s.name}</strong></td><td>${s.sube}</td><td style="font-size:11px">${s.kurum}</td><td></td></tr>`).join('')}
+          </tbody>
+        </table>
+        <div class="lb-notes">
+          <div class="lb-nb"><label>Öğretmen Notu</label>${[1,2,3].map(()=>'<div class="lb-line"></div>').join('')}</div>
+          <div class="lb-nb"><label>İmza</label>${[1,2,3].map(()=>'<div class="lb-line"></div>').join('')}</div>
+        </div>
+      </div>`;
+    }
+    html+=`</div>`;
+  }
+  container.innerHTML=html||'<div class="empty-s"><div class="ei">🖨️</div><p>Bu haftada ders yok</p></div>';
+}
+
+// ════════════════════════════════════════════
+// TAB
+// ════════════════════════════════════════════
+const TAB={haftalik:0,kazanim:1,analiz:2,print:3};
+function showTab(name){
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('p-'+name).classList.add('active');
+  document.querySelectorAll('.nav-btn')[TAB[name]]?.classList.add('active');
+  if(name==='print'){ buildPrintWSelector(); renderPrint(); }
+}
+
+// ════════════════════════════════════════════
+// EMBEDDED DB
+// ════════════════════════════════════════════
+const EMBEDDED_DB = __EMBEDDED_DB__;
+loadData();
+</script>
+</body>
+</html>
