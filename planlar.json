@@ -1,18 +1,388 @@
 {
   "1": {
     "Salı": {
+      "12A": {}
+    },
+    "Cuma": {
       "12A": {
         "0": {
-          "ders": "Türkçe",
-          "kaz": "Paragraf",
-          "ogretmen": "Nihal Suyolcu",
+          "ders": "Biyoloji",
+          "kaz": "Canlıların Temel Bileşenleri",
+          "ogretmen": "Nilay Olkan",
+          "ogrenciler": [
+            262,
+            840,
+            681,
+            172,
+            144,
+            739,
+            175
+          ]
+        },
+        "1": {
+          "ders": "T.Matematik",
+          "kaz": "Bölme ve Bölünebilme",
+          "ogretmen": "Utku Bingül",
+          "ogrenciler": [
+            170,
+            406,
+            840,
+            144,
+            739,
+            116,
+            232,
+            724,
+            164,
+            725,
+            636,
+            714,
+            573,
+            248,
+            639,
+            270,
+            738,
+            575,
+            749,
+            175,
+            284
+          ]
+        },
+        "2": {
+          "ders": "Fizik",
+          "kaz": "Elektrik ve Manyetizma (Temel)",
+          "ogretmen": "Yelda Çoşkun",
+          "ogrenciler": [
+            262,
+            406,
+            840,
+            575,
+            681,
+            172,
+            144,
+            722,
+            739
+          ]
+        },
+        "3": {
+          "ders": "Kimya",
+          "kaz": "Karışımlar ve Ayırma Yöntemleri",
+          "ogretmen": "Buket Aksoy",
           "ogrenciler": [
             170,
             262,
             251,
+            738,
+            406,
+            575,
+            681,
+            144,
+            722,
+            739
+          ]
+        }
+      },
+      "12B": {
+        "0": {
+          "ders": "Fizik",
+          "kaz": "Kuvvet ve Hareket",
+          "ogretmen": "Yelda Çoşkun",
+          "ogrenciler": [
+            170,
+            406,
+            575,
+            116,
+            749
+          ]
+        },
+        "1": {
+          "ders": "Türkçe",
+          "kaz": "Yazım Kuralları",
+          "ogretmen": "Gazel Göğebakan",
+          "ogrenciler": [
+            665,
+            130,
             681,
             172,
-            144
+            722,
+            931,
+            383,
+            929,
+            145,
+            310,
+            167,
+            108,
+            122,
+            121,
+            663,
+            411,
+            277,
+            251,
+            262
+          ]
+        },
+        "2": {
+          "ders": "Geometri",
+          "kaz": "Üçgenler",
+          "ogretmen": "Utku Bingül",
+          "ogrenciler": [
+            284,
+            164,
+            310,
+            115,
+            320,
+            738,
+            277,
+            116,
+            713,
+            929,
+            232,
+            724,
+            725,
+            145,
+            130,
+            121,
+            270,
+            248
+          ]
+        },
+        "3": {
+          "ders": "Fizik",
+          "kaz": "Dalgalar ve Ses",
+          "ogretmen": "Yelda Çoşkun",
+          "ogrenciler": [
+            172,
+            277,
+            749,
+            175,
+            931,
+            840
+          ]
+        }
+      },
+      "12C": {
+        "0": {
+          "ders": "T.Matematik",
+          "kaz": "Bölme ve Bölünebilme",
+          "ogretmen": "Elif Şimşek",
+          "ogrenciler": [
+            251,
+            738,
+            277,
+            722,
+            931,
+            713,
+            383,
+            665,
+            929,
+            145,
+            310,
+            130,
+            167,
+            108,
+            320,
+            663,
+            115,
+            243,
+            122,
+            715
+          ]
+        },
+        "1": {
+          "ders": "Tarih",
+          "kaz": "Atatürk İlke ve İnkılapları",
+          "ogretmen": "Burcu Demir",
+          "ogrenciler": [
+            713,
+            115,
+            320,
+            658,
+            715
+          ]
+        },
+        "2": {
+          "ders": "Türkçe",
+          "kaz": "Noktalama İşaretleri",
+          "ogretmen": "Sevim Seda Yıldıray",
+          "ogrenciler": [
+            658,
+            665,
+            636,
+            931,
+            167,
+            108,
+            122,
+            714,
+            573,
+            639,
+            663,
+            80,
+            690,
+            411
+          ]
+        },
+        "3": {
+          "ders": "Coğrafya",
+          "kaz": "Nüfus ve Yerleşme",
+          "ogretmen": "Begüm Yılmaz",
+          "ogrenciler": [
+            713,
+            284,
+            116,
+            929,
+            232,
+            724,
+            164,
+            725,
+            310,
+            115,
+            130,
+            108,
+            411,
+            121,
+            573,
+            248,
+            270,
+            658,
+            145,
+            636,
+            663
+          ]
+        }
+      },
+      "12D": {
+        "0": {
+          "ders": "Tarih",
+          "kaz": "Osmanlı Kültür ve Medeniyeti",
+          "ogretmen": "Nazan Özdere",
+          "ogrenciler": [
+            284,
+            121,
+            639,
+            658,
+            245,
+            80,
+            690,
+            411,
+            636,
+            573,
+            232,
+            724,
+            725,
+            714,
+            248,
+            270,
+            164
+          ]
+        },
+        "1": {
+          "ders": "Coğrafya",
+          "kaz": "Yerin Şekillenmesi (Jeomorfoloji)",
+          "ogretmen": "Begüm Yılmaz",
+          "ogrenciler": [
+            245,
+            80,
+            690,
+            243
+          ]
+        },
+        "2": {
+          "ders": "T.Matematik",
+          "kaz": "Problemler (Sayı, Yaş, İşçi, Hareket, Yüzde, Kar-Zarar)",
+          "ogretmen": "Elif Şimşek",
+          "ogrenciler": [
+            170,
+            251,
+            383,
+            749,
+            175,
+            245,
+            243,
+            715
+          ]
+        },
+        "3": {
+          "ders": "Tarih",
+          "kaz": "Tarih Bilimi",
+          "ogretmen": "Nazan Özdere",
+          "ogrenciler": [
+            320,
+            167,
+            245,
+            80,
+            690,
+            665,
+            383,
+            715,
+            122,
+            243,
+            714,
+            639
+          ]
+        }
+      },
+      "FL12": {
+        "0": {
+          "ders": "Kimya",
+          "kaz": "Karışımlar ve Ayırma Yöntemleri",
+          "ogretmen": "Buket Aksoy",
+          "ogrenciler": [
+            8,
+            106,
+            195,
+            228,
+            283,
+            326,
+            743,
+            9,
+            294
+          ]
+        },
+        "1": {
+          "ders": "T.Matematik",
+          "kaz": "Problemler (Sayı, Yaş, İşçi, Hareket, Yüzde, Kar-Zarar)",
+          "ogretmen": "Elif Şimşek",
+          "ogrenciler": [
+            8,
+            195,
+            228,
+            283,
+            294,
+            326,
+            9,
+            106,
+            743
+          ]
+        },
+        "2": {
+          "ders": "Biyoloji",
+          "kaz": "Hücre ve Organeller",
+          "ogretmen": "Nilay Olkan",
+          "ogrenciler": [
+            106,
+            195,
+            326,
+            743,
+            8,
+            9,
+            228,
+            283,
+            294
+          ]
+        },
+        "3": {
+          "ders": "Biyoloji",
+          "kaz": "Canlıların Temel Bileşenleri",
+          "ogretmen": "Nilay Olkan",
+          "ogrenciler": [
+            8,
+            195,
+            283,
+            294,
+            326,
+            743,
+            9,
+            106,
+            228
           ]
         }
       }
