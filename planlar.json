@@ -1,0 +1,21 @@
+{
+  "1": {
+    "Salı": {
+      "12A": {
+        "0": {
+          "ders": "Türkçe",
+          "kaz": "Paragraf",
+          "ogretmen": "Nihal Suyolcu",
+          "ogrenciler": [
+            170,
+            262,
+            251,
+            681,
+            172,
+            144
+          ]
+        }
+      }
+    }
+  }
+}
