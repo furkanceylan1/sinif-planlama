@@ -302,11 +302,24 @@ select:focus,input:focus{border-color:var(--grn)}
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
 .toast.error{background:var(--red)}
 
+/* A3 Tablo print stilleri */
+.a3-tablo-page{display:none}
 @media print{
   header,.nav,.gh-btn,.print-ctrl,.print-ws,.fbar,.sinav-bar,
   .panel:not(#p-print){display:none!important}
   #p-print{display:block!important}
   body{background:#fff}
+  /* Mod seçimine göre göster */
+  body.print-yoklama .a3-tablo-page{display:none!important}
+  body.print-a3 .print-slot-page{display:none!important}
+  body.print-a3 .a3-tablo-page{display:block!important}
+  body.print-a3 .print-ws{display:none!important}
+  .a3-tablo-page{
+    page-break-after:always;
+    page-break-inside:avoid;
+    width:100%;
+  }
+  .a3-tablo-page:last-child{page-break-after:auto}
   .print-slot-page{box-shadow:none;border:1px solid #ccc;margin-bottom:0;border-radius:0;page-break-after:always}
   .print-slot-page:last-child{page-break-after:auto}
   .main{padding:0;max-width:100%}
@@ -511,12 +524,25 @@ select:focus,input:focus{border-color:var(--grn)}
 
 <!-- YAZDIRMA -->
 <div id="p-print" class="panel">
-  <div class="print-ctrl">
-    <button class="btn btn-primary btn-lg" onclick="window.print()">🖨️ Yazdır / PDF</button>
-    <span style="font-size:12px;color:var(--ink3)">Her ders ayrı sayfa olarak yazdırılacak</span>
+  <div class="print-ctrl" style="flex-direction:column;align-items:flex-start;gap:12px">
+    <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">
+      <div style="display:flex;gap:0;border:1.5px solid var(--grn);border-radius:8px;overflow:hidden">
+        <button id="mode-yoklama" onclick="setPrintMode('yoklama')"
+          style="padding:8px 16px;background:var(--grn);color:#fff;border:none;font-family:Nunito,sans-serif;font-size:13px;font-weight:700;cursor:pointer">
+          📋 Yoklama Listesi
+        </button>
+        <button id="mode-a3" onclick="setPrintMode('a3')"
+          style="padding:8px 16px;background:transparent;color:var(--grn);border:none;font-family:Nunito,sans-serif;font-size:13px;font-weight:700;cursor:pointer">
+          📐 A3 Haftalık Tablo
+        </button>
+      </div>
+      <button class="btn btn-primary btn-lg" onclick="window.print()">🖨️ Yazdır / PDF</button>
+    </div>
+    <div id="print-mode-info" style="font-size:12px;color:var(--ink3)">Her ders ayrı sayfa — yoklama listesi formatı</div>
   </div>
   <div class="print-ws" id="print-ws"></div>
   <div id="print-pages"></div>
+  <div id="a3-pages"></div>
 </div>
 
 </div>
@@ -924,6 +950,22 @@ function getConflictsWithInfo(week,gun,di,excSalon){
   return info;
 }
 
+// REV: Aynı hafta aynı kazanımı kaç kez aldı
+function getKazanimWeekCount(week, oid, kaz){
+  let count=0;
+  for(const gun of GUNLER){
+    for(const salon of SUBELER){
+      for(let di=0;di<4;di++){
+        const slot=getSlot(week,gun,salon,di);
+        if(slot && slot.kaz===kaz && (slot.ogrenciler||[]).includes(oid)){
+          count++;
+        }
+      }
+    }
+  }
+  return count;
+}
+
 // ═══════════════════════════════════════════
 // MODAL
 // ═══════════════════════════════════════════
@@ -1073,6 +1115,7 @@ function renderMOgr(){
         <div class="oi-name">${s.name}</div>
         <div class="oi-meta">${s.kurum} · ${s.sube}</div>
         ${ci?`<div class="oi-conflict-info">📌 ${ci.salon} — ${ci.kaz.slice(0,35)}…</div>`:''}
+        ${(()=>{if(!DB||!modalCtx) return '';const cnt=getKazanimWeekCount(modalCtx.week,s.id,document.getElementById('m-kaz').value);return cnt>0?`<div style="font-size:10px;color:#b8860b;font-weight:700;margin-top:1px">⚠ Bu hafta bu konuyu ${cnt}× aldı</div>`:'';})()}
       </div>
       <div class="oi-bdg">
         ${s.y>0?`<span class="b by">⚠${s.y}×</span>`:''}
@@ -1328,6 +1371,25 @@ function selectSinav(id){
 // ═══════════════════════════════════════════
 // REV 8: YAZDIRMA — her slot ayrı sayfa
 // ═══════════════════════════════════════════
+let printMode = 'yoklama'; // 'yoklama' | 'a3'
+
+function setPrintMode(mode){
+  printMode = mode;
+  document.getElementById('mode-yoklama').style.background = mode==='yoklama'?'var(--grn)':'transparent';
+  document.getElementById('mode-yoklama').style.color      = mode==='yoklama'?'#fff':'var(--grn)';
+  document.getElementById('mode-a3').style.background      = mode==='a3'?'var(--grn)':'transparent';
+  document.getElementById('mode-a3').style.color           = mode==='a3'?'#fff':'var(--grn)';
+  document.getElementById('print-mode-info').textContent   = mode==='yoklama'
+    ? 'Her ders ayrı sayfa — yoklama listesi formatı'
+    : 'Her gün ayrı A3 yatay sayfa — tüm salon ve öğrenciler tek tabloda';
+  document.getElementById('print-ws').style.display        = mode==='yoklama' ? 'flex' : 'none';
+  document.getElementById('print-pages').style.display     = mode==='yoklama' ? 'block' : 'none';
+  document.getElementById('a3-pages').style.display        = mode==='a3'      ? 'block' : 'none';
+  document.body.className = mode==='a3' ? 'print-a3' : 'print-yoklama';
+  if(mode==='a3') renderA3();
+  else renderPrint();
+}
+
 function buildPrintWS(){
   const ws=document.getElementById('print-ws');
   ws.innerHTML='<label>Hafta:</label>';
@@ -1335,9 +1397,136 @@ function buildPrintWS(){
     const btn=document.createElement('button');
     btn.textContent=w+'. Hafta'; btn.dataset.w=String(w);
     if(String(w)===printWeek) btn.classList.add('active');
-    btn.onclick=()=>{ printWeek=String(w); ws.querySelectorAll('button').forEach(b=>b.classList.remove('active')); btn.classList.add('active'); renderPrint(); };
+    btn.onclick=()=>{ printWeek=String(w); ws.querySelectorAll('button').forEach(b=>b.classList.remove('active')); btn.classList.add('active'); renderPrint(); if(printMode==='a3') renderA3(); };
     ws.appendChild(btn);
   }
+}
+
+function renderA3(){
+  const container=document.getElementById('a3-pages');
+  const wData=schedule[printWeek]||{};
+  let html='';
+
+  for(const gun of GUNLER){
+    // Her gün için A3 yatay tablo
+    html+=`<div class="a3-tablo-page" style="
+      font-family:'Nunito',sans-serif;
+      page-size:A3 landscape;
+    ">
+      <!-- Başlık -->
+      <div style="
+        background:#1b4332;color:#fff;
+        padding:6px 12px;
+        display:flex;align-items:center;justify-content:space-between;
+        margin-bottom:0;
+      ">
+        <div>
+          <div style="font-size:8px;opacity:.7;letter-spacing:1px;text-transform:uppercase;font-weight:700">
+            İSTEK ÖZEL KEMAL ATATÜRK LİSESİ — 12. SINIF KAMP DÖNEMİ — ${printWeek}. HAFTA
+          </div>
+          <div style="font-family:'Playfair Display',serif;font-size:16px;margin-top:1px">${gun}</div>
+        </div>
+        <div style="font-size:8px;opacity:.65;text-align:right">
+          ETÜt PROGRAMI &nbsp;|&nbsp; ${new Date().toLocaleDateString('tr-TR')}
+        </div>
+      </div>
+
+      <!-- Tablo -->
+      <table style="
+        width:100%;border-collapse:collapse;
+        table-layout:fixed;
+        font-size:7.5px;
+      ">
+        <!-- Başlık satırı -->
+        <thead>
+          <tr>
+            <th style="
+              width:52px;padding:5px 6px;
+              background:#2d6a4f;color:#fff;
+              border:1px solid #1b4332;
+              font-size:8px;font-weight:700;letter-spacing:.5px;
+              text-align:left;
+            ">SALON</th>
+            ${DERS_SAATI.map(ds=>`
+              <th style="
+                padding:5px 6px;
+                background:#2d6a4f;color:#fff;
+                border:1px solid #1b4332;
+                font-size:8px;font-weight:700;letter-spacing:.5px;
+                text-align:center;
+              ">${ds}</th>
+            `).join('')}
+          </tr>
+        </thead>
+        <tbody>
+          ${SUBELER.map(salon=>{
+            const rowColor = salon==='FL12' ? '#f8f7f4' : '#fff';
+            return `<tr>
+              <td style="
+                padding:5px 6px;
+                background:#e8f0eb;
+                border:1.5px solid #1b4332;
+                font-weight:800;font-size:9px;color:#1b4332;
+                vertical-align:middle;text-align:center;
+                line-height:1.2;
+              ">${salon}</td>
+              ${DERS_SAATI.map((_,di)=>{
+                const slot=getSlot(printWeek,gun,salon,di);
+                if(!slot) return `<td style="
+                  border:1px solid #c8c0b0;
+                  background:${rowColor};
+                  vertical-align:top;
+                  padding:4px 5px;
+                "></td>`;
+
+                const sts=slot.ogrenciler.map(id=>DB?.students.find(s=>s.id===id)).filter(Boolean);
+                const color=dc(slot.ders);
+                // Öğrenci numarası (sıra no) ile isim
+                const ogrListesi=sts.map((s,i)=>`
+                  <div style="
+                    display:flex;align-items:baseline;gap:2px;
+                    padding:1px 0;
+                    border-bottom:1px solid rgba(0,0,0,.06);
+                    line-height:1.3;
+                  ">
+                    <span style="
+                      font-size:6px;color:rgba(0,0,0,.35);
+                      min-width:10px;flex-shrink:0;
+                    ">${i+1}.</span>
+                    <span style="font-weight:600;font-size:7.5px">${s.name.split(' ')[0]} ${s.name.split(' ').slice(-1)[0]}</span>
+                    <span style="font-size:6px;color:#888;margin-left:auto">${s.sube}</span>
+                  </div>`).join('');
+
+                return `<td style="
+                  border:1px solid #c8c0b0;
+                  background:${rowColor};
+                  vertical-align:top;
+                  padding:0;
+                ">
+                  <!-- Ders başlığı -->
+                  <div style="
+                    background:color-mix(in srgb,${color} 15%,white);
+                    border-bottom:2px solid ${color};
+                    padding:3px 5px;
+                  ">
+                    <div style="font-size:6.5px;font-weight:800;text-transform:uppercase;letter-spacing:.4px;color:${color}">${slot.ders}</div>
+                    <div style="font-size:7px;font-weight:700;color:#1a1a16;line-height:1.3;margin-top:1px">${slot.kaz}</div>
+                    ${slot.ogretmen?`<div style="font-size:6px;color:#666;font-style:italic;margin-top:1px">👤 ${slot.ogretmen}</div>`:''}
+                  </div>
+                  <!-- Öğrenci listesi -->
+                  <div style="padding:3px 5px;">
+                    ${ogrListesi}
+                  </div>
+                </td>`;
+              }).join('')}
+            </tr>`;
+          }).join('')}
+        </tbody>
+      </table>
+    </div>`;
+  }
+
+  container.innerHTML = html || '<div style="padding:40px;text-align:center;color:#999">Bu haftada planlanmış ders yok</div>';
 }
 
 function renderPrint(){
@@ -1422,7 +1611,7 @@ function showTab(name){
   document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
   document.getElementById('p-'+name).classList.add('active');
   document.querySelectorAll('.nav-btn')[TAB[name]]?.classList.add('active');
-  if(name==='print'){ buildPrintWS(); renderPrint(); }
+  if(name==='print'){ buildPrintWS(); renderPrint(); setPrintMode('yoklama'); }
 }
 
 // ═══════════════════════════════════════════
