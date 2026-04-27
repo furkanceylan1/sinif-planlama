@@ -387,5 +387,358 @@
         }
       }
     }
+  },
+  "2": {
+    "Salı": {
+      "12A": {
+        "0": {
+          "ders": "T.Matematik",
+          "kaz": "MAT.9.1.3. Farklı sayı kümelerinin özellikleri hakkında muhakeme yapabilme",
+          "ogretmen": "Bilal Şakirler",
+          "ogrenciler": [
+            251,
+            681,
+            175,
+            144,
+            713,
+            931,
+            929,
+            284,
+            232,
+            115,
+            575,
+            383,
+            172,
+            739,
+            145,
+            310
+          ]
+        },
+        "2": {
+          "ders": "Kimya",
+          "kaz": "Van Der Waals Kuvvetleri\nHidrojen Bağı",
+          "ogretmen": "Buket Aksoy",
+          "ogrenciler": [
+            575,
+            739,
+            931,
+            262,
+            172,
+            170,
+            738,
+            406,
+            840,
+            277,
+            245,
+            722
+          ]
+        }
+      },
+      "12B": {
+        "0": {
+          "ders": "Kimya",
+          "kaz": "Atomu Oluşturan Temel Tanecikler\nİzotop, İzoton, İzobar, İzoelektronik",
+          "ogretmen": "Buket Aksoy",
+          "ogrenciler": [
+            170,
+            262,
+            738,
+            406,
+            840,
+            749,
+            277,
+            245,
+            722
+          ]
+        },
+        "1": {
+          "ders": "Kimya",
+          "kaz": "Kimyasal Türler ve Bağlar",
+          "ogretmen": "Buket Aksoy",
+          "ogrenciler": [
+            170,
+            262,
+            738,
+            575,
+            722,
+            739,
+            681,
+            172,
+            144,
+            277,
+            931,
+            406,
+            840,
+            749,
+            175,
+            245
+          ]
+        },
+        "2": {
+          "ders": "Türkçe",
+          "kaz": "Ek Ve Kökleri Belirler.\nSözcük Yapısını Belirler.",
+          "ogretmen": "Sevim Seda Yıldıray",
+          "ogrenciler": [
+            116,
+            929,
+            164,
+            310,
+            130,
+            167,
+            411,
+            122,
+            121,
+            636,
+            663,
+            248,
+            639,
+            80,
+            658,
+            232,
+            145,
+            108,
+            243,
+            320,
+            573
+          ]
+        },
+        "3": {
+          "ders": "Türk Dili ve Edebiya",
+          "kaz": "Türün Ve Dönemin/Akımın Diğer Önemli Yazarlarını Ve Eserlerini Sıralar.",
+          "ogretmen": "Gazel Göğebakan",
+          "ogrenciler": [
+            713,
+            929,
+            310,
+            108,
+            121,
+            663,
+            167,
+            320,
+            639,
+            232,
+            725,
+            116,
+            164,
+            145,
+            115,
+            243,
+            248,
+            411,
+            122,
+            130,
+            658
+          ]
+        }
+      },
+      "12D": {
+        "0": {
+          "ders": "Türkçe",
+          "kaz": "Paragrafın Konu/Ana Fikrini Bulur.",
+          "ogretmen": "Gazel Göğebakan",
+          "ogrenciler": [
+            130,
+            658,
+            411,
+            248
+          ]
+        },
+        "1": {
+          "ders": "Türk Dili ve Edebiya",
+          "kaz": "Şiiri Yorumlayarak Edebi Anlayışların Yansımalarını,Temasını,Nazım Biçimi ve Türünü, Ahenk Unsurlarını Belirler.\nŞiiri Yorumlayarak Edebi Anlayışların Yansımalarını,Temasını,Nazım Biçimi ve Türünü, Ahenk Unsurlarını Belirler.",
+          "ogretmen": "",
+          "ogrenciler": [
+            243,
+            320,
+            248,
+            167,
+            658,
+            929,
+            108,
+            411
+          ]
+        },
+        "2": {
+          "ders": "Matematik(A)",
+          "kaz": "Fonksiyonlarda İşlemler",
+          "ogretmen": "Bilal Şakirler",
+          "ogrenciler": [
+            749,
+            713,
+            725,
+            115,
+            251,
+            681,
+            144,
+            175
+          ]
+        },
+        "3": {
+          "ders": "Türkçe",
+          "kaz": "Ek Ve Kökleri Belirler.\nSözcük Yapısını Belirler.",
+          "ogretmen": "",
+          "ogrenciler": [
+            245,
+            251,
+            738,
+            406,
+            714,
+            573,
+            270,
+            840,
+            383,
+            690,
+            284,
+            665,
+            724,
+            715,
+            636,
+            80
+          ]
+        }
+      },
+      "12C": {
+        "0": {
+          "ders": "Türkçe",
+          "kaz": "Paragrafın Konu/Ana Fikrini Bulur.",
+          "ogretmen": "",
+          "ogrenciler": [
+            663,
+            320,
+            665,
+            167,
+            121,
+            116,
+            636,
+            725,
+            639,
+            108,
+            714,
+            270,
+            715,
+            690,
+            80,
+            164,
+            122,
+            724,
+            243,
+            573
+          ]
+        },
+        "1": {
+          "ders": "Geometri",
+          "kaz": "Dörtgenler",
+          "ogretmen": "Utku Bingül",
+          "ogrenciler": [
+            725,
+            714,
+            713,
+            383,
+            665,
+            116,
+            232,
+            724,
+            164,
+            145,
+            310,
+            115,
+            130,
+            122,
+            121,
+            663,
+            636,
+            639,
+            270,
+            284,
+            573,
+            715
+          ]
+        },
+        "2": {
+          "ders": "Matematik(A)",
+          "kaz": "Trigonometrik Fonksiyonlarin İşaretleri\n90° Den Büyük Açilarin Trigonometrik Oranlari (Yatay Eksen)",
+          "ogretmen": "Aykut Elmas",
+          "ogrenciler": [
+            714,
+            383,
+            724,
+            270,
+            284,
+            665,
+            690,
+            715
+          ]
+        },
+        "3": {
+          "ders": "Matematik(A)",
+          "kaz": "Trigonometrik Özdeşlikler (11)",
+          "ogretmen": "Bilal Şakirler",
+          "ogrenciler": [
+            749,
+            144,
+            681,
+            931,
+            170,
+            262,
+            575,
+            172,
+            175,
+            277,
+            722,
+            739
+          ]
+        }
+      },
+      "FL12": {
+        "0": {
+          "ders": "T.Matematik",
+          "kaz": "Denklem ve Eşitsizliklerin Çözümünde Kullanılan Stratejiler",
+          "ogretmen": "Elif Şimşek",
+          "ogrenciler": [
+            106,
+            228,
+            294,
+            8,
+            283,
+            195,
+            9,
+            326,
+            743
+          ]
+        },
+        "1": {
+          "ders": "Matematik(A)",
+          "kaz": "İkinci Dereceden Denklemin Kökleri",
+          "ogretmen": "Bilal Şakirler",
+          "ogrenciler": [
+            283,
+            8,
+            106,
+            228,
+            743,
+            9,
+            195,
+            294,
+            326
+          ]
+        },
+        "2": {
+          "ders": "Matematik(A)",
+          "kaz": "Logaritmali Güncel Hayat Problemleri",
+          "ogretmen": "Elif Şimşek",
+          "ogrenciler": [
+            8,
+            228,
+            106,
+            195,
+            9,
+            283,
+            294,
+            326,
+            743
+          ]
+        }
+      }
+    }
   }
 }
