@@ -471,7 +471,8 @@
             840,
             749,
             175,
-            245
+            245,
+            251
           ]
         },
         "2": {
@@ -555,7 +556,9 @@
             658,
             929,
             108,
-            411
+            411,
+            80,
+            690
           ]
         },
         "2": {
@@ -708,7 +711,7 @@
         },
         "1": {
           "ders": "Matematik(A)",
-          "kaz": "İkinci Dereceden Denklemin Kökleri",
+          "kaz": "Trigonometrik Özdeşlikler (11)",
           "ogretmen": "Bilal Şakirler",
           "ogrenciler": [
             283,
@@ -724,7 +727,7 @@
         },
         "2": {
           "ders": "Matematik(A)",
-          "kaz": "Logaritmali Güncel Hayat Problemleri",
+          "kaz": "Trigonometrik Fonksiyonlarin İşaretleri\n90° Den Büyük Açilarin Trigonometrik Oranlari (Yatay Eksen)",
           "ogretmen": "Elif Şimşek",
           "ogrenciler": [
             8,
@@ -734,6 +737,22 @@
             9,
             283,
             294,
+            326,
+            743
+          ]
+        },
+        "3": {
+          "ders": "Kimya(A)",
+          "kaz": "Gazların Çözünürlüğünün Sıcaklık ve Basınçla Değişimi",
+          "ogretmen": "Buket Aksoy",
+          "ogrenciler": [
+            8,
+            106,
+            195,
+            228,
+            283,
+            294,
+            9,
             326,
             743
           ]
