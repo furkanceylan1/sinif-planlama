@@ -445,6 +445,24 @@
             245,
             722
           ]
+        },
+        "3": {
+          "ders": "Matematik(A)",
+          "kaz": "Trigonometrik Fonksiyonlarin İşaretleri\n90° Den Büyük Açilarin Trigonometrik Oranlari (Yatay Eksen)",
+          "ogretmen": "Elif Şimşek",
+          "ogrenciler": [
+            116,
+            115,
+            130,
+            243,
+            320,
+            121,
+            248,
+            122,
+            840,
+            383,
+            284
+          ]
         }
       },
       "12B": {
@@ -484,7 +502,7 @@
         "2": {
           "ders": "Türkçe",
           "kaz": "Ek Ve Kökleri Belirler.\nSözcük Yapısını Belirler.",
-          "ogretmen": "Sevim Seda Yıldıray",
+          "ogretmen": "Ahmet Alagöz",
           "ogrenciler": [
             116,
             929,
@@ -518,22 +536,14 @@
             929,
             310,
             108,
-            121,
             663,
             167,
-            320,
             639,
             232,
             725,
-            116,
             164,
             145,
-            115,
-            243,
-            248,
             411,
-            122,
-            130,
             658
           ]
         }
@@ -553,7 +563,7 @@
         "1": {
           "ders": "Türk Dili ve Edebiya",
           "kaz": "Şiiri Yorumlayarak Edebi Anlayışların Yansımalarını,Temasını,Nazım Biçimi ve Türünü, Ahenk Unsurlarını Belirler.\nŞiiri Yorumlayarak Edebi Anlayışların Yansımalarını,Temasını,Nazım Biçimi ve Türünü, Ahenk Unsurlarını Belirler.",
-          "ogretmen": "",
+          "ogretmen": "Ayşenur Tan",
           "ogrenciler": [
             243,
             320,
@@ -585,7 +595,7 @@
         "3": {
           "ders": "Türkçe",
           "kaz": "Ek Ve Kökleri Belirler.\nSözcük Yapısını Belirler.",
-          "ogretmen": "",
+          "ogretmen": "Ahmet Alagöz",
           "ogrenciler": [
             245,
             251,
@@ -594,10 +604,7 @@
             714,
             573,
             270,
-            840,
-            383,
             690,
-            284,
             665,
             724,
             715,
@@ -610,7 +617,7 @@
         "0": {
           "ders": "Türkçe",
           "kaz": "Paragrafın Konu/Ana Fikrini Bulur.",
-          "ogretmen": "",
+          "ogretmen": "Sevim Seda Yıldıray",
           "ogrenciler": [
             663,
             320,
