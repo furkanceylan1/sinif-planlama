@@ -496,7 +496,8 @@
             406,
             840,
             245,
-            251
+            251,
+            175
           ]
         },
         "2": {
@@ -756,7 +757,7 @@
         },
         "3": {
           "ders": "Kimya(A)",
-          "kaz": "Gazların Çözünürlüğünün Sıcaklık ve Basınçla Değişimi",
+          "kaz": "Dengeye Etki Eden Faktörler ve Le Chatelier İlkesi",
           "ogretmen": "Buket Aksoy",
           "ogrenciler": [
             8,
