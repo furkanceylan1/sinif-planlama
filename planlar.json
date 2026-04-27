@@ -414,6 +414,19 @@
             310
           ]
         },
+        "1": {
+          "ders": "Matematik(A)",
+          "kaz": "MAT.9.1.3. Farklı sayı kümelerinin özellikleri hakkında muhakeme yapabilme",
+          "ogretmen": "Elif Şimşek",
+          "ogrenciler": [
+            170,
+            575,
+            749,
+            739,
+            144,
+            172
+          ]
+        },
         "2": {
           "ders": "Kimya(A)",
           "kaz": "Gazların Çözünürlüğünün Sıcaklık ve Basınçla Değişimi",
@@ -456,21 +469,14 @@
           "kaz": "Kimyasal Türler ve Bağlar",
           "ogretmen": "Buket Aksoy",
           "ogrenciler": [
-            170,
             262,
             738,
-            575,
             722,
-            739,
             681,
-            172,
-            144,
             277,
             931,
             406,
             840,
-            749,
-            175,
             245,
             251
           ]
