@@ -336,7 +336,7 @@ select:focus,input:focus{border-color:var(--grn)}
 </div>
 
 <!-- ADMIN LOGIN -->
-<div id="login-overlay" style="position:fixed;inset:0;background:linear-gradient(135deg,#1b4332 0%,#2d6a4f 100%);z-index:9000;display:flex;align-items:center;justify-content:center;padding:20px">
+<div id="login-overlay" style="position:fixed;inset:0;background:linear-gradient(135deg,#1b4332 0%,#2d6a4f 100%);z-index:10000;display:flex;align-items:center;justify-content:center;padding:20px">
   <div style="background:#fff;border-radius:16px;padding:36px 32px;max-width:380px;width:100%;box-shadow:0 20px 60px rgba(0,0,0,.3);text-align:center">
     <div style="font-size:36px;margin-bottom:8px">🔐</div>
     <h2 style="font-family:'Playfair Display',serif;font-size:22px;color:#1b4332;margin-bottom:6px">Sınıf Planlama</h2>
@@ -719,7 +719,8 @@ async function loadData(){
     document.getElementById('login-overlay').style.display = 'none';
     await initApp();
   } else {
-    // Login bekle
+    // Login bekleniyor - loading'i kapat ki login görünsün
+    document.getElementById('loading').style.display = 'none';
     setTimeout(()=>document.getElementById('login-user')?.focus(), 100);
   }
 }
