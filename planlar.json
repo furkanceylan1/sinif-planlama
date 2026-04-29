@@ -892,23 +892,23 @@
           ]
         },
         "1": {
-          "ders": "T.Matematik",
-          "kaz": "Fonksiyonlar",
-          "ogretmen": "Bilal Şakirler",
+          "ders": "Türkçe",
+          "kaz": "Ses Bilgisi",
+          "ogretmen": "Nihal Suyolcu",
           "ogrenciler": [
-            170,
-            262,
             722,
-            116,
             232,
-            725,
-            115,
-            122,
             320,
             248,
             270,
-            739,
-            931
+            636,
+            663,
+            573,
+            80,
+            690,
+            665,
+            715,
+            639
           ]
         }
       },
