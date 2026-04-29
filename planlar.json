@@ -1027,19 +1027,13 @@
       "FL12": {
         "0": {
           "ders": "Türkçe",
-          "kaz": "Noktalama İşaretleri",
+          "kaz": "Noktalama İşaretleri • 📝 Soru Çözümü",
+          "kazlar": [
+            "Noktalama İşaretleri",
+            "📝 Soru Çözümü"
+          ],
           "ogretmen": "Gazel Göğebakan",
-          "ogrenciler": [
-            106,
-            8,
-            228,
-            9,
-            195,
-            283,
-            294,
-            326,
-            743
-          ]
+          "ogrenciler": []
         },
         "1": {
           "ders": "Biyoloji",
