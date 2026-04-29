@@ -1341,11 +1341,31 @@ function renderKazPills(){
     document.getElementById('kaz-sel-info').textContent='';
   }
   const listDiv=document.getElementById('m-kaz-list');
-  if(!list.length){
+  // ÖZEL: Soru Çözümü her zaman üstte
+  const SC_LABEL = '📝 Soru Çözümü';
+  const scIsSel = modalKazSet.has(SC_LABEL);
+  const scMatchesSearch = !search || SC_LABEL.toLowerCase().includes(search) || 'soru çözümü'.includes(search);
+  let listHTML = '';
+  if(scMatchesSearch){
+    listHTML += `<div onclick="toggleKaz('${SC_LABEL}')" style="
+      display:flex;align-items:center;gap:8px;padding:7px 10px;border-radius:6px;cursor:pointer;
+      background:${scIsSel?'#fff4d6':'#fffbef'};
+      border:1.5px solid ${scIsSel?'#d4a72c':'#e8d77e'};
+      margin-bottom:6px;transition:.13s">
+      <div style="width:14px;height:14px;border:2px solid ${scIsSel?'#d4a72c':'#e8d77e'};border-radius:3px;background:${scIsSel?'#d4a72c':'transparent'};display:flex;align-items:center;justify-content:center;font-size:9px;color:#fff;flex-shrink:0">${scIsSel?'✓':''}</div>
+      <div style="flex:1;font-size:12px;font-weight:700;line-height:1.3;color:#7a5510">${SC_LABEL}</div>
+      <div style="font-size:10px;color:#7a5510;font-style:italic;flex-shrink:0">kazanım belirtmeden</div>
+    </div>`;
+  }
+  if(!list.length && !scMatchesSearch){
     listDiv.innerHTML='<div style="text-align:center;color:var(--ink3);font-size:12px;padding:8px">Kazanım bulunamadı</div>';
     return;
   }
-  listDiv.innerHTML=list.map(k=>{
+  if(!list.length){
+    listDiv.innerHTML = listHTML + '<div style="text-align:center;color:var(--ink3);font-size:11px;padding:6px">Bu derste kazanım yok</div>';
+    return;
+  }
+  listHTML += list.map(k=>{
     let totalSoru=0;
     if(aktivSinavSet.size > 0){
       for(const sid of aktivSinavSet) totalSoru += k.sinav_detail?.[sid]?.soru||0;
@@ -1368,6 +1388,7 @@ function renderKazPills(){
       </div>
     </div>`;
   }).join('');
+  listDiv.innerHTML = listHTML;
 }
 
 function toggleKaz(kaz){
