@@ -1081,9 +1081,20 @@
         "0": {
           "ders": "Kimya",
           "kaz": "Asit-Baz-Tuz",
+          "kazlar": [
+            "Asit-Baz-Tuz"
+          ],
           "ogretmen": "Buket Aksoy",
           "ogrenciler": [
-            690
+            8,
+            106,
+            294,
+            326,
+            9,
+            195,
+            228,
+            283,
+            743
           ]
         },
         "1": {
