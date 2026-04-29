@@ -1006,9 +1006,21 @@
         "3": {
           "ders": "T.Matematik",
           "kaz": "Problemler (Sayı, Yaş, İşçi, Hareket, Yüzde, Kar-Zarar)",
+          "kazlar": [
+            "Problemler (Sayı, Yaş, İşçi, Hareket, Yüzde, Kar-Zarar)"
+          ],
           "ogretmen": "Elif Şimşek",
           "ogrenciler": [
-            690
+            690,
+            326,
+            106,
+            9,
+            8,
+            228,
+            743,
+            195,
+            294,
+            283
           ]
         }
       },
