@@ -813,11 +813,16 @@ function onLoaded(){
 // ═══════════════════════════════════════════
 // REV 1: GITHUB KAYDET
 // ═══════════════════════════════════════════
+let _saveTimer = null;
 async function githubKaydet(){
   if(isGuest){ toast('Misafir kullanıcılar kaydedemez.', true); return; }
-  let tok = localStorage.getItem('gh_token');
-  if(!tok){ tok = _getTk(); localStorage.setItem('gh_token', tok); }
-  await doGithubKaydet(tok);
+  // Debounce: art arda değişiklikler tek kaydet olsun (1 saniye bekle)
+  if(_saveTimer) clearTimeout(_saveTimer);
+  _saveTimer = setTimeout(async ()=>{
+    let tok = localStorage.getItem('gh_token');
+    if(!tok){ tok = _getTk(); localStorage.setItem('gh_token', tok); }
+    await doGithubKaydet(tok);
+  }, 800);
 }
 
 async function doGithubKaydet(tok){
@@ -1175,6 +1180,8 @@ function delCtx(e,ctx){
   if(schedule[w]?.[g]?.[s]) delete schedule[w][g][s][+d];
   localStorage.setItem('sch_v6',JSON.stringify(schedule));
   renderWeek(); renderPrint();
+  // Otomatik GitHub'a kaydet
+  githubKaydet();
 }
 function updateSlotCount(){
   let c=0;
@@ -1454,7 +1461,8 @@ function saveSlot(){
   const {week,gun,salon,di}=modalCtx;
   setSlot(week,gun,salon,di,{ders,kaz,ogretmen:ogr,ogrenciler:[...modalSel]});
   closeModal(); renderWeek(); renderPrint();
-  toast('Ders eklendi. Yayınlamak için "Kaydet & Yayınla" tıklayın.');
+  // Otomatik GitHub'a kaydet
+  githubKaydet();
 }
 
 // ═══════════════════════════════════════════
