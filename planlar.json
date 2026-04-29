@@ -1017,6 +1017,14 @@
         }
       },
       "12C": {
+        "0": {
+          "ders": "Kimya",
+          "kaz": "Asit-Baz-Tuz",
+          "ogretmen": "Buket Aksoy",
+          "ogrenciler": [
+            690
+          ]
+        },
         "2": {
           "ders": "T.Matematik",
           "kaz": "Problemler (Sayı, Yaş, İşçi, Hareket, Yüzde, Kar-Zarar)",
