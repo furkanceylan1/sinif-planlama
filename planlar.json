@@ -819,6 +819,9 @@
         "2": {
           "ders": "Tarih",
           "kaz": "Osmanlı Kuruluş ve Yükselme",
+          "kazlar": [
+            "Osmanlı Kuruluş ve Yükselme"
+          ],
           "ogretmen": "Burcu Demir",
           "ogrenciler": [
             245,
@@ -831,7 +834,10 @@
             411,
             715,
             658,
-            80
+            80,
+            167,
+            665,
+            690
           ]
         },
         "3": {
