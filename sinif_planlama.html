@@ -401,8 +401,11 @@ select:focus,input:focus{border-color:var(--grn)}
           </div>
         </div>
         <div class="ff">
-          <label>Kazanım <span id="kaz-cnt" style="font-weight:400;opacity:.6;text-transform:none;letter-spacing:0;font-size:11px"></span></label>
-          <select id="m-kaz" onchange="renderMOgr()"><option value="">— Önce ders seçin —</option></select>
+          <label>Kazanım <span id="kaz-cnt" style="font-weight:400;opacity:.6;text-transform:none;letter-spacing:0;font-size:11px"></span> <span id="kaz-sel-info" style="font-weight:700;color:var(--grn);text-transform:none;letter-spacing:0;font-size:11px;margin-left:6px"></span></label>
+          <input type="text" id="m-kaz-search" placeholder="Kazanım ara..." oninput="renderKazPills()" style="margin-bottom:6px;display:none">
+          <div id="m-kaz-list" style="max-height:200px;overflow-y:auto;border:1.5px solid var(--bdr);border-radius:7px;padding:6px;display:none;background:var(--surf)">
+            <div style="text-align:center;color:var(--ink3);font-size:12px;padding:8px">Önce ders seçin</div>
+          </div>
         </div>
       </div>
       <div class="mc-sec">
@@ -634,6 +637,7 @@ let ghFileSha   = null; // GitHub dosya SHA'sı (güncelleme için)
 let modalCtx    = null;
 let modalFilt   = 'all';
 let modalSel    = new Set();
+let modalKazSet = new Set();   // REV: Çoklu kazanım seti
 let selKazCtx   = null;
 let aktivSinavSet = new Set();  // boş = Tüm Sınavlar
 let secilenOgr  = null;
@@ -1144,11 +1148,15 @@ function renderWeek(){
           const color = dc(slot.ders);
           const shown = sts.slice(0,5);
           const more  = sts.length-shown.length;
+          const slotKazlar = slot.kazlar || (slot.kaz ? slot.kaz.split(' • ') : []);
+          const kazDisplay = slotKazlar.length > 1
+            ? slotKazlar.map(k=>`<div style="font-size:10px;font-weight:700;line-height:1.25">• ${k}</div>`).join('')
+            : `<div class="sc-kaz">${slot.kaz||''}</div>`;
           html+=`<div class="slot-card" style="background:color-mix(in srgb,${color} 9%,white);border-left:3px solid ${color}">
             <button class="sc-del" data-ctx="${ctx}" onclick="delCtx(event,this.dataset.ctx)">✕</button>
-            <div class="sc-ders" style="color:${color}">${slot.ders}</div>
-            <div class="sc-kaz">${slot.kaz}</div>
-            <div class="sc-ogr">${shown.map(s=>s.name.split(' ')[0]+' '+s.name.split(' ').slice(-1)[0]).join('<br>')}</div>
+            <div class="sc-ders" style="color:${color}">${slot.ders}${slotKazlar.length>1?` <span style="background:${color};color:#fff;padding:0 5px;border-radius:8px;font-size:8px">${slotKazlar.length} kazanım</span>`:''}</div>
+            ${kazDisplay}
+            <div class="sc-ogr" style="margin-top:3px">${shown.map(s=>s.name.split(' ')[0]+' '+s.name.split(' ').slice(-1)[0]).join('<br>')}</div>
             ${more>0?`<div class="sc-more">+${more} daha</div>`:''}
             ${slot.ogretmen?`<div class="sc-ogretmen">👤 ${slot.ogretmen}</div>`:''}
           </div>`;
@@ -1213,7 +1221,10 @@ function getKazanimWeekCount(week, oid, kaz){
     for(const salon of SUBELER){
       for(let di=0;di<4;di++){
         const slot=getSlot(week,gun,salon,di);
-        if(slot && slot.kaz===kaz && (slot.ogrenciler||[]).includes(oid)){
+        if(!slot) continue;
+        // Slotta seçili kazanım var mı? (eski format slot.kaz, yeni slot.kazlar)
+        const slotKazlar = slot.kazlar || (slot.kaz ? slot.kaz.split(' • ') : []);
+        if(slotKazlar.includes(kaz) && (slot.ogrenciler||[]).includes(oid)){
           count++;
         }
       }
@@ -1230,6 +1241,7 @@ function openModal(ctx){
   const [week,gun,salon,di]=ctx.split('|');
   modalCtx={week,gun,salon,di:+di};
   modalSel=new Set(); modalFilt='all';
+  modalKazSet=new Set();  // Çoklu kazanım seti
 
   document.getElementById('modal-title').textContent=`${salon} — ${DERS_SAATI[+di]}`;
   document.getElementById('modal-si').textContent=`${gun} · ${week}. Hafta`;
@@ -1240,22 +1252,33 @@ function openModal(ctx){
 
   const existing=getSlot(week,gun,salon,+di);
   const mDers=document.getElementById('m-ders');
-  const mKaz=document.getElementById('m-kaz');
   const mOgr=document.getElementById('m-ogr');
 
   if(existing){
     mDers.value=existing.ders; onMDers();
-    setTimeout(()=>{ mKaz.value=existing.kaz; renderMOgr(); },0);
+    setTimeout(()=>{
+      // Eski format: existing.kaz tek string; yeni: existing.kazlar array
+      if(existing.kazlar && existing.kazlar.length){
+        existing.kazlar.forEach(k=>modalKazSet.add(k));
+      } else if(existing.kaz){
+        modalKazSet.add(existing.kaz);
+      }
+      renderKazPills(); renderMOgr();
+    },0);
     mOgr.value=existing.ogretmen||'';
     modalSel=new Set(existing.ogrenciler);
   } else if(selKazCtx){
     mDers.value=selKazCtx.ders; onMDers();
-    setTimeout(()=>{ mKaz.value=selKazCtx.kaz; renderMOgr(); },0);
+    setTimeout(()=>{ modalKazSet.add(selKazCtx.kaz); renderKazPills(); renderMOgr(); },0);
     mOgr.value='';
   } else {
-    mDers.value=''; mKaz.innerHTML='<option value="">— Önce ders seçin —</option>';
+    mDers.value='';
+    document.getElementById('m-kaz-list').innerHTML='<div style="text-align:center;color:var(--ink3);font-size:12px;padding:8px">Önce ders seçin</div>';
+    document.getElementById('m-kaz-list').style.display='none';
+    document.getElementById('m-kaz-search').style.display='none';
     mOgr.value='';
     document.getElementById('kaz-cnt').textContent='';
+    document.getElementById('kaz-sel-info').textContent='';
     document.getElementById('modal-ogr').innerHTML='<div style="padding:14px;text-align:center;color:var(--ink3);font-size:13px">Ders ve kazanım seçin</div>';
   }
 
@@ -1272,46 +1295,85 @@ function closeModal(){
 
 function onMDers(){
   const ders=document.getElementById('m-ders').value;
-  const kaz=document.getElementById('m-kaz');
   document.getElementById('kaz-cnt').textContent='';
-  if(!ders){ kaz.innerHTML='<option value="">— Önce ders seçin —</option>'; renderMOgr(); return; }
+  document.getElementById('kaz-sel-info').textContent='';
+  modalKazSet.clear();
+  const listDiv=document.getElementById('m-kaz-list');
+  const searchInp=document.getElementById('m-kaz-search');
+  if(!ders){
+    listDiv.style.display='none';
+    searchInp.style.display='none';
+    listDiv.innerHTML='<div style="text-align:center;color:var(--ink3);font-size:12px;padding:8px">Önce ders seçin</div>';
+    renderMOgr();
+    return;
+  }
   const base=OGRETMENLER.filter(o=>ders.toLowerCase().includes(o.ders.toLowerCase().split(' ')[0]));
   if(base.length===1&&!document.getElementById('m-ogr').value)
     document.getElementById('m-ogr').value=base[0].ad;
-  kaz.innerHTML='<option value="">— Kazanım seçin —</option>';
-  const list=DB.kazanim_list.filter(k=>k.ders===ders).map(k=>{
+  listDiv.style.display='block';
+  searchInp.style.display='block';
+  searchInp.value='';
+  renderKazPills();
+  renderMOgr();
+}
+
+function renderKazPills(){
+  const ders=document.getElementById('m-ders').value;
+  if(!ders) return;
+  const search=(document.getElementById('m-kaz-search').value||'').toLowerCase().trim();
+  let list=DB.kazanim_list.filter(k=>k.ders===ders).map(k=>{
     let y=k.yanlis_ids.length, b=k.bos_ids.length;
     if(aktivSinavSet.size > 0){
       const ySet=new Set(), bSet=new Set();
       for(const sid of aktivSinavSet){
         const sd=k.sinav_detail?.[sid];
-        if(sd){
-          (sd.yanlis_ids||[]).forEach(id=>ySet.add(id));
-          (sd.bos_ids||[]).forEach(id=>bSet.add(id));
-        }
+        if(sd){ (sd.yanlis_ids||[]).forEach(id=>ySet.add(id)); (sd.bos_ids||[]).forEach(id=>bSet.add(id)); }
       }
       y=ySet.size; b=bSet.size;
     }
     return {...k,y,b};
   }).filter(k=>k.y>0||k.b>0).sort((a,b2)=>(b2.y+b2.b)-(a.y+a.b));
+  if(search) list=list.filter(k=>k.kaz.toLowerCase().includes(search));
   document.getElementById('kaz-cnt').textContent=`(${list.length} kazanım)`;
-  list.forEach(k=>{
-    const o=document.createElement('option');
-    o.value=k.kaz;
-    // Bu kazanımda o sınavda kaç soru çıktı?
-    let soruInfo='';
+  if(modalKazSet.size>0){
+    document.getElementById('kaz-sel-info').textContent=`✓ ${modalKazSet.size} seçili`;
+  } else {
+    document.getElementById('kaz-sel-info').textContent='';
+  }
+  const listDiv=document.getElementById('m-kaz-list');
+  if(!list.length){
+    listDiv.innerHTML='<div style="text-align:center;color:var(--ink3);font-size:12px;padding:8px">Kazanım bulunamadı</div>';
+    return;
+  }
+  listDiv.innerHTML=list.map(k=>{
     let totalSoru=0;
     if(aktivSinavSet.size > 0){
-      for(const sid of aktivSinavSet){
-        totalSoru += k.sinav_detail?.[sid]?.soru||0;
-      }
+      for(const sid of aktivSinavSet) totalSoru += k.sinav_detail?.[sid]?.soru||0;
     } else {
       Object.values(k.sinav_detail||{}).forEach(sd=>{ totalSoru+=(sd.soru||0); });
     }
-    if(totalSoru) soruInfo=` (${totalSoru} soru)`;
-    o.textContent=`${k.kaz}${soruInfo}  —  Y:${k.y} B:${k.b}`;
-    kaz.appendChild(o);
-  });
+    const isSel=modalKazSet.has(k.kaz);
+    const safeKaz=k.kaz.replace(/'/g,"\\'").replace(/"/g,'&quot;');
+    return `<div onclick="toggleKaz('${safeKaz}')" style="
+      display:flex;align-items:center;gap:8px;padding:6px 10px;border-radius:6px;cursor:pointer;
+      background:${isSel?'var(--grn-l)':'transparent'};
+      border:1.5px solid ${isSel?'var(--grn)':'transparent'};
+      margin-bottom:3px;transition:.13s">
+      <div style="width:14px;height:14px;border:2px solid ${isSel?'var(--grn)':'var(--bdr)'};border-radius:3px;background:${isSel?'var(--grn)':'transparent'};display:flex;align-items:center;justify-content:center;font-size:9px;color:#fff;flex-shrink:0">${isSel?'✓':''}</div>
+      <div style="flex:1;font-size:12px;font-weight:${isSel?'700':'500'};line-height:1.3">${k.kaz}</div>
+      <div style="display:flex;gap:4px;flex-shrink:0">
+        ${k.y>0?`<span style="font-size:10px;background:var(--red-l);color:var(--red);padding:1px 5px;border-radius:8px;font-weight:700">⚠${k.y}</span>`:''}
+        ${k.b>0?`<span style="font-size:10px;background:var(--amb-l);color:var(--amb);padding:1px 5px;border-radius:8px;font-weight:700">○${k.b}</span>`:''}
+        ${totalSoru>0?`<span style="font-size:10px;background:var(--grn-l);color:var(--grn);padding:1px 5px;border-radius:8px;font-weight:700">${totalSoru}</span>`:''}
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function toggleKaz(kaz){
+  if(modalKazSet.has(kaz)) modalKazSet.delete(kaz);
+  else modalKazSet.add(kaz);
+  renderKazPills();
   renderMOgr();
 }
 
@@ -1339,7 +1401,6 @@ function setMF(mode,btn){
 function renderMOgr(){
   if(!DB) return;
   const ders=document.getElementById('m-ders').value;
-  const kaz=document.getElementById('m-kaz').value;
   const {week,gun,di,salon}=modalCtx||{};
 
   // REV 4: çakışma + hangi etütte bilgisi
@@ -1347,25 +1408,23 @@ function renderMOgr(){
   const hasConflict = Object.keys(conflictInfo).length > 0;
   document.getElementById('conflict-note').style.display = hasConflict ? 'block' : 'none';
 
-  // REV 3: Sadece o salona uygun öğrencileri göster
-  const izinliKurum = SUBE_KURUM[salon]||null;
-  let students = izinliKurum
-    ? DB.students.filter(s=>s.kurum===izinliKurum)
-    : DB.students;
+  // Tüm öğrenciler her salona eklenebilir (AL ve FL karışık)
+  let students = DB.students;
 
-  // Kazanım bazlı hata verisi
+  // Kazanım bazlı hata verisi - SEÇİLİ TÜM KAZANIMLARIN BİRLEŞİMİ
   let detail=[];
-  if(ders&&kaz){
-    const ko=DB.kazanim_list.find(k=>k.ders===ders&&k.kaz===kaz);
-    if(ko){
+  if(ders && modalKazSet.size > 0){
+    const ogrToplam = {};
+    for(const kaz of modalKazSet){
+      const ko=DB.kazanim_list.find(k=>k.ders===ders&&k.kaz===kaz);
+      if(!ko) continue;
+      const kazKey = `${ders}|||${kaz}`;
       if(aktivSinavSet.size > 0){
-        // Çoklu sınav: ogr_sinav'dan kazanım toplamı al
-        const ogrToplam = {};
+        // Çoklu sınav + çoklu kazanım
         for(const sid of aktivSinavSet){
           for(const oidStr of Object.keys(DB.ogr_sinav||{})){
             const sd = DB.ogr_sinav[oidStr][sid];
             if(!sd) continue;
-            const kazKey = `${ders}|||${kaz}`;
             const k = sd.kaz?.[kazKey];
             if(!k) continue;
             const oid = parseInt(oidStr);
@@ -1374,12 +1433,20 @@ function renderMOgr(){
             ogrToplam[oid].b += k.b||0;
           }
         }
-        for(const [oidStr, v] of Object.entries(ogrToplam)){
-          if(v.y>0 || v.b>0) detail.push({id:parseInt(oidStr), y:v.y, b:v.b});
-        }
       } else {
-        detail=ko.detail||[];
+        // Tüm sınavlar - ogrenci_hatalar'dan al
+        for(const oidStr of Object.keys(DB.ogrenci_hatalar||{})){
+          const h = DB.ogrenci_hatalar[oidStr][kazKey];
+          if(!h) continue;
+          const oid = parseInt(oidStr);
+          if(!ogrToplam[oid]) ogrToplam[oid] = {y:0,b:0};
+          ogrToplam[oid].y += h.y||0;
+          ogrToplam[oid].b += h.b||0;
+        }
       }
+    }
+    for(const [oidStr, v] of Object.entries(ogrToplam)){
+      if(v.y>0 || v.b>0) detail.push({id:parseInt(oidStr), y:v.y, b:v.b});
     }
   }
 
@@ -1408,7 +1475,7 @@ function renderMOgr(){
         <div class="oi-name">${s.name}</div>
         <div class="oi-meta">${s.kurum} · ${s.sube}</div>
         ${ci?`<div class="oi-conflict-info">📌 ${ci.salon} — ${ci.kaz.slice(0,35)}…</div>`:''}
-        ${(()=>{if(!DB||!modalCtx) return '';const cnt=getKazanimWeekCount(modalCtx.week,s.id,document.getElementById('m-kaz').value);return cnt>0?`<div style="font-size:10px;color:#b8860b;font-weight:700;margin-top:1px">⚠ Bu hafta bu konuyu ${cnt}× aldı</div>`:'';})()}
+        ${(()=>{if(!DB||!modalCtx||modalKazSet.size===0) return '';let total=0;for(const k of modalKazSet) total+=getKazanimWeekCount(modalCtx.week,s.id,k);return total>0?`<div style="font-size:10px;color:#b8860b;font-weight:700;margin-top:1px">⚠ Bu hafta seçili kazanımı ${total}× aldı</div>`:'';})()}
       </div>
       <div class="oi-bdg">
         ${s.y>0?`<span class="b by">⚠${s.y}×</span>`:''}
@@ -1454,14 +1521,21 @@ function updateToggleBtn(){
 function saveSlot(){
   if(isGuest){ toast('Misafir kullanıcılar düzenleme yapamaz.', true); return; }
   const ders=document.getElementById('m-ders').value;
-  const kaz=document.getElementById('m-kaz').value;
   const ogr=document.getElementById('m-ogr').value.trim();
-  if(!ders||!kaz){ alert('Ders ve kazanım seçin.'); return; }
+  if(!ders){ alert('Ders seçin.'); return; }
+  if(modalKazSet.size===0){ alert('En az bir kazanım seçin.'); return; }
   if(!modalSel.size){ alert('En az bir öğrenci seçin.'); return; }
   const {week,gun,salon,di}=modalCtx;
-  setSlot(week,gun,salon,di,{ders,kaz,ogretmen:ogr,ogrenciler:[...modalSel]});
+  const kazlar=[...modalKazSet];
+  // Geriye uyum için kaz alanı = ilk kazanım, kazlar = tüm liste
+  setSlot(week,gun,salon,di,{
+    ders,
+    kaz: kazlar.join(' • '),
+    kazlar: kazlar,
+    ogretmen: ogr,
+    ogrenciler: [...modalSel]
+  });
   closeModal(); renderWeek(); renderPrint();
-  // Otomatik GitHub'a kaydet
   githubKaydet();
 }
 
