@@ -774,18 +774,7 @@
       }
     },
     "Perşembe": {
-      "12A": {
-        "0": {
-          "ders": "Biyoloji",
-          "kaz": "Hücre Bölünmeleri (Mitoz-Mayoz)",
-          "ogretmen": "Nilay Olkan",
-          "ogrenciler": [
-            406,
-            575,
-            749
-          ]
-        }
-      }
+      "12A": {}
     }
   }
 }
