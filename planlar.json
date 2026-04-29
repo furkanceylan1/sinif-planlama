@@ -971,6 +971,28 @@
             743
           ]
         }
+      },
+      "12C": {
+        "2": {
+          "ders": "T.Matematik",
+          "kaz": "Problemler (Sayı, Yaş, İşçi, Hareket, Yüzde, Kar-Zarar)",
+          "ogretmen": "Bilal Şakirler",
+          "ogrenciler": [
+            121,
+            243,
+            320,
+            251,
+            575,
+            724,
+            713,
+            310,
+            130,
+            108,
+            840,
+            931,
+            714
+          ]
+        }
       }
     }
   }
