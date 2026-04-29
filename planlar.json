@@ -943,6 +943,9 @@
         "0": {
           "ders": "Türkçe",
           "kaz": "Zamir",
+          "kazlar": [
+            "Zamir"
+          ],
           "ogretmen": "Nihal Suyolcu",
           "ogrenciler": [
             411,
@@ -951,7 +954,8 @@
             639,
             80,
             665,
-            715
+            715,
+            690
           ]
         },
         "1": {
