@@ -1013,6 +1013,25 @@
             690
           ]
         },
+        "1": {
+          "ders": "Fizik",
+          "kaz": "Elektrik ve Manyetizma (Temel)",
+          "ogretmen": "Yelda Çoşkun",
+          "ogrenciler": [
+            840,
+            251,
+            277,
+            738,
+            749,
+            172,
+            931,
+            170,
+            262,
+            406,
+            175,
+            144
+          ]
+        },
         "2": {
           "ders": "T.Matematik",
           "kaz": "Problemler (Sayı, Yaş, İşçi, Hareket, Yüzde, Kar-Zarar)",
