@@ -928,6 +928,22 @@
             326,
             743
           ]
+        },
+        "1": {
+          "ders": "Biyoloji",
+          "kaz": "Hücre Bölünmeleri (Mitoz-Mayoz)",
+          "ogretmen": "Nilay Olkan",
+          "ogrenciler": [
+            106,
+            326,
+            8,
+            9,
+            195,
+            228,
+            283,
+            294,
+            743
+          ]
         }
       }
     }
