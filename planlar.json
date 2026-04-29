@@ -1058,18 +1058,11 @@
         "2": {
           "ders": "Türkçe",
           "kaz": "Paragraf",
+          "kazlar": [
+            "Paragraf"
+          ],
           "ogretmen": "Gazel Göğebakan",
-          "ogrenciler": [
-            8,
-            9,
-            106,
-            195,
-            228,
-            283,
-            294,
-            326,
-            743
-          ]
+          "ogrenciler": []
         },
         "3": {
           "ders": "Tarih",
