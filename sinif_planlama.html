@@ -1156,7 +1156,7 @@ function renderWeek(){
             <button class="sc-del" data-ctx="${ctx}" onclick="delCtx(event,this.dataset.ctx)">✕</button>
             <div class="sc-ders" style="color:${color}">${slot.ders}${slotKazlar.length>1?` <span style="background:${color};color:#fff;padding:0 5px;border-radius:8px;font-size:8px">${slotKazlar.length} kazanım</span>`:''}</div>
             ${kazDisplay}
-            <div class="sc-ogr" style="margin-top:3px">${shown.map(s=>s.name.split(' ')[0]+' '+s.name.split(' ').slice(-1)[0]).join('<br>')}</div>
+            <div class="sc-ogr" style="margin-top:3px">${shown.length>0 ? shown.map(s=>s.name.split(' ')[0]+' '+s.name.split(' ').slice(-1)[0]).join('<br>') : '<span style="font-style:italic;color:var(--ink3)">Öğrenci eklenmedi</span>'}</div>
             ${more>0?`<div class="sc-more">+${more} daha</div>`:''}
             ${slot.ogretmen?`<div class="sc-ogretmen">👤 ${slot.ogretmen}</div>`:''}
           </div>`;
@@ -1545,7 +1545,6 @@ function saveSlot(){
   const ogr=document.getElementById('m-ogr').value.trim();
   if(!ders){ alert('Ders seçin.'); return; }
   if(modalKazSet.size===0){ alert('En az bir kazanım seçin.'); return; }
-  if(!modalSel.size){ alert('En az bir öğrenci seçin.'); return; }
   const {week,gun,salon,di}=modalCtx;
   const kazlar=[...modalKazSet];
   // Geriye uyum için kaz alanı = ilk kazanım, kazlar = tüm liste
