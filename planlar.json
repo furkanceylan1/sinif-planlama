@@ -849,6 +849,24 @@
             715
           ]
         }
+      },
+      "FL12": {
+        "0": {
+          "ders": "Türkçe",
+          "kaz": "Noktalama İşaretleri",
+          "ogretmen": "Gazel Göğebakan",
+          "ogrenciler": [
+            106,
+            8,
+            228,
+            9,
+            195,
+            283,
+            294,
+            326,
+            743
+          ]
+        }
       }
     }
   }
