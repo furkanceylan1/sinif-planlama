@@ -908,9 +908,14 @@
         "2": {
           "ders": "Biyoloji",
           "kaz": "Canlıların Temel Bileşenleri",
+          "kazlar": [
+            "Canlıların Temel Bileşenleri"
+          ],
           "ogretmen": "Nilay Olkan",
           "ogrenciler": [
-            690
+            690,
+            167,
+            665
           ]
         },
         "3": {
