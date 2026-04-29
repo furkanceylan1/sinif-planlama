@@ -774,7 +774,17 @@
       }
     },
     "Perşembe": {
-      "12A": {}
+      "12A": {
+        "0": {
+          "ders": "Felsefe",
+          "kaz": "Mö 6. Yüzyil-Ms 2. Yüzyil Felsefesinin Karakteristik Özellikleri",
+          "ogretmen": "Cem Onur Gülal",
+          "ogrenciler": [
+            121,
+            663
+          ]
+        }
+      }
     }
   }
 }
