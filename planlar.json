@@ -774,16 +774,7 @@
       }
     },
     "Perşembe": {
-      "12A": {
-        "0": {
-          "ders": "Fizik",
-          "kaz": "Elektrik ve Manyetizma (Temel)",
-          "ogretmen": "Burcu Bıyıkoğlu",
-          "ogrenciler": [
-            245
-          ]
-        }
-      }
+      "12A": {}
     }
   }
 }
