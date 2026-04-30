@@ -1153,7 +1153,10 @@
         "3": {
           "ders": "T.Matematik",
           "kaz": "Fonksiyonlar",
-          "ogretmen": "Elif Şimşek",
+          "kazlar": [
+            "Fonksiyonlar"
+          ],
+          "ogretmen": "Bilal Şakirler",
           "ogrenciler": [
             167,
             108,
