@@ -1246,13 +1246,26 @@
           ]
         },
         "2": {
-          "ders": "Kimya",
-          "kaz": "Asit-Baz-Tuz",
+          "ders": "Kimya(A)",
+          "kaz": "Elektrokimya",
           "kazlar": [
-            "Asit-Baz-Tuz"
+            "Elektrokimya"
           ],
           "ogretmen": "Buket Aksoy",
-          "ogrenciler": []
+          "ogrenciler": [
+            170,
+            406,
+            840,
+            575,
+            144,
+            277,
+            739,
+            245,
+            262,
+            251,
+            749,
+            681
+          ]
         },
         "3": {
           "ders": "T.Matematik",
