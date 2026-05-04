@@ -1249,6 +1249,15 @@
           ],
           "ogretmen": "Dursun Demirci",
           "ogrenciler": []
+        },
+        "3": {
+          "ders": "Türkçe",
+          "kaz": "Paragraf",
+          "kazlar": [
+            "Paragraf"
+          ],
+          "ogretmen": "Gazel Göğebakan",
+          "ogrenciler": []
         }
       }
     }
