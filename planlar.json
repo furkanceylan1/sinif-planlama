@@ -1531,12 +1531,27 @@
         },
         "2": {
           "ders": "T.Matematik",
-          "kaz": "Sayı Basamakları",
+          "kaz": "Kümelerde Kesişim, Birleşim İşlemleri",
           "kazlar": [
-            "Sayı Basamakları"
+            "Kümelerde Kesişim, Birleşim İşlemleri"
           ],
           "ogretmen": "Elif Şimşek",
-          "ogrenciler": []
+          "ogrenciler": [
+            283,
+            175,
+            8,
+            106,
+            195,
+            228,
+            294,
+            172,
+            722,
+            270,
+            9,
+            326,
+            743,
+            738
+          ]
         },
         "3": {
           "ders": "Kimya",
