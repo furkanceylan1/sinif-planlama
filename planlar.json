@@ -1327,12 +1327,20 @@
       "12D": {
         "0": {
           "ders": "Tarih",
-          "kaz": "Osmanlı Kuruluş ve Yükselme",
+          "kaz": "Milli Mücadele Dönemi • Düzenli Ordunun Kurulmasından Mudanya Ateşkes Antlaşması’Na Kadar Meydana Gelen Gelişmeleri Türkiye’Nin Bağımsızlık Sürecine Katkıları Açısından Analiz Eder.",
           "kazlar": [
-            "Osmanlı Kuruluş ve Yükselme"
+            "Milli Mücadele Dönemi",
+            "Düzenli Ordunun Kurulmasından Mudanya Ateşkes Antlaşması’Na Kadar Meydana Gelen Gelişmeleri Türkiye’Nin Bağımsızlık Sürecine Katkıları Açısından Analiz Eder."
           ],
           "ogretmen": "Burcu Demir",
-          "ogrenciler": []
+          "ogrenciler": [
+            690,
+            80,
+            411,
+            715,
+            929,
+            665
+          ]
         },
         "1": {
           "ders": "(1) Din Kültürü ve Ahlak",
