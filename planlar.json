@@ -1187,12 +1187,25 @@
       "12A": {
         "0": {
           "ders": "T.Matematik",
-          "kaz": "Temel Kavramlar",
+          "kaz": "Eşitsizlik",
           "kazlar": [
-            "Temel Kavramlar"
+            "Eşitsizlik"
           ],
           "ogretmen": "Bilal Şakirler",
-          "ogrenciler": []
+          "ogrenciler": [
+            251,
+            713,
+            724,
+            326,
+            725,
+            294,
+            406,
+            121,
+            145,
+            383,
+            277,
+            310
+          ]
         },
         "1": {
           "ders": "T.Matematik",
