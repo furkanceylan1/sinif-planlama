@@ -1540,6 +1540,15 @@
             639,
             270
           ]
+        },
+        "3": {
+          "ders": "Kimya",
+          "kaz": "Kimyasal Türler ve Bağlar",
+          "kazlar": [
+            "Kimyasal Türler ve Bağlar"
+          ],
+          "ogretmen": "Buket Aksoy",
+          "ogrenciler": []
         }
       }
     }
