@@ -1259,6 +1259,17 @@
           "ogretmen": "Gazel Göğebakan",
           "ogrenciler": []
         }
+      },
+      "12C": {
+        "0": {
+          "ders": "Türkçe",
+          "kaz": "Paragraf",
+          "kazlar": [
+            "Paragraf"
+          ],
+          "ogretmen": "Sevim Seda Yıldıray",
+          "ogrenciler": []
+        }
       }
     }
   }
