@@ -1219,7 +1219,28 @@
             "Problemler (Sayı, Yaş, İşçi, Hareket, Yüzde, Kar-Zarar)"
           ],
           "ogretmen": "Elif Şimşek",
-          "ogrenciler": []
+          "ogrenciler": [
+            121,
+            251,
+            320,
+            931,
+            277,
+            713,
+            383,
+            145,
+            724,
+            840,
+            228,
+            270,
+            284,
+            681,
+            743,
+            722,
+            144,
+            116,
+            232,
+            749
+          ]
         },
         "2": {
           "ders": "Kimya",
