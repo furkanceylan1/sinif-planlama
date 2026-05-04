@@ -1431,13 +1431,37 @@
           ]
         },
         "1": {
-          "ders": "Matematik(A)",
-          "kaz": "📝 Soru Çözümü",
+          "ders": "T.Matematik",
+          "kaz": "Problemler (Sayı, Yaş, İşçi, Hareket, Yüzde, Kar-Zarar)",
           "kazlar": [
-            "📝 Soru Çözümü"
+            "Problemler (Sayı, Yaş, İşçi, Hareket, Yüzde, Kar-Zarar)"
           ],
           "ogretmen": "Bilal Şakirler",
-          "ogrenciler": []
+          "ogrenciler": [
+            122,
+            115,
+            739,
+            294,
+            262,
+            248,
+            195,
+            164,
+            243,
+            406,
+            172,
+            714,
+            9,
+            106,
+            725,
+            929,
+            170,
+            326,
+            636,
+            167,
+            310,
+            130,
+            575
+          ]
         },
         "2": {
           "ders": "T.Matematik",
