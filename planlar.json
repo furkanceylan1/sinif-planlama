@@ -1287,6 +1287,15 @@
           ],
           "ogretmen": "",
           "ogrenciler": []
+        },
+        "3": {
+          "ders": "Matematik(A)",
+          "kaz": "📝 Soru Çözümü",
+          "kazlar": [
+            "📝 Soru Çözümü"
+          ],
+          "ogretmen": "Bilal Şakirler",
+          "ogrenciler": []
         }
       }
     }
