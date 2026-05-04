@@ -1181,5 +1181,20 @@
         }
       }
     }
+  },
+  "3": {
+    "Salı": {
+      "12A": {
+        "0": {
+          "ders": "T.Matematik",
+          "kaz": "Temel Kavramlar",
+          "kazlar": [
+            "Temel Kavramlar"
+          ],
+          "ogretmen": "Bilal Şakirler",
+          "ogrenciler": []
+        }
+      }
+    }
   }
 }
