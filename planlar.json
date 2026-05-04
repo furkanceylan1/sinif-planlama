@@ -1338,13 +1338,28 @@
           "ogrenciler": []
         },
         "3": {
-          "ders": "Türkçe",
-          "kaz": "Paragraf",
+          "ders": "Türk Dili ve Edebiya",
+          "kaz": "Şiiri Yorumlayarak Fikir Akımlarının Yansımalarını,Temasını Belirler. • Şiiri Yorumlayarak Edebi Anlayışların Yansımalarını,Temasını,Nazım Biçimi ve Türünü, Ahenk Unsurlarını Belirler.",
           "kazlar": [
-            "Paragraf"
+            "Şiiri Yorumlayarak Fikir Akımlarının Yansımalarını,Temasını Belirler.",
+            "Şiiri Yorumlayarak Edebi Anlayışların Yansımalarını,Temasını,Nazım Biçimi ve Türünü, Ahenk Unsurlarını Belirler."
           ],
           "ogretmen": "Gazel Göğebakan",
-          "ogrenciler": []
+          "ogrenciler": [
+            663,
+            639,
+            167,
+            262,
+            929,
+            108,
+            80,
+            658,
+            690,
+            665,
+            715,
+            411,
+            636
+          ]
         }
       },
       "12C": {
