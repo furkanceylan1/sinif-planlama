@@ -1472,6 +1472,15 @@
             639,
             270
           ]
+        },
+        "2": {
+          "ders": "Kimya",
+          "kaz": "Asit-Baz-Tuz",
+          "kazlar": [
+            "Asit-Baz-Tuz"
+          ],
+          "ogretmen": "Buket Aksoy",
+          "ogrenciler": []
         }
       }
     }
