@@ -1588,13 +1588,28 @@
           ]
         },
         "2": {
-          "ders": "T.Matematik",
-          "kaz": "Sayı Basamakları",
+          "ders": "Matematik(A)",
+          "kaz": "Trigonometrik Özdeşlikler (11)",
           "kazlar": [
-            "Sayı Basamakları"
+            "Trigonometrik Özdeşlikler (11)"
           ],
           "ogretmen": "Elif Şimşek",
-          "ogrenciler": []
+          "ogrenciler": [
+            8,
+            738,
+            106,
+            228,
+            294,
+            172,
+            722,
+            9,
+            326,
+            743,
+            195,
+            283,
+            175,
+            270
+          ]
         },
         "3": {
           "ders": "Kimya(A)",
