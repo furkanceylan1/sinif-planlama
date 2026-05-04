@@ -1211,6 +1211,15 @@
           ],
           "ogretmen": "Buket Aksoy",
           "ogrenciler": []
+        },
+        "3": {
+          "ders": "T.Matematik",
+          "kaz": "Sayı Basamakları",
+          "kazlar": [
+            "Sayı Basamakları"
+          ],
+          "ogretmen": "",
+          "ogrenciler": []
         }
       }
     }
