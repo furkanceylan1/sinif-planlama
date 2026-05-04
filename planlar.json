@@ -1507,12 +1507,18 @@
         },
         "3": {
           "ders": "Coğrafya",
-          "kaz": "Doğadaki Üç Unsur",
+          "kaz": "Ülkeler Arasi Etkileşim • Nüfusun Dağılışı Üzerinde Etkili Olan Faktörler • Yağış Rejmi",
           "kazlar": [
-            "Doğadaki Üç Unsur"
+            "Ülkeler Arasi Etkileşim",
+            "Nüfusun Dağılışı Üzerinde Etkili Olan Faktörler",
+            "Yağış Rejmi"
           ],
           "ogretmen": "Begüm Yılmaz",
-          "ogrenciler": []
+          "ogrenciler": [
+            175,
+            122,
+            232
+          ]
         }
       },
       "FL12": {
