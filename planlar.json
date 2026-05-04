@@ -1570,13 +1570,21 @@
           "ogrenciler": []
         },
         "3": {
-          "ders": "Kimya",
-          "kaz": "Kimyasal Türler ve Bağlar",
+          "ders": "Kimya(A)",
+          "kaz": "Organik ve Anorganik Bileşiklerin Farkı",
           "kazlar": [
-            "Kimyasal Türler ve Bağlar"
+            "Organik ve Anorganik Bileşiklerin Farkı"
           ],
           "ogretmen": "Buket Aksoy",
-          "ogrenciler": []
+          "ogrenciler": [
+            195,
+            283,
+            294,
+            743,
+            144,
+            931,
+            228
+          ]
         }
       }
     }
