@@ -1422,13 +1422,34 @@
           "ogrenciler": []
         },
         "2": {
-          "ders": "T.Matematik",
-          "kaz": "Temel Kavramlar",
+          "ders": "Matematik(A)",
+          "kaz": "Dizi Tanimi",
           "kazlar": [
-            "Temel Kavramlar"
+            "Dizi Tanimi"
           ],
           "ogretmen": "Bilal Şakirler",
-          "ogrenciler": []
+          "ogrenciler": [
+            931,
+            713,
+            383,
+            284,
+            232,
+            145,
+            115,
+            130,
+            714,
+            80,
+            116,
+            724,
+            164,
+            725,
+            310,
+            320,
+            243,
+            122,
+            121,
+            248
+          ]
         },
         "3": {
           "ders": "Coğrafya",
