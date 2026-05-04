@@ -1193,6 +1193,15 @@
           ],
           "ogretmen": "Bilal Şakirler",
           "ogrenciler": []
+        },
+        "1": {
+          "ders": "T.Matematik",
+          "kaz": "Problemler (Sayı, Yaş, İşçi, Hareket, Yüzde, Kar-Zarar)",
+          "kazlar": [
+            "Problemler (Sayı, Yaş, İşçi, Hareket, Yüzde, Kar-Zarar)"
+          ],
+          "ogretmen": "Elif Şimşek",
+          "ogrenciler": []
         }
       }
     }
