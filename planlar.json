@@ -1268,13 +1268,36 @@
           ]
         },
         "3": {
-          "ders": "T.Matematik",
-          "kaz": "Sayı Basamakları",
+          "ders": "Matematik(A)",
+          "kaz": "Parçali Fonksiyon",
           "kazlar": [
-            "Sayı Basamakları"
+            "Parçali Fonksiyon"
           ],
           "ogretmen": "Elif Şimşek",
-          "ogrenciler": []
+          "ogrenciler": [
+            840,
+            749,
+            681,
+            739,
+            713,
+            383,
+            284,
+            116,
+            724,
+            164,
+            725,
+            145,
+            310,
+            115,
+            130,
+            243,
+            121,
+            714,
+            248,
+            270,
+            320,
+            9
+          ]
         }
       },
       "12B": {
