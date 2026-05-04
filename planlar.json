@@ -1325,6 +1325,15 @@
           ],
           "ogretmen": "Bilal Şakirler",
           "ogrenciler": []
+        },
+        "3": {
+          "ders": "Coğrafya",
+          "kaz": "Doğadaki Üç Unsur",
+          "kazlar": [
+            "Doğadaki Üç Unsur"
+          ],
+          "ogretmen": "Begüm Yılmaz",
+          "ogrenciler": []
         }
       }
     }
