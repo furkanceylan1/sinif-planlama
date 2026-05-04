@@ -1286,7 +1286,9 @@
             "Kimyasal Türler ve Bağlar"
           ],
           "ogretmen": "",
-          "ogrenciler": []
+          "ogrenciler": [
+            8
+          ]
         },
         "2": {
           "ders": "Din Kültürü ve Ahlak",
