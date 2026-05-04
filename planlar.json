@@ -1278,6 +1278,15 @@
           ],
           "ogretmen": "Begüm Yılmaz",
           "ogrenciler": []
+        },
+        "2": {
+          "ders": "Tarih",
+          "kaz": "19. Yüzyıl Osmanlı",
+          "kazlar": [
+            "19. Yüzyıl Osmanlı"
+          ],
+          "ogretmen": "",
+          "ogrenciler": []
         }
       }
     }
