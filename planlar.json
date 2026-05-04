@@ -1373,12 +1373,36 @@
       "FL12": {
         "0": {
           "ders": "Matematik(A)",
-          "kaz": "📝 Soru Çözümü",
+          "kaz": "Polinomun (Ax^N – B) İle Bölümünden Kalani Bulma • Polinom Fonksiyonlarin Limiti",
           "kazlar": [
-            "📝 Soru Çözümü"
+            "Polinomun (Ax^N – B) İle Bölümünden Kalani Bulma",
+            "Polinom Fonksiyonlarin Limiti"
           ],
           "ogretmen": "Elif Şimşek",
-          "ogrenciler": []
+          "ogrenciler": [
+            170,
+            164,
+            575,
+            681,
+            931,
+            232,
+            115,
+            130,
+            262,
+            284,
+            840,
+            144,
+            739,
+            106,
+            195,
+            228,
+            283,
+            743,
+            172,
+            175,
+            722,
+            116
+          ]
         },
         "1": {
           "ders": "Matematik(A)",
