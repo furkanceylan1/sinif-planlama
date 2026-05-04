@@ -1297,6 +1297,17 @@
           "ogretmen": "Bilal Şakirler",
           "ogrenciler": []
         }
+      },
+      "12D": {
+        "0": {
+          "ders": "Tarih",
+          "kaz": "Osmanlı Kuruluş ve Yükselme",
+          "kazlar": [
+            "Osmanlı Kuruluş ve Yükselme"
+          ],
+          "ogretmen": "Burcu Demir",
+          "ogrenciler": []
+        }
       }
     }
   }
