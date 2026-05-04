@@ -1339,7 +1339,8 @@
             658,
             636,
             573,
-            749
+            749,
+            245
           ]
         },
         "1": {
@@ -1529,27 +1530,12 @@
         },
         "2": {
           "ders": "T.Matematik",
-          "kaz": "Eşitsizlik",
+          "kaz": "Sayı Basamakları",
           "kazlar": [
-            "Eşitsizlik"
+            "Sayı Basamakları"
           ],
           "ogretmen": "Elif Şimşek",
-          "ogrenciler": [
-            294,
-            326,
-            8,
-            9,
-            195,
-            283,
-            738,
-            106,
-            228,
-            743,
-            172,
-            722,
-            270,
-            175
-          ]
+          "ogrenciler": []
         },
         "3": {
           "ders": "Kimya",
