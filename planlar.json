@@ -1387,13 +1387,21 @@
           ]
         },
         "3": {
-          "ders": "Matematik(A)",
-          "kaz": "📝 Soru Çözümü",
+          "ders": "Geometri",
+          "kaz": "Üçgenler",
           "kazlar": [
-            "📝 Soru Çözümü"
+            "Üçgenler"
           ],
           "ogretmen": "Bilal Şakirler",
-          "ogrenciler": []
+          "ogrenciler": [
+            575,
+            277,
+            251,
+            8,
+            106,
+            326,
+            406
+          ]
         }
       },
       "12D": {
