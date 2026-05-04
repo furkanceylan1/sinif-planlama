@@ -1280,12 +1280,21 @@
       "12C": {
         "0": {
           "ders": "Türkçe",
-          "kaz": "Paragraf",
+          "kaz": "Cümlenin Ögeleri",
           "kazlar": [
-            "Paragraf"
+            "Cümlenin Ögeleri"
           ],
           "ogretmen": "Sevim Seda Yıldıray",
-          "ogrenciler": []
+          "ogrenciler": [
+            108,
+            663,
+            167,
+            639,
+            658,
+            636,
+            573,
+            749
+          ]
         },
         "1": {
           "ders": "Coğrafya",
