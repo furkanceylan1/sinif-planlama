@@ -1243,7 +1243,11 @@
             "Kimyasal Türler ve Bağlar"
           ],
           "ogretmen": "",
-          "ogrenciler": []
+          "ogrenciler": [
+            8,
+            9,
+            738
+          ]
         },
         "1": {
           "ders": "Kimya",
