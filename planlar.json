@@ -1221,6 +1221,17 @@
           "ogretmen": "",
           "ogrenciler": []
         }
+      },
+      "12B": {
+        "0": {
+          "ders": "Kimya",
+          "kaz": "Kimyasal Türler ve Bağlar",
+          "kazlar": [
+            "Kimyasal Türler ve Bağlar"
+          ],
+          "ogretmen": "",
+          "ogrenciler": []
+        }
       }
     }
   }
