@@ -1803,9 +1803,12 @@
       "12C": {
         "0": {
           "ders": "Kimya",
-          "kaz": "📝 Soru Çözümü",
+          "kaz": "📝 Soru Çözümü • Elektrokimya • Çözünürlük Denge • Asit-Baz Dengesi",
           "kazlar": [
-            "📝 Soru Çözümü"
+            "📝 Soru Çözümü",
+            "Elektrokimya",
+            "Çözünürlük Denge",
+            "Asit-Baz Dengesi"
           ],
           "ogretmen": "Buket Aksoy",
           "ogrenciler": [
