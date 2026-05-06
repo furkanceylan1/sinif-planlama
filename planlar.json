@@ -1744,6 +1744,17 @@
           "ogretmen": "Bilal Şakirler",
           "ogrenciler": []
         }
+      },
+      "12D": {
+        "0": {
+          "ders": "Türk Dili ve Edebiya",
+          "kaz": "📝 Soru Çözümü",
+          "kazlar": [
+            "📝 Soru Çözümü"
+          ],
+          "ogretmen": "Nihal Suyolcu",
+          "ogrenciler": []
+        }
       }
     }
   }
