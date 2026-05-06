@@ -1763,6 +1763,15 @@
           ],
           "ogretmen": "Nihal Suyolcu",
           "ogrenciler": []
+        },
+        "2": {
+          "ders": "Matematik(A)",
+          "kaz": "📝 Soru Çözümü",
+          "kazlar": [
+            "📝 Soru Çözümü"
+          ],
+          "ogretmen": "Elif Şimşek",
+          "ogrenciler": []
         }
       }
     }
