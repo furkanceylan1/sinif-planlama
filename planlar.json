@@ -1801,6 +1801,15 @@
           ],
           "ogretmen": "Nilay Olkan",
           "ogrenciler": []
+        },
+        "3": {
+          "ders": "Matematik(A)",
+          "kaz": "📝 Soru Çözümü",
+          "kazlar": [
+            "📝 Soru Çözümü"
+          ],
+          "ogretmen": "Aykut Elmas",
+          "ogrenciler": []
         }
       }
     }
