@@ -1725,6 +1725,15 @@
           ],
           "ogretmen": "Burcu Demir",
           "ogrenciler": []
+        },
+        "2": {
+          "ders": "T.Matematik",
+          "kaz": "📝 Soru Çözümü",
+          "kazlar": [
+            "📝 Soru Çözümü"
+          ],
+          "ogretmen": "Bilal Şakirler",
+          "ogrenciler": []
         }
       }
     }
