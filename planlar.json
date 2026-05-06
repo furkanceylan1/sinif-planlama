@@ -1840,7 +1840,20 @@
             "📝 Soru Çözümü"
           ],
           "ogretmen": "Bilal Şakirler",
-          "ogrenciler": []
+          "ogrenciler": [
+            232,
+            724,
+            164,
+            725,
+            115,
+            122,
+            243,
+            320,
+            121,
+            714,
+            248,
+            270
+          ]
         },
         "3": {
           "ders": "Matematik(A)",
