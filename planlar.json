@@ -1706,6 +1706,17 @@
           "ogretmen": "Burcu Bıyıkoğlu",
           "ogrenciler": []
         }
+      },
+      "12C": {
+        "0": {
+          "ders": "Kimya",
+          "kaz": "📝 Soru Çözümü",
+          "kazlar": [
+            "📝 Soru Çözümü"
+          ],
+          "ogretmen": "Buket Aksoy",
+          "ogrenciler": []
+        }
       }
     }
   }
