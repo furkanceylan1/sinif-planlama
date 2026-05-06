@@ -2060,11 +2060,12 @@
         },
         "3": {
           "ders": "Matematik(A)",
-          "kaz": "📝 Soru Çözümü • Logaritmali Denklemler • Logaritmali Güncel Hayat Problemleri",
+          "kaz": "📝 Soru Çözümü • Logaritmali Denklemler • Logaritmali Güncel Hayat Problemleri • Logaritma",
           "kazlar": [
             "📝 Soru Çözümü",
             "Logaritmali Denklemler",
-            "Logaritmali Güncel Hayat Problemleri"
+            "Logaritmali Güncel Hayat Problemleri",
+            "Logaritma"
           ],
           "ogretmen": "Aykut Elmas",
           "ogrenciler": [
