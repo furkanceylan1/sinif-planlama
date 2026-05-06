@@ -1792,6 +1792,15 @@
           ],
           "ogretmen": "Yelda Çoşkun",
           "ogrenciler": []
+        },
+        "1": {
+          "ders": "Biyoloji",
+          "kaz": "📝 Soru Çözümü",
+          "kazlar": [
+            "📝 Soru Çözümü"
+          ],
+          "ogretmen": "Nilay Olkan",
+          "ogrenciler": []
         }
       }
     }
