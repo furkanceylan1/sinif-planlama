@@ -1756,10 +1756,11 @@
         },
         "2": {
           "ders": "Biyoloji(A)",
-          "kaz": "📝 Soru Çözümü • Fotosentez",
+          "kaz": "📝 Soru Çözümü • Fotosentez • Genden Proteine",
           "kazlar": [
             "📝 Soru Çözümü",
-            "Fotosentez"
+            "Fotosentez",
+            "Genden Proteine"
           ],
           "ogretmen": "Nilay Olkan",
           "ogrenciler": [
