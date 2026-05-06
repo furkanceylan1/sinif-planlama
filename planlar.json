@@ -1659,7 +1659,19 @@
             "📝 Soru Çözümü"
           ],
           "ogretmen": "Sevim Seda Yıldıray",
-          "ogrenciler": []
+          "ogrenciler": [
+            245,
+            80,
+            658,
+            690,
+            665,
+            715,
+            164,
+            636,
+            663,
+            573,
+            639
+          ]
         },
         "2": {
           "ders": "Tarih",
