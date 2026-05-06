@@ -1696,6 +1696,15 @@
           ],
           "ogretmen": "Nilay Olkan",
           "ogrenciler": []
+        },
+        "3": {
+          "ders": "Fizik",
+          "kaz": "Elektrik ve Manyetizma (Temel)",
+          "kazlar": [
+            "Elektrik ve Manyetizma (Temel)"
+          ],
+          "ogretmen": "Burcu Bıyıkoğlu",
+          "ogrenciler": []
         }
       }
     }
