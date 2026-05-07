@@ -2534,7 +2534,17 @@
             "📝 Soru Çözümü"
           ],
           "ogretmen": "Nilay Olkan",
-          "ogrenciler": []
+          "ogrenciler": [
+            8,
+            9,
+            106,
+            195,
+            228,
+            283,
+            294,
+            326,
+            743
+          ]
         }
       }
     }
