@@ -2365,12 +2365,20 @@
         },
         "2": {
           "ders": "Matematik(A)",
-          "kaz": "📝 Soru Çözümü",
+          "kaz": "📝 Soru Çözümü • TÜREV",
           "kazlar": [
-            "📝 Soru Çözümü"
+            "📝 Soru Çözümü",
+            "TÜREV"
           ],
           "ogretmen": "Elif Şimşek",
-          "ogrenciler": []
+          "ogrenciler": [
+            122,
+            243,
+            320,
+            121,
+            714,
+            270
+          ]
         },
         "3": {
           "ders": "Tarih",
