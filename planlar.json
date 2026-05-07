@@ -2244,6 +2244,17 @@
           "ogretmen": "Nazan Özdere",
           "ogrenciler": []
         }
+      },
+      "FL12": {
+        "0": {
+          "ders": "Kimya(A)",
+          "kaz": "📝 Soru Çözümü",
+          "kazlar": [
+            "📝 Soru Çözümü"
+          ],
+          "ogretmen": "Buket Aksoy",
+          "ogrenciler": []
+        }
       }
     }
   }
