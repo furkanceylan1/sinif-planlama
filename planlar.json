@@ -1780,9 +1780,10 @@
         },
         "3": {
           "ders": "Fizik",
-          "kaz": "Elektrik ve Manyetizma (Temel)",
+          "kaz": "Elektrik ve Manyetizma (Temel) • MANYETİZMA",
           "kazlar": [
-            "Elektrik ve Manyetizma (Temel)"
+            "Elektrik ve Manyetizma (Temel)",
+            "MANYETİZMA"
           ],
           "ogretmen": "Burcu Bıyıkoğlu",
           "ogrenciler": [
