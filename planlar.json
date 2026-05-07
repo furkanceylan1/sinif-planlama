@@ -2102,6 +2102,15 @@
           ],
           "ogretmen": "Nilay Olkan",
           "ogrenciler": []
+        },
+        "1": {
+          "ders": "Geometri",
+          "kaz": "📝 Soru Çözümü",
+          "kazlar": [
+            "📝 Soru Çözümü"
+          ],
+          "ogretmen": "Utku Bingül",
+          "ogrenciler": []
         }
       }
     }
