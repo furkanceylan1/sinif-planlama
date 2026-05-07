@@ -2323,7 +2323,12 @@
             "📝 Soru Çözümü"
           ],
           "ogretmen": "Begüm Yılmaz",
-          "ogrenciler": []
+          "ogrenciler": [
+            714,
+            121,
+            320,
+            243
+          ]
         },
         "2": {
           "ders": "Matematik(A)",
