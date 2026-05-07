@@ -1732,9 +1732,10 @@
         },
         "1": {
           "ders": "Matematik(A)",
-          "kaz": "📝 Soru Çözümü",
+          "kaz": "📝 Soru Çözümü • NOKTANIN ANALATİĞİ",
           "kazlar": [
-            "📝 Soru Çözümü"
+            "📝 Soru Çözümü",
+            "NOKTANIN ANALATİĞİ"
           ],
           "ogretmen": "Elif Şimşek",
           "ogrenciler": [
