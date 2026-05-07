@@ -1634,9 +1634,10 @@
       "12A": {
         "0": {
           "ders": "Matematik(A)",
-          "kaz": "📝 Soru Çözümü",
+          "kaz": "📝 Soru Çözümü • LOGARİTMA",
           "kazlar": [
-            "📝 Soru Çözümü"
+            "📝 Soru Çözümü",
+            "LOGARİTMA"
           ],
           "ogretmen": "Aykut Elmas",
           "ogrenciler": [
