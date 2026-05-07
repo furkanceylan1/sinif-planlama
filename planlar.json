@@ -2206,6 +2206,17 @@
           "ogretmen": "Begüm Yılmaz",
           "ogrenciler": []
         }
+      },
+      "12D": {
+        "0": {
+          "ders": "Tarih",
+          "kaz": "📝 Soru Çözümü",
+          "kazlar": [
+            "📝 Soru Çözümü"
+          ],
+          "ogretmen": "Nazan Özdere",
+          "ogrenciler": []
+        }
       }
     }
   }
