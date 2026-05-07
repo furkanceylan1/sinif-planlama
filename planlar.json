@@ -2230,12 +2230,27 @@
         },
         "2": {
           "ders": "Geometri",
-          "kaz": "📝 Soru Çözümü",
+          "kaz": "ÜÇGENDE ALAN BENZERLİK",
           "kazlar": [
-            "📝 Soru Çözümü"
+            "ÜÇGENDE ALAN BENZERLİK"
           ],
           "ogretmen": "Utku Bingül",
-          "ogrenciler": []
+          "ogrenciler": [
+            170,
+            262,
+            738,
+            840,
+            749,
+            245,
+            713,
+            383,
+            284,
+            116,
+            724,
+            232,
+            115,
+            248
+          ]
         },
         "3": {
           "ders": "Fizik(A)",
