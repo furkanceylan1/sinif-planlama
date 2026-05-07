@@ -2148,12 +2148,19 @@
       "12B": {
         "0": {
           "ders": "Fizik(A)",
-          "kaz": "📝 Soru Çözümü",
+          "kaz": "📝 Soru Çözümü • MANYETİZMA",
           "kazlar": [
-            "📝 Soru Çözümü"
+            "📝 Soru Çözümü",
+            "MANYETİZMA"
           ],
           "ogretmen": "Yelda Çoşkun",
-          "ogrenciler": []
+          "ogrenciler": [
+            406,
+            277,
+            722,
+            739,
+            931
+          ]
         },
         "1": {
           "ders": "Türkçe",
