@@ -2168,6 +2168,17 @@
           "ogretmen": "Yelda Çoşkun",
           "ogrenciler": []
         }
+      },
+      "12C": {
+        "0": {
+          "ders": "Matematik(A)",
+          "kaz": "📝 Soru Çözümü",
+          "kazlar": [
+            "📝 Soru Çözümü"
+          ],
+          "ogretmen": "Elif Şimşek",
+          "ogrenciler": []
+        }
       }
     }
   }
