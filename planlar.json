@@ -2149,6 +2149,15 @@
           ],
           "ogretmen": "Gazel Göğebakan",
           "ogrenciler": []
+        },
+        "2": {
+          "ders": "Geometri",
+          "kaz": "📝 Soru Çözümü",
+          "kazlar": [
+            "📝 Soru Çözümü"
+          ],
+          "ogretmen": "Utku Bingül",
+          "ogrenciler": []
         }
       }
     }
