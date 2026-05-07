@@ -2266,9 +2266,10 @@
         },
         "1": {
           "ders": "Tarih",
-          "kaz": "📝 Soru Çözümü",
+          "kaz": "📝 Soru Çözümü • SINAVLARDA ÇIKMIŞ SORULARIN ÇÖZÜMÜ",
           "kazlar": [
-            "📝 Soru Çözümü"
+            "📝 Soru Çözümü",
+            "SINAVLARDA ÇIKMIŞ SORULARIN ÇÖZÜMÜ"
           ],
           "ogretmen": "Burcu Demir",
           "ogrenciler": []
