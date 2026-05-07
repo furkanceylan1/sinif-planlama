@@ -1884,12 +1884,12 @@
           ]
         },
         "3": {
-          "ders": "Geometri",
-          "kaz": "DÖRTGENLER",
+          "ders": "Matematik(A)",
+          "kaz": "LOGARİTMA",
           "kazlar": [
-            "DÖRTGENLER"
+            "LOGARİTMA"
           ],
-          "ogretmen": "Utku Bingül",
+          "ogretmen": "Bilal Şakirler",
           "ogrenciler": [
             245,
             284,
