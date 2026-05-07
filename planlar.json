@@ -2176,12 +2176,26 @@
         },
         "3": {
           "ders": "Kimya(A)",
-          "kaz": "📝 Soru Çözümü",
+          "kaz": "📝 Soru Çözümü • ÇÖZÜNÜRLÜK DENGESİ",
           "kazlar": [
-            "📝 Soru Çözümü"
+            "📝 Soru Çözümü",
+            "ÇÖZÜNÜRLÜK DENGESİ"
           ],
           "ogretmen": "Buket Aksoy",
-          "ogrenciler": []
+          "ogrenciler": [
+            251,
+            738,
+            406,
+            840,
+            575,
+            749,
+            175,
+            144,
+            277,
+            722,
+            739,
+            931
+          ]
         }
       },
       "12B": {
