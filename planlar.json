@@ -2288,12 +2288,23 @@
         },
         "2": {
           "ders": "Biyoloji(A)",
-          "kaz": "📝 Soru Çözümü",
+          "kaz": "📝 Soru Çözümü • GENLER PROTEİNİ -  FOTOSENTEZ",
           "kazlar": [
-            "📝 Soru Çözümü"
+            "📝 Soru Çözümü",
+            "GENLER PROTEİNİ -  FOTOSENTEZ"
           ],
           "ogretmen": "Nilay Olkan",
-          "ogrenciler": []
+          "ogrenciler": [
+            8,
+            9,
+            106,
+            195,
+            228,
+            283,
+            294,
+            326,
+            743
+          ]
         },
         "3": {
           "ders": "Biyoloji(A)",
