@@ -2130,6 +2130,17 @@
           "ogretmen": "Buket Aksoy",
           "ogrenciler": []
         }
+      },
+      "12B": {
+        "0": {
+          "ders": "Fizik(A)",
+          "kaz": "📝 Soru Çözümü",
+          "kazlar": [
+            "📝 Soru Çözümü"
+          ],
+          "ogretmen": "Yelda Çoşkun",
+          "ogrenciler": []
+        }
       }
     }
   }
