@@ -2197,7 +2197,24 @@
             "Yazım Kuralları"
           ],
           "ogretmen": "Gazel Göğebakan",
-          "ogrenciler": []
+          "ogrenciler": [
+            130,
+            167,
+            108,
+            639,
+            663,
+            573,
+            929,
+            310,
+            636,
+            658,
+            665,
+            749,
+            411,
+            80,
+            690,
+            715
+          ]
         },
         "2": {
           "ders": "Geometri",
