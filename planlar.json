@@ -2254,6 +2254,15 @@
           ],
           "ogretmen": "Buket Aksoy",
           "ogrenciler": []
+        },
+        "1": {
+          "ders": "Matematik(A)",
+          "kaz": "📝 Soru Çözümü",
+          "kazlar": [
+            "📝 Soru Çözümü"
+          ],
+          "ogretmen": "Elif Şimşek",
+          "ogrenciler": []
         }
       }
     }
