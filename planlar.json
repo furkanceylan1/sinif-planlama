@@ -2254,7 +2254,17 @@
             "ÇÖZÜNÜRLÜK DENGESİ- ASİT BAZ DENGESİ"
           ],
           "ogretmen": "Buket Aksoy",
-          "ogrenciler": []
+          "ogrenciler": [
+            8,
+            9,
+            106,
+            195,
+            228,
+            283,
+            294,
+            326,
+            743
+          ]
         },
         "1": {
           "ders": "Matematik(A)",
