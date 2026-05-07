@@ -2090,5 +2090,20 @@
         }
       }
     }
+  },
+  "4": {
+    "Salı": {
+      "12A": {
+        "0": {
+          "ders": "Biyoloji(A)",
+          "kaz": "📝 Soru Çözümü",
+          "kazlar": [
+            "📝 Soru Çözümü"
+          ],
+          "ogretmen": "Nilay Olkan",
+          "ogrenciler": []
+        }
+      }
+    }
   }
 }
