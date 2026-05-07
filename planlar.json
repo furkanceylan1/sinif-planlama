@@ -2191,9 +2191,10 @@
         },
         "1": {
           "ders": "Türkçe",
-          "kaz": "📝 Soru Çözümü",
+          "kaz": "📝 Soru Çözümü • Yazım Kuralları",
           "kazlar": [
-            "📝 Soru Çözümü"
+            "📝 Soru Çözümü",
+            "Yazım Kuralları"
           ],
           "ogretmen": "Gazel Göğebakan",
           "ogrenciler": []
