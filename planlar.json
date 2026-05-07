@@ -2096,12 +2096,26 @@
       "12A": {
         "0": {
           "ders": "Biyoloji(A)",
-          "kaz": "📝 Soru Çözümü",
+          "kaz": "📝 Soru Çözümü • GENLER PROTEİNİ- FOTOSENTEZ",
           "kazlar": [
-            "📝 Soru Çözümü"
+            "📝 Soru Çözümü",
+            "GENLER PROTEİNİ- FOTOSENTEZ"
           ],
           "ogretmen": "Nilay Olkan",
-          "ogrenciler": []
+          "ogrenciler": [
+            170,
+            262,
+            251,
+            738,
+            840,
+            575,
+            749,
+            681,
+            172,
+            175,
+            144,
+            245
+          ]
         },
         "1": {
           "ders": "Geometri",
