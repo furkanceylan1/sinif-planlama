@@ -1655,9 +1655,10 @@
         },
         "1": {
           "ders": "Türkçe",
-          "kaz": "📝 Soru Çözümü",
+          "kaz": "📝 Soru Çözümü • SÖZCÜKTE YAPI",
           "kazlar": [
-            "📝 Soru Çözümü"
+            "📝 Soru Çözümü",
+            "SÖZCÜKTE YAPI"
           ],
           "ogretmen": "Sevim Seda Yıldıray",
           "ogrenciler": [
