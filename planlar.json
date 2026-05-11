@@ -2315,13 +2315,15 @@
           ]
         },
         "2": {
-          "ders": "Biyoloji(A)",
-          "kaz": "📝 Soru Çözümü • GENLER PROTEİNİ -  FOTOSENTEZ",
+          "ders": "Matematik(A)",
+          "kaz": "Trigonometrik Fonksiyonlarin İşaretleri\n90° Den Büyük Açilarin Trigonometrik Oranlari (Yatay Eksen) • Trigonometrik Fonksiyonlar • 📝 Soru Çözümü • DİZİLER",
           "kazlar": [
+            "Trigonometrik Fonksiyonlarin İşaretleri\n90° Den Büyük Açilarin Trigonometrik Oranlari (Yatay Eksen)",
+            "Trigonometrik Fonksiyonlar",
             "📝 Soru Çözümü",
-            "GENLER PROTEİNİ -  FOTOSENTEZ"
+            "DİZİLER"
           ],
-          "ogretmen": "Nilay Olkan",
+          "ogretmen": "Elif Şimşek",
           "ogrenciler": [
             8,
             9,
