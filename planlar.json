@@ -2382,23 +2382,6 @@
         }
       },
       "12D": {
-        "1": {
-          "ders": "Coğrafya",
-          "kaz": "📝 Soru Çözümü • İKLİM BİLGİSİ",
-          "kazlar": [
-            "📝 Soru Çözümü",
-            "İKLİM BİLGİSİ"
-          ],
-          "ogretmen": "Begüm Yılmaz",
-          "ogrenciler": [
-            714,
-            121,
-            320,
-            243,
-            116,
-            725
-          ]
-        },
         "2": {
           "ders": "Matematik(A)",
           "kaz": "📝 Soru Çözümü • TÜREV",
