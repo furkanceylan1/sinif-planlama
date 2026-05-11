@@ -2337,13 +2337,15 @@
           ]
         },
         "3": {
-          "ders": "Fizik(A)",
-          "kaz": "📝 Soru Çözümü • MANYETİZMA",
+          "ders": "Kimya(A)",
+          "kaz": "📝 Soru Çözümü • ÇÖZÜNÜRLÜĞÜN DENGESİ • Denge Sabiti-Katsayı İlişkisi\nDenge Bağıntıları ile İlgili Hesaplamalar • Gazların Çözünürlüğünün Sıcaklık ve Basınçla Değişimi",
           "kazlar": [
             "📝 Soru Çözümü",
-            "MANYETİZMA"
+            "ÇÖZÜNÜRLÜĞÜN DENGESİ",
+            "Denge Sabiti-Katsayı İlişkisi\nDenge Bağıntıları ile İlgili Hesaplamalar",
+            "Gazların Çözünürlüğünün Sıcaklık ve Basınçla Değişimi"
           ],
-          "ogretmen": "Burcu Bıyıkoğlu",
+          "ogretmen": "Buket Aksoy",
           "ogrenciler": [
             8,
             9,
