@@ -2115,26 +2115,14 @@
           "ogrenciler": []
         },
         "2": {
-          "ders": "Fizik(A)",
-          "kaz": "📝 Soru Çözümü • Atmanın Sabit Ve Serbest Uçtan Yansıması -  IŞIĞIN KIRILMASI",
+          "ders": "Kimya(A)",
+          "kaz": "Çözünürlük DENGESİ • 📝 Soru Çözümü",
           "kazlar": [
-            "📝 Soru Çözümü",
-            "Atmanın Sabit Ve Serbest Uçtan Yansıması -  IŞIĞIN KIRILMASI"
+            "Çözünürlük DENGESİ",
+            "📝 Soru Çözümü"
           ],
-          "ogretmen": "Yelda Çoşkun",
-          "ogrenciler": [
-            406,
-            251,
-            575,
-            681,
-            172,
-            175,
-            277,
-            144,
-            722,
-            739,
-            931
-          ]
+          "ogretmen": "Buket Aksoy",
+          "ogrenciler": []
         },
         "3": {
           "ders": "Kimya(A)",
