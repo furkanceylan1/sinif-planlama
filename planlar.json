@@ -2146,31 +2146,14 @@
           "ogrenciler": []
         },
         "1": {
-          "ders": "Türkçe",
-          "kaz": "📝 Soru Çözümü • Yazım Kuralları",
+          "ders": "Kimya(A)",
+          "kaz": "📝 Soru Çözümü • ÇÖZÜNÜRLÜK DENGESİ",
           "kazlar": [
             "📝 Soru Çözümü",
-            "Yazım Kuralları"
+            "ÇÖZÜNÜRLÜK DENGESİ"
           ],
-          "ogretmen": "Gazel Göğebakan",
-          "ogrenciler": [
-            130,
-            167,
-            108,
-            639,
-            663,
-            573,
-            929,
-            310,
-            636,
-            658,
-            665,
-            749,
-            411,
-            80,
-            690,
-            715
-          ]
+          "ogretmen": "",
+          "ogrenciler": []
         },
         "2": {
           "ders": "Geometri",
