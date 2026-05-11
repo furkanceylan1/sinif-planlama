@@ -2381,32 +2381,7 @@
           ]
         }
       },
-      "12D": {
-        "3": {
-          "ders": "Tarih",
-          "kaz": "📝 Soru Çözümü • 17. YÜZYIL OSMANLI",
-          "kazlar": [
-            "📝 Soru Çözümü",
-            "17. YÜZYIL OSMANLI"
-          ],
-          "ogretmen": "Nazan Özdere",
-          "ogrenciler": [
-            658,
-            690,
-            715,
-            310,
-            130,
-            80,
-            167,
-            108,
-            411,
-            636,
-            663,
-            573,
-            639
-          ]
-        }
-      },
+      "12D": {},
       "FL12": {
         "0": {
           "ders": "Kimya(A)",
