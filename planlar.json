@@ -2198,31 +2198,16 @@
           "ogrenciler": []
         },
         "2": {
-          "ders": "Türkçe",
-          "kaz": "📝 Soru Çözümü",
+          "ders": "Tarih",
+          "kaz": "📝 Soru Çözümü • Osmanlı kuruluş ve yükselme",
           "kazlar": [
-            "📝 Soru Çözümü"
+            "📝 Soru Çözümü",
+            "Osmanlı kuruluş ve yükselme"
           ],
-          "ogretmen": "Sevim Seda Yıldıray",
+          "ogretmen": "Nazan Özdere",
           "ogrenciler": [
-            80,
-            658,
-            690,
-            665,
-            929,
             715,
-            164,
-            725,
-            145,
-            310,
-            130,
-            167,
-            108,
-            411,
-            636,
-            663,
-            573,
-            639
+            164
           ]
         },
         "3": {
