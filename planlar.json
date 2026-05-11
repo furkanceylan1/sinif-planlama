@@ -2167,9 +2167,10 @@
         },
         "3": {
           "ders": "Türkçe",
-          "kaz": "📝 Soru Çözümü",
+          "kaz": "📝 Soru Çözümü • Yazım kuralları, karma dilbilgisi, anlam soruları",
           "kazlar": [
-            "📝 Soru Çözümü"
+            "📝 Soru Çözümü",
+            "Yazım kuralları, karma dilbilgisi, anlam soruları"
           ],
           "ogretmen": "Gazel Göğebakan",
           "ogrenciler": []
