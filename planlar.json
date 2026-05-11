@@ -2137,13 +2137,12 @@
       },
       "12B": {
         "0": {
-          "ders": "Fizik(A)",
-          "kaz": "📝 Soru Çözümü • MANYETİZMA",
+          "ders": "Kimya(A)",
+          "kaz": "Denge Sabiti-Katsayı İlişkisi\nDenge Bağıntıları ile İlgili Hesaplamalar",
           "kazlar": [
-            "📝 Soru Çözümü",
-            "MANYETİZMA"
+            "Denge Sabiti-Katsayı İlişkisi\nDenge Bağıntıları ile İlgili Hesaplamalar"
           ],
-          "ogretmen": "Yelda Çoşkun",
+          "ogretmen": "Buket Aksoy",
           "ogrenciler": [
             406,
             277,
