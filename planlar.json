@@ -2381,7 +2381,66 @@
           ]
         }
       },
-      "12D": {},
+      "12D": {
+        "1": {
+          "ders": "Coğrafya",
+          "kaz": "📝 Soru Çözümü • İKLİM BİLGİSİ",
+          "kazlar": [
+            "📝 Soru Çözümü",
+            "İKLİM BİLGİSİ"
+          ],
+          "ogretmen": "Begüm Yılmaz",
+          "ogrenciler": [
+            714,
+            121,
+            320,
+            243,
+            116,
+            725
+          ]
+        },
+        "2": {
+          "ders": "Matematik(A)",
+          "kaz": "📝 Soru Çözümü • TÜREV",
+          "kazlar": [
+            "📝 Soru Çözümü",
+            "TÜREV"
+          ],
+          "ogretmen": "Elif Şimşek",
+          "ogrenciler": [
+            122,
+            243,
+            320,
+            121,
+            714,
+            270
+          ]
+        },
+        "3": {
+          "ders": "Tarih",
+          "kaz": "📝 Soru Çözümü • 17. YÜZYIL OSMANLI",
+          "kazlar": [
+            "📝 Soru Çözümü",
+            "17. YÜZYIL OSMANLI"
+          ],
+          "ogretmen": "Nazan Özdere",
+          "ogrenciler": [
+            658,
+            690,
+            715,
+            310,
+            130,
+            80,
+            167,
+            108,
+            411,
+            636,
+            663,
+            573,
+            639
+          ]
+        }
+      },
       "FL12": {
         "0": {
           "ders": "Kimya(A)",
