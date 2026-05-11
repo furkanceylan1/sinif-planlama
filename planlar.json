@@ -2231,21 +2231,15 @@
           "ogrenciler": []
         },
         "1": {
-          "ders": "Coğrafya",
-          "kaz": "📝 Soru Çözümü • İKLİM BİLGİSİ",
+          "ders": "(1) Din Kültürü ve Ahlak",
+          "kaz": "Dünya Hayatı İle Ahiret Hayatı Arasında İlişki Kurar. • 📝 Soru Çözümü • GENEL KAVRAMLAR",
           "kazlar": [
+            "Dünya Hayatı İle Ahiret Hayatı Arasında İlişki Kurar.",
             "📝 Soru Çözümü",
-            "İKLİM BİLGİSİ"
+            "GENEL KAVRAMLAR"
           ],
-          "ogretmen": "Begüm Yılmaz",
-          "ogrenciler": [
-            714,
-            121,
-            320,
-            243,
-            116,
-            725
-          ]
+          "ogretmen": "Dursun Demirci",
+          "ogrenciler": []
         },
         "2": {
           "ders": "Matematik(A)",
