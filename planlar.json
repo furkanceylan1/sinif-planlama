@@ -2156,28 +2156,14 @@
           "ogrenciler": []
         },
         "2": {
-          "ders": "Geometri",
-          "kaz": "ÜÇGENDE ALAN BENZERLİK",
+          "ders": "(1) Din Kültürü ve Ahlak",
+          "kaz": "📝 Soru Çözümü • GENEL TEKRAR",
           "kazlar": [
-            "ÜÇGENDE ALAN BENZERLİK"
+            "📝 Soru Çözümü",
+            "GENEL TEKRAR"
           ],
-          "ogretmen": "Utku Bingül",
-          "ogrenciler": [
-            170,
-            262,
-            738,
-            840,
-            749,
-            245,
-            713,
-            383,
-            284,
-            116,
-            724,
-            232,
-            115,
-            248
-          ]
+          "ogretmen": "Dursun Demirci",
+          "ogrenciler": []
         },
         "3": {
           "ders": "Fizik(A)",
