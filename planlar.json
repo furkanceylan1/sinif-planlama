@@ -2293,12 +2293,15 @@
         },
         "1": {
           "ders": "Matematik(A)",
-          "kaz": "📝 Soru Çözümü • DOĞRUNUN ANALİTİĞİ",
+          "kaz": "📝 Soru Çözümü • DOĞRUNUN ANALİTİĞİ • Trigonometrik Özdeşlikler (11) • Birim Çember (11)\nTrigonometrik Özdeşlikler (11) • DİZİLER",
           "kazlar": [
             "📝 Soru Çözümü",
-            "DOĞRUNUN ANALİTİĞİ"
+            "DOĞRUNUN ANALİTİĞİ",
+            "Trigonometrik Özdeşlikler (11)",
+            "Birim Çember (11)\nTrigonometrik Özdeşlikler (11)",
+            "DİZİLER"
           ],
-          "ogretmen": "Elif Şimşek",
+          "ogretmen": "Bilal Şakirler",
           "ogrenciler": [
             283,
             294,
