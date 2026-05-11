@@ -2095,27 +2095,13 @@
     "Salı": {
       "12A": {
         "0": {
-          "ders": "Biyoloji(A)",
-          "kaz": "📝 Soru Çözümü • GENLER PROTEİNİ- FOTOSENTEZ",
+          "ders": "Matematik(A)",
+          "kaz": "📝 Soru Çözümü",
           "kazlar": [
-            "📝 Soru Çözümü",
-            "GENLER PROTEİNİ- FOTOSENTEZ"
+            "📝 Soru Çözümü"
           ],
-          "ogretmen": "Nilay Olkan",
-          "ogrenciler": [
-            170,
-            262,
-            251,
-            738,
-            840,
-            575,
-            749,
-            681,
-            172,
-            175,
-            144,
-            245
-          ]
+          "ogretmen": "Bilal Şakirler",
+          "ogrenciler": []
         },
         "1": {
           "ders": "Geometri",
@@ -2382,6 +2368,65 @@
         }
       },
       "12D": {
+        "0": {
+          "ders": "Tarih",
+          "kaz": "📝 Soru Çözümü • Millî Mücadele Sonucunda Kazanılan Diplomatik Başarıları Ülkemizin Bağımsızlığı Açısından Değerlendirir.",
+          "kazlar": [
+            "📝 Soru Çözümü",
+            "Millî Mücadele Sonucunda Kazanılan Diplomatik Başarıları Ülkemizin Bağımsızlığı Açısından Değerlendirir."
+          ],
+          "ogretmen": "Nazan Özdere",
+          "ogrenciler": [
+            80,
+            658,
+            690,
+            665,
+            929,
+            715,
+            310,
+            130,
+            167,
+            108,
+            411,
+            636,
+            663,
+            573
+          ]
+        },
+        "1": {
+          "ders": "Coğrafya",
+          "kaz": "📝 Soru Çözümü • İKLİM BİLGİSİ",
+          "kazlar": [
+            "📝 Soru Çözümü",
+            "İKLİM BİLGİSİ"
+          ],
+          "ogretmen": "Begüm Yılmaz",
+          "ogrenciler": [
+            714,
+            121,
+            320,
+            243,
+            116,
+            725
+          ]
+        },
+        "2": {
+          "ders": "Matematik(A)",
+          "kaz": "📝 Soru Çözümü • TÜREV",
+          "kazlar": [
+            "📝 Soru Çözümü",
+            "TÜREV"
+          ],
+          "ogretmen": "Elif Şimşek",
+          "ogrenciler": [
+            122,
+            243,
+            320,
+            121,
+            714,
+            270
+          ]
+        },
         "3": {
           "ders": "Tarih",
           "kaz": "📝 Soru Çözümü • 17. YÜZYIL OSMANLI",
