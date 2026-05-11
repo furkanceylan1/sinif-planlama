@@ -2105,39 +2105,14 @@
           "ogrenciler": []
         },
         "1": {
-          "ders": "Geometri",
-          "kaz": "📝 Soru Çözümü",
+          "ders": "Matematik(A)",
+          "kaz": "📝 Soru Çözümü • DİZİLER",
           "kazlar": [
-            "📝 Soru Çözümü"
+            "📝 Soru Çözümü",
+            "DİZİLER"
           ],
-          "ogretmen": "Utku Bingül",
-          "ogrenciler": [
-            170,
-            262,
-            251,
-            738,
-            406,
-            575,
-            277,
-            172,
-            175,
-            245,
-            232,
-            724,
-            164,
-            145,
-            122,
-            248,
-            270,
-            115,
-            840,
-            722,
-            739,
-            931,
-            713,
-            383,
-            284
-          ]
+          "ogretmen": "Elif Şimşek",
+          "ogrenciler": []
         },
         "2": {
           "ders": "Fizik(A)",
