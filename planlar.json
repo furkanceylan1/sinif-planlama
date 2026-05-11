@@ -2178,33 +2178,14 @@
       },
       "12C": {
         "0": {
-          "ders": "Matematik(A)",
-          "kaz": "📝 Soru Çözümü • DİZİLER-TÜREV",
+          "ders": "Türkçe",
+          "kaz": "📝 Soru Çözümü • Yazım kuralları, karma dilbilgisi, anlam soruları",
           "kazlar": [
             "📝 Soru Çözümü",
-            "DİZİLER-TÜREV"
+            "Yazım kuralları, karma dilbilgisi, anlam soruları"
           ],
-          "ogretmen": "Elif Şimşek",
-          "ogrenciler": [
-            713,
-            383,
-            284,
-            116,
-            232,
-            724,
-            164,
-            725,
-            145,
-            115,
-            122,
-            243,
-            320,
-            121,
-            714,
-            248,
-            270,
-            639
-          ]
+          "ogretmen": "Sevim Seda Yıldıray",
+          "ogrenciler": []
         },
         "1": {
           "ders": "Tarih",
