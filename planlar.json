@@ -2208,34 +2208,14 @@
           "ogrenciler": []
         },
         "3": {
-          "ders": "Coğrafya",
-          "kaz": "📝 Soru Çözümü • BÖLGE KAVRAMALRI",
+          "ders": "Matematik(A)",
+          "kaz": "Trigonometrik Fonksiyonlarin İşaretleri\n90° Den Büyük Açilarin Trigonometrik Oranlari (Yatay Eksen) • DİZİLER",
           "kazlar": [
-            "📝 Soru Çözümü",
-            "BÖLGE KAVRAMALRI"
+            "Trigonometrik Fonksiyonlarin İşaretleri\n90° Den Büyük Açilarin Trigonometrik Oranlari (Yatay Eksen)",
+            "DİZİLER"
           ],
-          "ogretmen": "Begüm Yılmaz",
-          "ogrenciler": [
-            713,
-            383,
-            284,
-            665,
-            116,
-            929,
-            232,
-            724,
-            164,
-            725,
-            145,
-            115,
-            122,
-            243,
-            320,
-            121,
-            714,
-            248,
-            270
-          ]
+          "ogretmen": "Bilal Şakirler",
+          "ogrenciler": []
         }
       },
       "12D": {
