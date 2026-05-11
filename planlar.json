@@ -2382,23 +2382,6 @@
         }
       },
       "12D": {
-        "2": {
-          "ders": "Matematik(A)",
-          "kaz": "📝 Soru Çözümü • TÜREV",
-          "kazlar": [
-            "📝 Soru Çözümü",
-            "TÜREV"
-          ],
-          "ogretmen": "Elif Şimşek",
-          "ogrenciler": [
-            122,
-            243,
-            320,
-            121,
-            714,
-            270
-          ]
-        },
         "3": {
           "ders": "Tarih",
           "kaz": "📝 Soru Çözümü • 17. YÜZYIL OSMANLI",
