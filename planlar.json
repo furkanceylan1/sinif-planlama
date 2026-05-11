@@ -2243,20 +2243,16 @@
         },
         "2": {
           "ders": "Matematik(A)",
-          "kaz": "📝 Soru Çözümü • TÜREV",
+          "kaz": "📝 Soru Çözümü • TÜREV • MAT.9.1.3. Farklı sayı kümelerinin özellikleri hakkında muhakeme yapabilme • Trigonometrik Fonksiyonlarin İşaretleri\n90° Den Büyük Açilarin Trigonometrik Oranlari (Yatay Eksen) • Dizi Tanimi",
           "kazlar": [
             "📝 Soru Çözümü",
-            "TÜREV"
+            "TÜREV",
+            "MAT.9.1.3. Farklı sayı kümelerinin özellikleri hakkında muhakeme yapabilme",
+            "Trigonometrik Fonksiyonlarin İşaretleri\n90° Den Büyük Açilarin Trigonometrik Oranlari (Yatay Eksen)",
+            "Dizi Tanimi"
           ],
-          "ogretmen": "Elif Şimşek",
-          "ogrenciler": [
-            122,
-            243,
-            320,
-            121,
-            714,
-            270
-          ]
+          "ogretmen": "Bilal Şakirler",
+          "ogrenciler": []
         },
         "3": {
           "ders": "Tarih",
