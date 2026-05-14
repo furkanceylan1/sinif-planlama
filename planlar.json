@@ -2475,6 +2475,17 @@
           "ogretmen": "Bilal Şakirler",
           "ogrenciler": []
         }
+      },
+      "12D": {
+        "0": {
+          "ders": "Türk Dili ve Edebiya",
+          "kaz": "DİVAN EDEBİYATI NAZIM ŞEKİLLERİ VE TÜRLERİ",
+          "kazlar": [
+            "DİVAN EDEBİYATI NAZIM ŞEKİLLERİ VE TÜRLERİ"
+          ],
+          "ogretmen": "NİHAL SUYOLCU",
+          "ogrenciler": []
+        }
       }
     }
   }
