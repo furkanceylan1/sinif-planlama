@@ -2417,6 +2417,15 @@
           ],
           "ogretmen": "Elif Şimşek",
           "ogrenciler": []
+        },
+        "2": {
+          "ders": "Biyoloji",
+          "kaz": "AYT ÇIKMIŞ SORULAR",
+          "kazlar": [
+            "AYT ÇIKMIŞ SORULAR"
+          ],
+          "ogretmen": "Nilay Olkan",
+          "ogrenciler": []
         }
       }
     }
