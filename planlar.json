@@ -2370,6 +2370,15 @@
           ],
           "ogretmen": "Aykut Elmas",
           "ogrenciler": []
+        },
+        "1": {
+          "ders": "Türkçe",
+          "kaz": "YAZIM KURALLARI",
+          "kazlar": [
+            "YAZIM KURALLARI"
+          ],
+          "ogretmen": "Sevim Seda Yıldıray",
+          "ogrenciler": []
         }
       }
     }
