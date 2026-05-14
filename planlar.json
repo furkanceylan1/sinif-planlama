@@ -2398,6 +2398,17 @@
           "ogretmen": "Nilay Olkan",
           "ogrenciler": []
         }
+      },
+      "12B": {
+        "0": {
+          "ders": "Matematik(A)",
+          "kaz": "TÜREV",
+          "kazlar": [
+            "TÜREV"
+          ],
+          "ogretmen": "Utku Bingül",
+          "ogrenciler": []
+        }
       }
     }
   }
