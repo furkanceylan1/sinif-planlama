@@ -2458,9 +2458,10 @@
         },
         "2": {
           "ders": "T.Matematik",
-          "kaz": "SORU ÇÖZÜMÜ",
+          "kaz": "SORU ÇÖZÜMÜ • TRİGONOMETRİ",
           "kazlar": [
-            "SORU ÇÖZÜMÜ"
+            "SORU ÇÖZÜMÜ",
+            "TRİGONOMETRİ"
           ],
           "ogretmen": "Bilal Şakirler",
           "ogrenciler": []
