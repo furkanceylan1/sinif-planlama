@@ -2408,6 +2408,15 @@
           ],
           "ogretmen": "Utku Bingül",
           "ogrenciler": []
+        },
+        "1": {
+          "ders": "Matematik(A)",
+          "kaz": "TÜREV",
+          "kazlar": [
+            "TÜREV"
+          ],
+          "ogretmen": "Elif Şimşek",
+          "ogrenciler": []
         }
       }
     }
