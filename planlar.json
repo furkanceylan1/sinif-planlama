@@ -2464,6 +2464,16 @@
           ],
           "ogretmen": "Bilal Şakirler",
           "ogrenciler": []
+        },
+        "3": {
+          "ders": "Matematik(A)",
+          "kaz": "SORU ÇÖZÜMÜ • SORU CÖZÜMÜ",
+          "kazlar": [
+            "SORU ÇÖZÜMÜ",
+            "SORU CÖZÜMÜ"
+          ],
+          "ogretmen": "Bilal Şakirler",
+          "ogrenciler": []
         }
       }
     }
