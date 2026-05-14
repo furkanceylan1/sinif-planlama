@@ -2494,6 +2494,15 @@
           ],
           "ogretmen": "Nihal Suyolcu",
           "ogrenciler": []
+        },
+        "2": {
+          "ders": "Matematik(A)",
+          "kaz": "SORU ÇÖZMÜ",
+          "kazlar": [
+            "SORU ÇÖZMÜ"
+          ],
+          "ogretmen": "Elif Şimşek",
+          "ogrenciler": []
         }
       }
     }
