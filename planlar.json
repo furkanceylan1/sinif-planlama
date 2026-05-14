@@ -2436,6 +2436,17 @@
           "ogretmen": "Burcu Bıyıkoğlu",
           "ogrenciler": []
         }
+      },
+      "12C": {
+        "0": {
+          "ders": "Kimya",
+          "kaz": "CÖZÜNÜRLÜK DENGESİ",
+          "kazlar": [
+            "CÖZÜNÜRLÜK DENGESİ"
+          ],
+          "ogretmen": "Buket Aksoy",
+          "ogrenciler": []
+        }
       }
     }
   }
