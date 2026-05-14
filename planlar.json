@@ -2512,6 +2512,17 @@
           "ogretmen": "Elif Şimşek",
           "ogrenciler": []
         }
+      },
+      "FL12": {
+        "2": {
+          "ders": "Matematik(A)",
+          "kaz": "TRİGONOMETRİ",
+          "kazlar": [
+            "TRİGONOMETRİ"
+          ],
+          "ogretmen": "Elif Şimşek",
+          "ogrenciler": []
+        }
       }
     }
   }
