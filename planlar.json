@@ -2514,6 +2514,15 @@
         }
       },
       "FL12": {
+        "0": {
+          "ders": "Matematik(A)",
+          "kaz": "DİZİLER",
+          "kazlar": [
+            "DİZİLER"
+          ],
+          "ogretmen": "Aykut Elmas",
+          "ogrenciler": []
+        },
         "2": {
           "ders": "Matematik(A)",
           "kaz": "TRİGONOMETRİ",
