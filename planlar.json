@@ -2522,6 +2522,16 @@
           ],
           "ogretmen": "Elif Şimşek",
           "ogrenciler": []
+        },
+        "3": {
+          "ders": "Matematik(A)",
+          "kaz": "Trigonometrik Fonksiyonlarin İşaretleri\n90° Den Büyük Açilarin Trigonometrik Oranlari (Yatay Eksen) • TRİGONEMETRİ",
+          "kazlar": [
+            "Trigonometrik Fonksiyonlarin İşaretleri\n90° Den Büyük Açilarin Trigonometrik Oranlari (Yatay Eksen)",
+            "TRİGONEMETRİ"
+          ],
+          "ogretmen": "Elif Şimşek",
+          "ogrenciler": []
         }
       }
     }
