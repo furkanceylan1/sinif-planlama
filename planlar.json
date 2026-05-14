@@ -2426,6 +2426,15 @@
           ],
           "ogretmen": "Nilay Olkan",
           "ogrenciler": []
+        },
+        "3": {
+          "ders": "Fizik",
+          "kaz": "SORU ÇÖZÜMÜ",
+          "kazlar": [
+            "SORU ÇÖZÜMÜ"
+          ],
+          "ogretmen": "Burcu Bıyıkoğlu",
+          "ogrenciler": []
         }
       }
     }
