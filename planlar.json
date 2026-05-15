@@ -190,7 +190,10 @@
         "1": {
           "ders": "Tarih",
           "kaz": "Atatürk İlke ve İnkılapları",
-          "ogretmen": "Burcu Demir",
+          "kazlar": [
+            "Atatürk İlke ve İnkılapları"
+          ],
+          "ogretmen": "Nazan Özdere",
           "ogrenciler": [
             713,
             115,
