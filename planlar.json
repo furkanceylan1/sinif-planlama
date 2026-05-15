@@ -362,7 +362,11 @@
         },
         "2": {
           "ders": "Biyoloji",
-          "kaz": "Hücre ve Organeller",
+          "kaz": "Hücre ve Organeller • İNSAN FİZYOLOJİSİ",
+          "kazlar": [
+            "Hücre ve Organeller",
+            "İNSAN FİZYOLOJİSİ"
+          ],
           "ogretmen": "Nilay Olkan",
           "ogrenciler": [
             106,
