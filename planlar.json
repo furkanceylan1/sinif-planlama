@@ -383,6 +383,9 @@
         "3": {
           "ders": "Biyoloji",
           "kaz": "Canlıların Temel Bileşenleri",
+          "kazlar": [
+            "Canlıların Temel Bileşenleri"
+          ],
           "ogretmen": "Nilay Olkan",
           "ogrenciler": [
             8,
