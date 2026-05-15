@@ -216,7 +216,10 @@
         },
         "2": {
           "ders": "Türkçe",
-          "kaz": "Noktalama İşaretleri",
+          "kaz": "SÖZCÜK TÜRLERİ",
+          "kazlar": [
+            "SÖZCÜK TÜRLERİ"
+          ],
           "ogretmen": "Sevim Seda Yıldıray",
           "ogrenciler": [
             658,
