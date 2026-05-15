@@ -177,7 +177,10 @@
       "12C": {
         "0": {
           "ders": "T.Matematik",
-          "kaz": "Bölme ve Bölünebilme",
+          "kaz": "TRİGONOMETRİ",
+          "kazlar": [
+            "TRİGONOMETRİ"
+          ],
           "ogretmen": "Elif Şimşek",
           "ogrenciler": [
             251,
