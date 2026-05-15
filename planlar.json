@@ -305,7 +305,11 @@
         },
         "3": {
           "ders": "Tarih",
-          "kaz": "Tarih Bilimi",
+          "kaz": "Tarih Bilimi • ATATÜRK İLKE VE İNKİLAPLARI",
+          "kazlar": [
+            "Tarih Bilimi",
+            "ATATÜRK İLKE VE İNKİLAPLARI"
+          ],
           "ogretmen": "Nazan Özdere",
           "ogrenciler": [
             320,
