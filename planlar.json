@@ -373,7 +373,10 @@
         },
         "1": {
           "ders": "T.Matematik",
-          "kaz": "Problemler (Sayı, Yaş, İşçi, Hareket, Yüzde, Kar-Zarar)",
+          "kaz": "TRİGONOMETRİ-2",
+          "kazlar": [
+            "TRİGONOMETRİ-2"
+          ],
           "ogretmen": "Elif Şimşek",
           "ogrenciler": [
             8,
