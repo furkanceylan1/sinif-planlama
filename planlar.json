@@ -84,7 +84,10 @@
       "12B": {
         "0": {
           "ders": "Fizik",
-          "kaz": "Kuvvet ve Hareket",
+          "kaz": "MANYETİZMA",
+          "kazlar": [
+            "MANYETİZMA"
+          ],
           "ogretmen": "Yelda Çoşkun",
           "ogrenciler": [
             170,
