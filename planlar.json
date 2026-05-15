@@ -105,7 +105,10 @@
         },
         "1": {
           "ders": "Türkçe",
-          "kaz": "Yazım Kuralları",
+          "kaz": "SÖZCÜK TÜRLERİ",
+          "kazlar": [
+            "SÖZCÜK TÜRLERİ"
+          ],
           "ogretmen": "Gazel Göğebakan",
           "ogrenciler": [
             665,
