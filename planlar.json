@@ -339,7 +339,10 @@
       "FL12": {
         "0": {
           "ders": "Kimya",
-          "kaz": "Karışımlar ve Ayırma Yöntemleri",
+          "kaz": "KİMYASAL TEPKİMELERDE HIZ",
+          "kazlar": [
+            "KİMYASAL TEPKİMELERDE HIZ"
+          ],
           "ogretmen": "Buket Aksoy",
           "ogrenciler": [
             8,
