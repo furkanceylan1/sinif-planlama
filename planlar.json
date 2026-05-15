@@ -137,7 +137,11 @@
         },
         "2": {
           "ders": "Geometri",
-          "kaz": "Üçgenler",
+          "kaz": "Üçgenler • DOĞRUNUN ANALATİĞİ",
+          "kazlar": [
+            "Üçgenler",
+            "DOĞRUNUN ANALATİĞİ"
+          ],
           "ogretmen": "Utku Bingül",
           "ogrenciler": [
             284,
