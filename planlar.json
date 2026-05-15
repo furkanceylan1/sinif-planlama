@@ -24,7 +24,10 @@
         },
         "1": {
           "ders": "T.Matematik",
-          "kaz": "Bölme ve Bölünebilme",
+          "kaz": "TRİGONOMETRİ-2",
+          "kazlar": [
+            "TRİGONOMETRİ-2"
+          ],
           "ogretmen": "Utku Bingül",
           "ogrenciler": [
             170,
