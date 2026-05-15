@@ -68,7 +68,11 @@
         },
         "3": {
           "ders": "Kimya",
-          "kaz": "Karışımlar ve Ayırma Yöntemleri",
+          "kaz": "Karışımlar ve Ayırma Yöntemleri • KİMYASAL TEPKİMELERDE HIZ",
+          "kazlar": [
+            "Karışımlar ve Ayırma Yöntemleri",
+            "KİMYASAL TEPKİMELERDE HIZ"
+          ],
           "ogretmen": "Buket Aksoy",
           "ogrenciler": [
             170,
