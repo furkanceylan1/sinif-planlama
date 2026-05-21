@@ -1770,22 +1770,7 @@
             "Asit-Baz Dengesi"
           ],
           "ogretmen": "Buket Aksoy",
-          "ogrenciler": [
-            251,
-            738,
-            406,
-            840,
-            575,
-            749,
-            681,
-            172,
-            175,
-            144,
-            277,
-            245,
-            722,
-            931
-          ]
+          "ogrenciler": []
         },
         "1": {
           "ders": "Fizik(A)",
